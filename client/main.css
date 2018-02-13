@@ -1,0 +1,61 @@
+/* CSS declarations go here */
+body{
+    background-color: beige;
+}
+#header{
+    height: 120px;
+    background-image: url('../img/backgroundheader.png');
+    background-repeat: no-repeat;
+    max-width: 100%;
+    background-size: cover;
+}
+
+#controllerWrap {
+    background-color: lightgrey;
+    height: 100%;
+}
+#controllerWrap form {
+    width: 80%;
+    margin:0 auto;
+    padding: 6px;
+}
+
+#remove form{
+    align-items: right;
+}
+#total{
+    text-align: right;
+}
+/*#titleBar{
+    display: flex;
+    justify-content: space-between;
+    margin:5px;
+}*/
+#titleBarH{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin:0 auto;
+    padding: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    font-weight: normal;
+    color:darkslategrey;
+    font-size: 1.3em;
+
+
+}
+li{
+
+    display: flex;
+    justify-content: space-between;
+}
+ul{
+    width:1000px;
+}
+#titleBarH h2{
+    font-style: oblique;
+    font-size: 1em;
+    vertical-align: middle;
+    margin-top: 45px;
+}
