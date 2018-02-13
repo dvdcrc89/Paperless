@@ -44,9 +44,15 @@ export default class AddItems extends React.Component{
                 <div id ="controllerWrap">
                     <form onSubmit={this.handleSubmit}>
                         <input type = "text" name ="ItemName" placeholder="Item Name"/>
-                        <input type = "text" name ="ItemDescription" placeholder="Description"/>
-                        <input type = "number" name ="ItemQuantity" placeholder="Quantity"/>
-                        <input type = "number" name ="ItemPrice" placeholder="Price"/>
+                        <select name="ItemDescription" placeholder="Meat">
+                            <option value="Meat">Meat</option>
+                            <option value="Fish">Fish</option>
+                            <option value="Vegetables">Vegetables</option>
+                            <option value="Diary">Diary</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <input type = "number" min ="0" step="any" name ="ItemQuantity" placeholder="Quantity"/>
+                        <input type = "number" min ="0" step="any" name ="ItemPrice" placeholder="Price"/>
                         <button>Add Item</button>
                     </form>
                     <div id="remove">
