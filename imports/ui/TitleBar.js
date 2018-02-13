@@ -20,11 +20,14 @@ export default class TitleBar extends React.Component{
         }
         return(
             <div id="header">
-                <AccountDropdown id="Account" user={user}/>
                 <div id="titleBarH">
+
                     <h1>{this.props.title}</h1>
                     <h2>{date}</h2>
                     <h2 id="total">Total item: {this.props.length}</h2>
+                    <AccountDropdown id="Account" user={user}/>
+
+
                 </div>
             </div>
         )

@@ -70,23 +70,68 @@ ul{
 .dropdown__content {
     display: none;
     position: absolute;
+    background-color: beige;
+    z-index:100;
+    width:100%
 
 
 }
 
 .dropdown--active .dropdown__content {
+    margin:10px;
+    border-radius: 25px;
+    border-style: groove;
     display: block;
     max-width: 150px;
     position:absolute;
-    colour:black;
+    background-color:cornsilk;
+    max-width: 15%;
+
+
+
 }
 
 #Account{
     font-family: FreeSans;
     font-size: 0.2em;
+    display: flex;
+    max-width: 100%;
+
 
 
 }
+.account-dropdown a{
+    /* Applies to all unvisited links */
+    text-decoration:  underline;
+
+    font-weight:      bold;
+    color:            black;
+    font-family: FreeSans;
+    font-size: 0.7em;
+    text-decoration: none;
+    text-align: right;
+
+
+}
+.account-dropdown a:hover{
+    /* Applies to all unvisited links */
+    text-decoration:  underline;
+
+    font-weight:      bold;
+    color:            darkslategrey;
+    font-family: FreeSans;
+    font-size: 0.7em;
+    text-decoration: none;
+    text-align: right;
+
+
+}
+
 .account-dropdown__avatar{
-    max-width: 20px;
+    max-width: 50px;
+    margin-left: 20px;
 }
+.account-dropdown__name{
+    max-width: 100px;
+}
+

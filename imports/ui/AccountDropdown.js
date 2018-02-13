@@ -17,13 +17,16 @@ class AccountDropdown extends Component {
         const { user } = this.props;
 
         return (
+            <div id="menuContainer">
             <Dropdown className="account-dropdown" ref="dropdown">
                 <DropdownTrigger>
-                    <img className="account-dropdown__avatar" src={user.avatar_url} /><span className="account-dropdown__name">My Account</span>
+                    <img className="account-dropdown__name" src='./img/menu.png'></img>
                 </DropdownTrigger>
                 <DropdownContent>
                     <div className="account-dropdown__identity account-dropdown__segment">
                         Signed in as <strong>{user.name}</strong>
+                        <img className="account-dropdown__avatar" src={user.avatar_url} ></img>
+
                     </div>
                     <ul className="account-dropdown__quick-links account-dropdown__segment">
                         <li className="account-dropdown__link">
@@ -61,6 +64,7 @@ class AccountDropdown extends Component {
                     </ul>
                 </DropdownContent>
             </Dropdown>
+            </div>
         );
     }
 }
