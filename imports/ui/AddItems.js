@@ -44,7 +44,7 @@ export default class AddItems extends React.Component{
                 <div id ="controllerWrap">
                     <form onSubmit={this.handleSubmit}>
                         <input type = "text" name ="ItemName" placeholder="Item Name"/>
-                        <select name="ItemDescription" placeholder="Meat">
+                        <select  name="ItemDescription" placeholder="Meat">
                             <option value="Meat">Meat</option>
                             <option value="Fish">Fish</option>
                             <option value="Vegetables">Vegetables</option>

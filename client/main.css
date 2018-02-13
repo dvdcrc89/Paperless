@@ -59,3 +59,34 @@ ul{
     vertical-align: middle;
     margin-top: 45px;
 }
+
+
+
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown__content {
+    display: none;
+    position: absolute;
+
+
+}
+
+.dropdown--active .dropdown__content {
+    display: block;
+    max-width: 150px;
+    position:absolute;
+    colour:black;
+}
+
+#Account{
+    font-family: FreeSans;
+    font-size: 0.2em;
+
+
+}
+.account-dropdown__avatar{
+    max-width: 20px;
+}

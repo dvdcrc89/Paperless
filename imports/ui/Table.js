@@ -13,27 +13,30 @@ export default class Table extends React.Component {
 
         const columns = [
             {
-                Header: 'Ingredients ID',
+                Header: 'ID',
                 accessor: '_id' // String-based value accessors!
             },{
             Header: 'Ingredients Name',
             accessor: 'ItemName' // String-based value accessors!
         },{
-            Header: 'Ingredients Description',
+            Header: 'Description',
             accessor: 'ItemDescription' // String-based value accessors!
     },{
-            Header: 'Ingredients Quantity',
-            accessor: 'ItemQuantity' // String-based value accessors!
+            Header: 'Quantity',
+            accessor: 'ItemQuantity', // String-based value accessors!
+
         },{
-            Header: 'Ingredients Price',
-            accessor: 'ItemPrice' // String-based value accessors!
+            Header: 'Price in £',
+            accessor: 'ItemPrice', // String-based value accessors!
+
         }]
 
         return (
             <ReactTable
                 data={data}
                 columns={columns}
-                pageSize ={10}
+                defaultPageSize ={10}
+
             />
         )
     }
