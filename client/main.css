@@ -1,27 +1,13 @@
 /* CSS declarations go here */
 body{
-    background-color: beige;
-}
-#header{
-    height: 120px;
-    background-image: url('../img/backgroundheader.png');
-    background-repeat: no-repeat;
-    max-width: 100%;
-    background-size: cover;
+    background-color: white;
 }
 
-#controllerWrap {
-    background-color: lightgrey;
-    height: 100%;
-}
-#controllerWrap form {
-    width: 80%;
-    margin:0 auto;
-    padding: 6px;
-}
+
+
 
 #remove form{
-    align-items: right;
+    align-items: center;
 }
 #total{
     text-align: right;
@@ -31,20 +17,7 @@ body{
     justify-content: space-between;
     margin:5px;
 }*/
-#titleBarH{
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin:0 auto;
-    padding: 15px;
-    font-family: 'Open Sans', sans-serif;
-    font-style: italic;
-    font-weight: normal;
-    color:darkslategrey;
-    font-size: 1.3em;
 
-
-}
 li{
 
     display: flex;
@@ -53,44 +26,88 @@ li{
 ul{
     width:1000px;
 }
-#titleBarH h2{
-    font-style: oblique;
+h2{
     font-size: 1em;
     vertical-align: middle;
     margin-top: 45px;
+
+}
+
+h1{
+    font-size: em;
+    vertical-align: middle;
+    margin-top: 45px;
+
 }
 
 
 
 
-.dropdown {
-    display: inline-block;
+
+
+/*HEADER*/  
+/*--------------------------------------------------------------------------------*/
+#header{
+    height: 120px;
+    background-image: url('../img/backgroundheader.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.dropdown__content {
-    display: none;
-    position: absolute;
-    background-color: beige;
-    z-index:100;
-    width:100%
+#titleBarH{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin:0 auto;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: lighter;
+    color:white;
+    font-size: 1.3em;
+}
 
+#controllerWrap {
+    background-color: WHITE;
+    height: 100%;
+}
+
+#controllerWrap form {
+    width: 900px;
+    margin:0 auto;
 
 }
 
-.dropdown--active .dropdown__content {
+
+.formstyle input[type=text], 
+.formstyle input[type=date],
+.formstyle input[type=datetime],
+.formstyle input[type=number],
+.formstyle input[type=search],
+.formstyle input[type=time],
+.formstyle input[type=url],
+.formstyle input[type=email],
+textarea, 
+select{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border:1px solid #BEBEBE;
+    padding: 5px;
     margin:10px;
-    border-radius: 25px;
-    border-style: groove;
-    display: block;
-    max-width: 150px;
-    position:absolute;
-    background-color:cornsilk;
-    max-width: 15%;
-
-
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;  
+    border-radius: 7px;
 
 }
 
+
+
+
+/* DROP MENU*/
+/*--------------------------------------------------------------------------------*/
 #Account{
     font-family: FreeSans;
     font-size: 0.2em;
@@ -103,7 +120,6 @@ ul{
 .account-dropdown a{
     /* Applies to all unvisited links */
     text-decoration:  underline;
-
     font-weight:      bold;
     color:            black;
     font-family: FreeSans;
@@ -135,3 +151,35 @@ ul{
     max-width: 100px;
 }
 
+
+
+.dropdown {
+    display: inline-block;
+}
+
+.dropdown__content {
+    display: none;
+    position: absolute;
+    z-index:100;
+    width:100%
+
+
+}
+
+.dropdown--active .dropdown__content {
+    margin:10px;
+    border-radius: 25px;
+    border-style: groove;
+    display: block;
+    max-width: 150px;
+    position:absolute;
+    background-color:cornsilk;
+    max-width: 15%;
+
+
+
+}
+
+.account-dropdown__name{
+    width: 50px;
+}

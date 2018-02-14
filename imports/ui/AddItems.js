@@ -39,11 +39,12 @@ export default class AddItems extends React.Component{
     }
     render(){
         return(
-            <div>
+            <header>
+                <div class = 'formstyle'>
                 <TitleBar title="STOCK" month="February" length={Items.find().fetch().length}/>
                 <div id ="controllerWrap">
                     <form onSubmit={this.handleSubmit}>
-                        <input type = "text" name ="ItemName" placeholder="Item Name"/>
+                        <input type = "text" name ="ItemName" placeholder="Item Name" class = "typebox"/>
                         <select  name="ItemDescription" placeholder="Meat">
                             <option value="Meat">Meat</option>
                             <option value="Fish">Fish</option>
@@ -63,8 +64,8 @@ export default class AddItems extends React.Component{
                     </div>
 
                 </div>
-
             </div>
+            </header>
     )
     }
 }
