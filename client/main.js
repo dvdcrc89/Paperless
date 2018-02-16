@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import {Meteor} from 'meteor/meteor'
 import {Tracker} from 'meteor/tracker'
 import {Items} from "./../imports/api/items";
-import App from './../imports/ui/App'
+import App from '../imports/ui/stock/App'
 
 Meteor.startup( ()=> {
     Tracker.autorun(()=>{

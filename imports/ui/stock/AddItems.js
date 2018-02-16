@@ -1,8 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {Items} from "../api/items";
-import ItemsValue from './ItemValues'
-import TitleBar from "./TitleBar";
+import {Items} from "./../../api/items"
+import TitleBar from "../generic/TitleBar";
 
 
 export default class AddItems extends React.Component{
@@ -39,8 +38,8 @@ export default class AddItems extends React.Component{
     }
     render(){
         return(
-            <header>
-                <div class = 'formstyle'>
+
+                <div className = 'formstyle'>
                 <TitleBar title="STOCK" month="February" length={Items.find().fetch().length}/>
                 <div id ="controllerWrap">
                     <form onSubmit={this.handleSubmit}>
@@ -65,7 +64,7 @@ export default class AddItems extends React.Component{
 
                 </div>
             </div>
-            </header>
+
     )
     }
 }

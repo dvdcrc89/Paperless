@@ -6,7 +6,7 @@ import Table from './Table'
 
 export default class App extends React.Component{
     render() {
-        return (<div>
+        return (<div class="container">
                 <AddItems/>
                 <Table data={this.props.items}/>
             </div>

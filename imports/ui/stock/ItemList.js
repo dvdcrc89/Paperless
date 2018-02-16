@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import {Items} from "../api/items";
+import {Items} from "./../../api/items"
 import propTypes from "prop-types"
 import Item from './Item'
 
