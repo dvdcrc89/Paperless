@@ -18,7 +18,7 @@ export default class Profile extends React.Component {
                 <div className="container">
 
                     <TitleBar title="Profile" mainData={this.getUser()}/>
-              
+
                     <button onClick={() => {
                         history.push('/stock');
                     }}>Stock

@@ -2,30 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a11ad881-b0bf-409f-b985-168949682b6e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/imports/ui/generic/table.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/imports/ui/paperworks/fridgeFreezer.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/imports/ui/profile/profile.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/imports/ui/routes/routes.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/imports/ui/startingPages/landingPage.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/imports/ui/startingPages/login.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/imports/ui/startingPages/signup.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/imports/ui/stock/stockMain.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/imports/ui/stocktakes/stocktakes.js" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_browser.xml" afterPath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_browser.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.meteor/packages" afterPath="$PROJECT_DIR$/.meteor/packages" />
-      <change beforePath="$PROJECT_DIR$/.meteor/versions" afterPath="$PROJECT_DIR$/.meteor/versions" />
-      <change beforePath="$PROJECT_DIR$/client/main.js" afterPath="$PROJECT_DIR$/client/main.js" />
-      <change beforePath="$PROJECT_DIR$/client/main.scss" afterPath="$PROJECT_DIR$/client/main.scss" />
-      <change beforePath="$PROJECT_DIR$/imports/client/style/components/stock/_table.scss" afterPath="$PROJECT_DIR$/imports/client/style/components/stock/_table.scss" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/generic/TitleBar.js" afterPath="$PROJECT_DIR$/imports/ui/generic/titlebar.js" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/stock/AddItems.js" afterPath="$PROJECT_DIR$/imports/ui/stock/add_items.js" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/stock/App.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/stock/Item.js" afterPath="$PROJECT_DIR$/imports/ui/stock/item.js" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/stock/ItemList.js" afterPath="$PROJECT_DIR$/imports/ui/stock/itemList.js" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/stock/Table.js" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/profile/profile.js" afterPath="$PROJECT_DIR$/imports/ui/profile/profile.js" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/startingPages/signup.js" afterPath="$PROJECT_DIR$/imports/ui/startingPages/signup.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -95,12 +73,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="signup.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="signup.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/imports/ui/startingPages/signup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="41" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="291">
+              <caret line="49" column="53" lean-forward="false" selection-start-line="49" selection-start-column="53" selection-end-line="49" selection-end-column="53" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -127,11 +107,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="profile.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="profile.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/profile/profile.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
-              <caret line="20" column="14" lean-forward="false" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -212,12 +192,12 @@
         <option value="$PROJECT_DIR$/imports/client/style/components/stock/_table.scss" />
         <option value="$PROJECT_DIR$/client/main.scss" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/imports/ui/startingPages/signup.js" />
         <option value="$PROJECT_DIR$/imports/ui/stock/stockMain.js" />
         <option value="$PROJECT_DIR$/client/main.js" />
         <option value="$PROJECT_DIR$/imports/ui/routes/routes.js" />
         <option value="$PROJECT_DIR$/imports/ui/startingPages/login.js" />
         <option value="$PROJECT_DIR$/imports/ui/profile/profile.js" />
+        <option value="$PROJECT_DIR$/imports/ui/startingPages/signup.js" />
       </list>
     </option>
   </component>
@@ -361,12 +341,12 @@
       <workItem from="1518536284192" duration="14199000" />
       <workItem from="1518552536180" duration="11443000" />
       <workItem from="1518987047802" duration="134000" />
-      <workItem from="1519672249783" duration="11549000" />
+      <workItem from="1519672249783" duration="11697000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49323000" />
+    <option name="totallyTimeSpent" value="49471000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="63" y="-4" width="1303" height="772" extended-state="6" />
@@ -724,14 +704,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/startingPages/signup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="41" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-145">
@@ -755,9 +727,19 @@
     <entry file="file://$PROJECT_DIR$/imports/ui/profile/profile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
-          <caret line="20" column="14" lean-forward="false" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/startingPages/signup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="49" column="53" lean-forward="false" selection-start-line="49" selection-start-column="53" selection-end-line="49" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

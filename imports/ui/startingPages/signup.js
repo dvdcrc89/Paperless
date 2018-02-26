@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import {Accounts} from "meteor/accounts-base";
 import {Meteor} from "meteor/meteor";
 import {history} from "../routes/routes";
+import TitleBar from "../generic/titlebar";
 
 export default class Signup extends React.Component{
     componentWillMount(){
@@ -46,7 +47,7 @@ export default class Signup extends React.Component{
 
         return (
             <div>
-                <h1>Signup to Paperless</h1>
+                <TitleBar title="Signup to Paperless"/>
                 {this.state.error ? <p>{this.state.error}</p> : undefined}
                 <form onSubmit={this.onSubmit.bind(this)} noValidate>
                     <input type="email" name="email" ref="email" placeholder="Email"/>
