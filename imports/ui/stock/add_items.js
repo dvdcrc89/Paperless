@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {Items} from "./../../api/items"
 import TitleBar from "../generic/titlebar";
+import {Meteor} from 'meteor/meteor'
 
 
 export default class AddItems extends React.Component{
@@ -11,7 +12,7 @@ export default class AddItems extends React.Component{
         let itemQuantity = e.target.ItemQuantity.value;
         let itemPrice = e.target.ItemPrice.value;
         e.preventDefault();
-        let length= Items.find().fetch().length+1;
+        let length= Items.find({User: Meteor.userId()}).fetch().length+1;
         if(itemName){
             e.target.ItemName.value ='';
             e.target.ItemDescription.value ='';
@@ -19,6 +20,7 @@ export default class AddItems extends React.Component{
             e.target.ItemPrice.value ='';
 
             Items.insert({
+                User: Meteor.userId(),
                 ItemName: itemName,
                 ItemDescription: itemDescription,
                 ItemQuantity: itemQuantity,

@@ -26,7 +26,7 @@ export default class StockMain extends React.Component{
                 Header: '', accessor: 'btn',width: 50
             }]
 
-        const data = Items.find().fetch().map((dat) => {
+        const data = Items.find({User: Meteor.userId()}).fetch().map((dat) => {
             return {
                 ...dat,
                 btn:
@@ -52,7 +52,7 @@ export default class StockMain extends React.Component{
         return (
 
             <div class="container">
-                {console.log(Items.find().fetch())}
+                {console.log(Items.find({User: Meteor.userId()}).fetch())}
                 <TitleBar title="STOCK" mainData= {"Total items: " +this.fetch().data.length}/>
                 <AddItems/>
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>

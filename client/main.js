@@ -14,7 +14,8 @@ import {AppRouter,onAuthChange} from './../imports/ui/routes/routes'
 
 Meteor.startup(()=> {
     Tracker.autorun(()=> {
-        onAuthChange();
-    ReactDOM.render(<AppRouter/>,document.getElementById("app"));
+    onAuthChange();
+        const data = Items.find({User: Meteor.userId()}).fetch()
+        ReactDOM.render(<AppRouter/>,document.getElementById("app"));
 })
 });
