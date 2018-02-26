@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import {Items} from "./../../api/items"
 import propTypes from "prop-types"
-import Item from './Item'
+import Item from './item'
 
 export default class ItemList extends React.Component {
 

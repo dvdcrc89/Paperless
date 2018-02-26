@@ -15,13 +15,11 @@ export default class TitleBar extends React.Component{
         let date=this.returnDate();
 
         return(
-            <div id="header">
-                <div id="titleBarH">
+            <div className="header">
+                <div className="titleBar">
+                    <h2 className="titleDate">{date}</h2>
                     <h1>{this.props.title}</h1>
-                    <h2>{date}</h2>
-                    <h2 id="total">Total item: {this.props.length}</h2>
-
-
+                    <h2 className="titleMainData" >{this.props.mainData}</h2>
                 </div>
             </div>
         )

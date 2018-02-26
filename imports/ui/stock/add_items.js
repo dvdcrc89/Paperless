@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import {Items} from "./../../api/items"
-import TitleBar from "../generic/TitleBar";
+import TitleBar from "../generic/titlebar";
 
 
 export default class AddItems extends React.Component{
@@ -27,23 +27,14 @@ export default class AddItems extends React.Component{
             });
         }
     };
-    handleRemove(e){
-        let itemID = e.target.ItemID.value;
-        e.preventDefault();
-        if(itemID){
-            e.target.ItemID.value="";
 
-            Items.remove(itemID);
-        }
-    }
     render(){
         return(
 
                 <div className = 'formstyle'>
-                <TitleBar title="STOCK" month="February" length={Items.find().fetch().length}/>
-                <div id ="controllerWrap">
+                <div className ="controllerWrap">
                     <form onSubmit={this.handleSubmit}>
-                        <input type = "text" name ="ItemName" placeholder="Item Name" class = "typebox"/>
+                        <input type = "text" name ="ItemName" placeholder="Item Name" className = "typebox"/>
                         <select  name="ItemDescription" placeholder="Meat">
                             <option value="Meat">Meat</option>
                             <option value="Fish">Fish</option>
@@ -55,12 +46,6 @@ export default class AddItems extends React.Component{
                         <input type = "number" min ="0" step="any" name ="ItemPrice" placeholder="Price"/>
                         <button>Add Item</button>
                     </form>
-                    <div id="remove">
-                    <form onSubmit={this.handleRemove}>
-                        <input type = "text" name ="ItemID" placeholder="Item ID"/>
-                        <button>Remove Item</button>
-                    </form>
-                    </div>
 
                 </div>
             </div>

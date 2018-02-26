@@ -2,14 +2,14 @@
 @import './../imports/client/style/components/stock/main-stock';
 
 body{
-    background-color: white;
+    background-color: #f4f4f4;
 }
 
 
 
 .container{
     margin: 0 auto;
-    max-width: 50rem;
+    max-width: 90%;
     padding:0.8rem;
 
 }
@@ -35,14 +35,12 @@ ul{
     width:1000px;
 }
 h2{
-    font-size: 1em;
     vertical-align: middle;
     margin-top: 45px;
 
 }
 
 h1{
-    font-size: em;
     vertical-align: middle;
     margin-top: 45px;
 
@@ -55,43 +53,60 @@ h1{
 
 /*HEADER*/  
 /*--------------------------------------------------------------------------------*/
-#header{
+.header{
     height: 120px;
     background-image: url('../img/backgroundheader.png');
     background-repeat: no-repeat;
     background-size: cover;
+    border: 1px solid #696969;
+
 }
 
-#titleBarH{
+.titleBar{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content:space-between;
     width: 90%;
-    margin:0 auto;
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: lighter;
     color:white;
-    font-size: 1.3em;
+    font-size: 0.8rem;
+    margin: 0 auto;
+
+}
+.titleBarDate{
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: lighter;
+    color:white;
+    font-size: 0.6rem;
+
+}
+.titleMainData{
+    font-size:0.9rem;
+
 }
 
-#controllerWrap {
-    background-color: WHITE;
+.controllerWrap {
     height: 100%;
+    width: 100%;
+
 
 }
 
-#controllerWrap form {
-    width: 900px;
+.controllerWrap form {
+    width: 100%;
     margin:0 auto;
 
 
 }
 .formstyle{
     margin: 0 auto;
-    max-width: 50rem;
     padding:0rem;
     display: flex;
     flex-direction: column;
+
+    //background-color:  	#bdbdbd;
+background-color: rgba(0,0,0,0.03);
+    border: 1px solid #696969;
 }
 
 .formstyle input[type=text], 

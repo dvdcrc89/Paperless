@@ -7,7 +7,9 @@
   -webkit-box-direction:normal;
   -ms-flex-direction:column;
   flex-direction:column;
-  border:1px solid rgba(0,0,0,0.1);
+  //border:1px solid rgba(0,0,0,0.1);
+  border: 1px solid #696969;
+
 }
 .ReactTable *{
   box-sizing:border-box
@@ -48,7 +50,8 @@
 }
 .ReactTable .rt-thead.-headerGroups{
   background:rgba(0,0,0,0.03);
-  border-bottom:1px solid rgba(0,0,0,0.05)
+  //border-bottom:1px solid rgba(0,0,0,0.05)
+
 }
 .ReactTable .rt-thead.-filters{
   border-bottom:1px solid rgba(0,0,0,0.05);

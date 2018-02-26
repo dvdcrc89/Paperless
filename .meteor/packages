@@ -23,3 +23,5 @@ aslagle:reactive-table
 universe:modules
 momentjs:moment
 fourseven:scss
+accounts-base
+accounts-password

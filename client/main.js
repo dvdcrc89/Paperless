@@ -3,14 +3,18 @@ import ReactDOM from 'react-dom'
 import {Meteor} from 'meteor/meteor'
 import {Tracker} from 'meteor/tracker'
 import {Items} from "./../imports/api/items";
-import App from '../imports/ui/stock/App'
+import StockMain from '../imports/ui/stock/stockMain'
+import StockTakes from './../imports/ui/stocktakes/stocktakes'
+import FridgeFreezer from './../imports/ui/paperworks/fridgeFreezer'
+import {AppRouter,onAuthChange} from './../imports/ui/routes/routes'
 
-Meteor.startup( ()=> {
-    Tracker.autorun(()=>{
-        let items = Items.find().fetch();
-        ReactDOM.render(<App items={items}/>,document.getElementById('app'));
 
-    });
 
+
+
+Meteor.startup(()=> {
+    Tracker.autorun(()=> {
+        onAuthChange();
+    ReactDOM.render(<AppRouter/>,document.getElementById("app"));
+})
 });
-

@@ -2,6 +2,29 @@
   <library name="meteor-packages-auto-import-browser" type="javaScript">
     <properties>
       <sourceFilesUrls>
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/accounts_client.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/accounts_client_tests.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/accounts_common.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/accounts_rate_limit.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/accounts_reconnect_tests.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/accounts_server.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/accounts_tests.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/accounts_tests_setup.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/accounts_url_tests.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/client_main.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/client_tests.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/localstorage_token.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/server_main.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/server_tests.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/url_client.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/url_server.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-password/1.5.1/web.browser/email_templates.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-password/1.5.1/web.browser/email_tests.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-password/1.5.1/web.browser/email_tests_setup.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-password/1.5.1/web.browser/password_client.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-password/1.5.1/web.browser/password_server.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-password/1.5.1/web.browser/password_tests.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/accounts-password/1.5.1/web.browser/password_tests_setup.js" />
         <item url="file://$USER_HOME$/.meteor/packages/allow-deny/1.1.0/web.browser/allow-deny-tests.js" />
         <item url="file://$USER_HOME$/.meteor/packages/allow-deny/1.1.0/web.browser/allow-deny.js" />
         <item url="file://$USER_HOME$/.meteor/packages/anti_i18n/0.4.3/web.browser/packages/anti:i18n.js" />
@@ -105,6 +128,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/jquery/1.11.11/web.browser/main.js" />
         <item url="file://$USER_HOME$/.meteor/packages/launch-screen/1.1.1/web.browser/default-behavior.js" />
         <item url="file://$USER_HOME$/.meteor/packages/launch-screen/1.1.1/web.browser/mobile-launch-screen.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/localstorage/1.2.0/web.browser/localstorage.js" />
         <item url="file://$USER_HOME$/.meteor/packages/logging/1.1.19/web.browser/logging.js" />
         <item url="file://$USER_HOME$/.meteor/packages/logging/1.1.19/web.browser/logging_cordova.js" />
         <item url="file://$USER_HOME$/.meteor/packages/logging/1.1.19/web.browser/logging_test.js" />
@@ -133,6 +157,8 @@
         <item url="file://$USER_HOME$/.meteor/packages/promise/0.10.1/web.browser/server.js" />
         <item url="file://$USER_HOME$/.meteor/packages/random/1.1.0/web.browser/random.js" />
         <item url="file://$USER_HOME$/.meteor/packages/random/1.1.0/web.browser/random_tests.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/rate-limit/1.0.9/web.browser/rate-limit-tests.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/rate-limit/1.0.9/web.browser/rate-limit.js" />
         <item url="file://$USER_HOME$/.meteor/packages/reactive-var/1.0.11/web.browser/reactive-var.js" />
         <item url="file://$USER_HOME$/.meteor/packages/reload/1.2.0/web.browser/reload.js" />
         <item url="file://$USER_HOME$/.meteor/packages/reload/1.2.0/web.browser/reload_tests.js" />
@@ -143,6 +169,8 @@
         <item url="file://$USER_HOME$/.meteor/packages/server-render/0.3.0/web.browser/server-render-tests.js" />
         <item url="file://$USER_HOME$/.meteor/packages/server-render/0.3.0/web.browser/server-sink.js" />
         <item url="file://$USER_HOME$/.meteor/packages/server-render/0.3.0/web.browser/server.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/service-configuration/1.0.11/web.browser/service_configuration_common.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/sha/1.0.9/web.browser/sha256.js" />
         <item url="file://$USER_HOME$/.meteor/packages/shim-common/0.1.0/web.browser/server.js" />
         <item url="file://$USER_HOME$/.meteor/packages/socket-stream-client/0.1.0/web.browser/browser.js" />
         <item url="file://$USER_HOME$/.meteor/packages/socket-stream-client/0.1.0/web.browser/client-tests.js" />
@@ -157,6 +185,8 @@
         <item url="file://$USER_HOME$/.meteor/packages/spacebars-compiler/1.1.3/web.browser/react.js" />
         <item url="file://$USER_HOME$/.meteor/packages/spacebars-compiler/1.1.3/web.browser/templatetag.js" />
         <item url="file://$USER_HOME$/.meteor/packages/spacebars/1.0.15/web.browser/spacebars-runtime.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/srp/1.0.10/web.browser/biginteger.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/srp/1.0.10/web.browser/srp.js" />
         <item url="file://$USER_HOME$/.meteor/packages/templating-runtime/1.3.2/web.browser/dynamic.js" />
         <item url="file://$USER_HOME$/.meteor/packages/templating-runtime/1.3.2/web.browser/templating.js" />
         <item url="file://$USER_HOME$/.meteor/packages/templating-tools/1.1.2/web.browser/code-generation.js" />
@@ -188,6 +218,29 @@
       </sourceFilesUrls>
     </properties>
     <CLASSES>
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/accounts_client.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/accounts_client_tests.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/accounts_common.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/accounts_rate_limit.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/accounts_reconnect_tests.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/accounts_server.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/accounts_tests.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/accounts_tests_setup.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/accounts_url_tests.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/client_main.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/client_tests.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/localstorage_token.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/server_main.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/server_tests.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/url_client.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-base/1.4.2/web.browser/url_server.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-password/1.5.1/web.browser/email_templates.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-password/1.5.1/web.browser/email_tests.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-password/1.5.1/web.browser/email_tests_setup.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-password/1.5.1/web.browser/password_client.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-password/1.5.1/web.browser/password_server.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-password/1.5.1/web.browser/password_tests.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/accounts-password/1.5.1/web.browser/password_tests_setup.js" />
       <root url="file://$USER_HOME$/.meteor/packages/allow-deny/1.1.0/web.browser/allow-deny-tests.js" />
       <root url="file://$USER_HOME$/.meteor/packages/allow-deny/1.1.0/web.browser/allow-deny.js" />
       <root url="file://$USER_HOME$/.meteor/packages/anti_i18n/0.4.3/web.browser/packages/anti:i18n.js" />
@@ -291,6 +344,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/jquery/1.11.11/web.browser/main.js" />
       <root url="file://$USER_HOME$/.meteor/packages/launch-screen/1.1.1/web.browser/default-behavior.js" />
       <root url="file://$USER_HOME$/.meteor/packages/launch-screen/1.1.1/web.browser/mobile-launch-screen.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/localstorage/1.2.0/web.browser/localstorage.js" />
       <root url="file://$USER_HOME$/.meteor/packages/logging/1.1.19/web.browser/logging.js" />
       <root url="file://$USER_HOME$/.meteor/packages/logging/1.1.19/web.browser/logging_cordova.js" />
       <root url="file://$USER_HOME$/.meteor/packages/logging/1.1.19/web.browser/logging_test.js" />
@@ -319,6 +373,8 @@
       <root url="file://$USER_HOME$/.meteor/packages/promise/0.10.1/web.browser/server.js" />
       <root url="file://$USER_HOME$/.meteor/packages/random/1.1.0/web.browser/random.js" />
       <root url="file://$USER_HOME$/.meteor/packages/random/1.1.0/web.browser/random_tests.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/rate-limit/1.0.9/web.browser/rate-limit-tests.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/rate-limit/1.0.9/web.browser/rate-limit.js" />
       <root url="file://$USER_HOME$/.meteor/packages/reactive-var/1.0.11/web.browser/reactive-var.js" />
       <root url="file://$USER_HOME$/.meteor/packages/reload/1.2.0/web.browser/reload.js" />
       <root url="file://$USER_HOME$/.meteor/packages/reload/1.2.0/web.browser/reload_tests.js" />
@@ -329,6 +385,8 @@
       <root url="file://$USER_HOME$/.meteor/packages/server-render/0.3.0/web.browser/server-render-tests.js" />
       <root url="file://$USER_HOME$/.meteor/packages/server-render/0.3.0/web.browser/server-sink.js" />
       <root url="file://$USER_HOME$/.meteor/packages/server-render/0.3.0/web.browser/server.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/service-configuration/1.0.11/web.browser/service_configuration_common.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/sha/1.0.9/web.browser/sha256.js" />
       <root url="file://$USER_HOME$/.meteor/packages/shim-common/0.1.0/web.browser/server.js" />
       <root url="file://$USER_HOME$/.meteor/packages/socket-stream-client/0.1.0/web.browser/browser.js" />
       <root url="file://$USER_HOME$/.meteor/packages/socket-stream-client/0.1.0/web.browser/client-tests.js" />
@@ -343,6 +401,8 @@
       <root url="file://$USER_HOME$/.meteor/packages/spacebars-compiler/1.1.3/web.browser/react.js" />
       <root url="file://$USER_HOME$/.meteor/packages/spacebars-compiler/1.1.3/web.browser/templatetag.js" />
       <root url="file://$USER_HOME$/.meteor/packages/spacebars/1.0.15/web.browser/spacebars-runtime.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/srp/1.0.10/web.browser/biginteger.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/srp/1.0.10/web.browser/srp.js" />
       <root url="file://$USER_HOME$/.meteor/packages/templating-runtime/1.3.2/web.browser/dynamic.js" />
       <root url="file://$USER_HOME$/.meteor/packages/templating-runtime/1.3.2/web.browser/templating.js" />
       <root url="file://$USER_HOME$/.meteor/packages/templating-tools/1.1.2/web.browser/code-generation.js" />
