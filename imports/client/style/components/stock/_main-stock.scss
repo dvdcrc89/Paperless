@@ -1,15 +1,5 @@
-body{
-  background-color: #f4f4f4;
-}
 
 
-
-.container{
-  margin: 0 auto;
-  max-width: 90%;
-  padding:0.8rem;
-
-}
 
 #remove form{
   align-items: center;
@@ -17,94 +7,15 @@ body{
 #total{
   text-align: right;
 }
-/*#titleBar{
-    display: flex;
-    justify-content: space-between;
-    margin:5px;
-}*/
-
-li{
-
-  display: flex;
-  justify-content: space-between;
-}
-ul{
-  width:1000px;
-}
-h2{
-  vertical-align: middle;
-  margin-top: 45px;
-
-}
-
-h1{
-  vertical-align: middle;
-  margin-top: 45px;
-
-}
 
 
 
 
 
 
-/*HEADER*/
-/*--------------------------------------------------------------------------------*/
-.header{
-  height: 120px;
-  background-image: url('../img/backgroundheader.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: 1px solid #696969;
-
-}
-
-.titleBar{
-  display: flex;
-  justify-content:space-between;
-  width: 90%;
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-weight: lighter;
-  color:white;
-  font-size: 0.8rem;
-  margin: 0 auto;
-
-}
-.titleBarDate{
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-weight: lighter;
-  color:white;
-  font-size: 0.6rem;
-
-}
-.titleMainData{
-  font-size:0.9rem;
-
-}
-
-.controllerWrap {
-  height: 100%;
-  width: 100%;
 
 
-}
 
-.controllerWrap form {
-  width: 100%;
-  margin:0 auto;
-
-
-}
-.formstyle{
-  margin: 0 auto;
-  padding:0rem;
-  display: flex;
-  flex-direction: column;
-
-  //background-color:  	#bdbdbd;
-  background-color: rgba(0,0,0,0.03);
-  border: 1px solid #696969;
-}
 
 .formstyle input[type=text],
 .formstyle input[type=date],

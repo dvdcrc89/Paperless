@@ -1,0 +1,48 @@
+/*HEADER*/
+/*--------------------------------------------------------------------------------*/
+.header{
+    height: 90px;
+    width: 100%;
+    background-image: url('../img/backgroundheader.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  
+  }
+  
+  .titleBar{
+    display: flex;
+    justify-content:space-between;
+    width: 90%;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: lighter;
+    color:white;
+    font-size: 0.8rem;
+    margin: 0 auto;
+  
+  }
+  .titleBarDate{
+      
+   }
+  .titleMainData{
+  
+  }
+
+  /*TYPING*/
+/*--------------------------------------------------------------------------------*/
+
+h1{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 3rem;
+    line-height: 15px;
+    color: black;
+}
+  
+h2{
+    line-height: 50px;
+    font-size:1rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white
+}
+  
+

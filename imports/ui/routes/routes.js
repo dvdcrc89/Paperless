@@ -10,6 +10,7 @@ import StockMain from './../stock/stockMain'
 import StockTakes from '../stocktakes/stocktake'
 import FridgeFreezer from './../paperworks/fridgeFreezer'
 import NotFound from './../generic/notFound'
+import StocktakesList from './../stocktakes/stocktakesList'
 export const history = createHistory();
 
 //Define pages that can be visit from Unauthenticated users only
@@ -45,6 +46,7 @@ export const AppRouter = () => (
             <Route exact path="/stock" component={StockMain}/>
 
             <Route exact path="/stocktakes" component={StockTakes}/>
+            <Route exact path="/stocktakeslist" component={StocktakesList}/>
 
             <Route exact path="/fftemperature" component={FridgeFreezer}/>
 

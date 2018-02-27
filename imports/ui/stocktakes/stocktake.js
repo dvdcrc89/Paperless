@@ -5,6 +5,7 @@ import ReactAutocomplete from 'react-autocomplete';
 import {Items} from './../../api/items'
 import {Meteor} from 'meteor/meteor'
 import {Temps} from './../../api/temps'
+import {StockTakes} from "../../api/stocktakes";
 
 
 const menuStyle={
@@ -21,8 +22,7 @@ const menuStyle={
     overflow: 'auto',
     maxHeight: '50%', // TODO: don't cheat, let it flow to the bottom
 }
-
-
+let value=''
 export default class Stocktakes extends React.Component {
 
     constructor (props) {
@@ -31,8 +31,8 @@ export default class Stocktakes extends React.Component {
             value: '',
             _id:''
         }
-    }
 
+    }
 
     fetch(){
         const columns = [
@@ -51,7 +51,6 @@ export default class Stocktakes extends React.Component {
                 btn:
                     <button onClick={() => {
                         let itemID = dat._id;
-                        console.log(dat._id);
                         if (itemID) {
                             Temps.remove(itemID);
                         }
@@ -77,17 +76,47 @@ export default class Stocktakes extends React.Component {
                 _id: itemId
             }).fetch()
             e.target.ItemQuantity.value = '';
-            this.setState({_id: ''});
-            console.log(item)
+            this.setState({
+                value:'',
+                _id: ''});
+
+            if(Temps.find({IngredientId:item[0]._id}).fetch().length>0){
+             alert("Item already in");
+                return
+             }
+
             Temps.insert({
                 User: Meteor.userId(),
                 ItemName: item[0].ItemName,
                 ItemQuantity: itemQuantity,
+                IngredientId: item[0]._id
 
             });
 
         }
     }
+
+    saveStocktakes(e){
+        e.preventDefault();
+        let date = new Date()
+        let begun = moment(date).format("DD MMMM YYYY");
+        let notes = e.target.STnote.value;
+        let stocktake = Temps.find({User:Meteor.userId()}).fetch()
+        StockTakes.insert({
+            User: Meteor.userId(),
+            Date: begun,
+            Note: notes,
+            STitems:stocktake
+
+        })
+        Temps.find({User:Meteor.userId}).fetch().map((temp)=>{
+            Temps.remove({_id:temp._id})})
+        }
+
+
+
+
+
 
     render() {
         return (
@@ -97,7 +126,7 @@ export default class Stocktakes extends React.Component {
                 <ReactAutocomplete
                     items={Items.find({User:Meteor.userId()}).fetch()}
                     shouldItemRender={(item, value) => item.ItemName.toLowerCase().indexOf(value.toLowerCase()) > -1}
-                    getItemValue={item => {
+                    getItemValue={(item) => {
                         this.setState({_id:item._id})
                         return item.ItemName;
 
@@ -111,12 +140,16 @@ export default class Stocktakes extends React.Component {
                         </div>
                     }
                     value={this.state.value}
-                    onChange={e => this.setState({ value: e.target.value })}
-                    onSelect={value => this.setState({ value })}
+                    onChange={(e) => this.setState({value: e.target.value})}
+                    onSelect={(value) => this.setState({ value })}
                     menuStyle= {menuStyle}
                 />
                     <input type = "number" min ="0" step="any" name ="ItemQuantity" placeholder="Quantity"/>
                     <button>Add</button>
+                </form>
+                <form onSubmit={this.saveStocktakes.bind(this)}>
+                    <input type = "text" name ="STnote" placeholder="Notes" className = "typebox"/>
+                    <button>Save</button>
                 </form>
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>
             </div>)
