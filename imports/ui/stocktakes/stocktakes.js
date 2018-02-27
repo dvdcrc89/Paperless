@@ -6,6 +6,23 @@ import {Items} from './../../api/items'
 import {Meteor} from 'meteor/meteor'
 import {Temps} from './../../api/temps'
 
+
+const menuStyle={
+    borderRadius: '3px',
+    boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',
+    background: 'rgba(255, 255, 255, 0.9)',
+    padding: '2px 5px',
+    fontSize: '90%',
+    zIndex: '100',
+    borderBottom: '1px solid black',
+    borderLeft:'1px solid black',
+    borderRight:'1px solid black',
+    position: 'fixed',
+    overflow: 'auto',
+    maxHeight: '50%', // TODO: don't cheat, let it flow to the bottom
+}
+
+
 export default class Stocktakes extends React.Component {
 
     constructor (props) {
@@ -15,6 +32,8 @@ export default class Stocktakes extends React.Component {
             _id:''
         }
     }
+
+
     fetch(){
         const columns = [
             {
@@ -94,6 +113,7 @@ export default class Stocktakes extends React.Component {
                     value={this.state.value}
                     onChange={e => this.setState({ value: e.target.value })}
                     onSelect={value => this.setState({ value })}
+                    menuStyle= {menuStyle}
                 />
                     <input type = "number" min ="0" step="any" name ="ItemQuantity" placeholder="Quantity"/>
                     <button>Add</button>
