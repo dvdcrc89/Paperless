@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a11ad881-b0bf-409f-b985-168949682b6e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/client/main.js" afterPath="$PROJECT_DIR$/client/main.js" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/client/main.scss" afterPath="$PROJECT_DIR$/client/main.scss" />
+      <change beforePath="$PROJECT_DIR$/imports/client/style/components/stock/_main-stock.scss" afterPath="$PROJECT_DIR$/imports/client/style/components/stock/_main-stock.scss" />
+      <change beforePath="$PROJECT_DIR$/imports/client/style/components/stock/_table.scss" afterPath="$PROJECT_DIR$/imports/client/style/components/generic/_table.scss" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,7 +21,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/main.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="342">
@@ -24,26 +29,6 @@
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="autocomplete.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/ui/generic/autocomplete.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/ui/routes/routes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="43" lean-forward="false" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -70,34 +55,52 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/main.js">
+      <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/main.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="43" lean-forward="false" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
+            <state relative-caret-position="72">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="items.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/api/items.js">
+      <file leaf-file-name="_main-stock.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/client/style/components/stock/_main-stock.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2124">
+              <caret line="118" column="24" lean-forward="true" selection-start-line="118" selection-start-column="24" selection-end-line="118" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_add-item.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/client/style/components/stock/_add-item.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="51" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add_items.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/ui/stock/add_items.js">
+      <file leaf-file-name="_table.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/client/style/components/generic/_table.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="51" column="15" lean-forward="true" selection-start-line="38" selection-start-column="8" selection-end-line="51" selection-end-column="15" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="4608">
+              <caret line="256" column="13" lean-forward="false" selection-start-line="256" selection-start-column="13" selection-end-line="256" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_title-bar.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/imports/client/style/components/generic/_title-bar.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -105,8 +108,8 @@
       <file leaf-file-name="stockMain.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/stock/stockMain.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="57" column="14" lean-forward="true" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="80" />
+            <state relative-caret-position="381">
+              <caret line="56" column="27" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="27" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -114,12 +117,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Autocomplete.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/react-autocomplete/build/lib/Autocomplete.js">
+      <file leaf-file-name="add_items.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/ui/stock/add_items.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-11197">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="-87">
+              <caret line="46" column="35" lean-forward="false" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#25#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -172,7 +177,6 @@
         <option value="$PROJECT_DIR$/imports/ui/stock/ItemList.js" />
         <option value="$PROJECT_DIR$/imports/ui/stock/Item.js" />
         <option value="$PROJECT_DIR$/imports/client/style/components/generic/_main-generic.scss" />
-        <option value="$PROJECT_DIR$/imports/client/style/components/stock/_main-stock.scss" />
         <option value="$PROJECT_DIR$/imports/ui/stock/App.js" />
         <option value="$PROJECT_DIR$/imports/ui/stock/Table.js" />
         <option value="$PROJECT_DIR$/imports/ui/stock/AddItems.js" />
@@ -188,7 +192,6 @@
         <option value="$PROJECT_DIR$/imports/ui/routes/routes.js" />
         <option value="$PROJECT_DIR$/imports/ui/startingPages/signup.js" />
         <option value="$PROJECT_DIR$/imports/ui/startingPages/login.js" />
-        <option value="$PROJECT_DIR$/client/main.scss" />
         <option value="$PROJECT_DIR$/imports/ui/generic/notFound.js" />
         <option value="$PROJECT_DIR$/imports/ui/generic/autocomplete.js" />
         <option value="$PROJECT_DIR$/imports/ui/stock/add_items.js" />
@@ -196,6 +199,8 @@
         <option value="$PROJECT_DIR$/imports/api/temps.js" />
         <option value="$PROJECT_DIR$/imports/ui/stocktakes/stocktakes.js" />
         <option value="$PROJECT_DIR$/client/main.js" />
+        <option value="$PROJECT_DIR$/imports/client/style/components/stock/_main-stock.scss" />
+        <option value="$PROJECT_DIR$/client/main.scss" />
       </list>
     </option>
   </component>
@@ -259,6 +264,45 @@
               <item name="restaurant-manager" type="b2602c69:ProjectViewProjectNode" />
               <item name="restaurant-manager" type="462c0819:PsiDirectoryNode" />
               <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="restaurant-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="restaurant-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="restaurant-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="restaurant-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="restaurant-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="restaurant-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="generic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="restaurant-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="restaurant-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="stock" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="restaurant-manager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="restaurant-manager" type="462c0819:PsiDirectoryNode" />
+              <item name="imports" type="462c0819:PsiDirectoryNode" />
               <item name="ui" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -297,15 +341,15 @@
     <property name="js.meteor.library.was.enabled" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/imports/ui" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/imports/client/style/components/generic" />
       <recent name="$PROJECT_DIR$/imports/ui" />
       <recent name="$PROJECT_DIR$/imports/ui/generic" />
       <recent name="$PROJECT_DIR$/imports/ui/stock" />
       <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/img" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/imports/ui" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -337,12 +381,12 @@
       <workItem from="1518552536180" duration="11443000" />
       <workItem from="1518987047802" duration="134000" />
       <workItem from="1519672249783" duration="14559000" />
-      <workItem from="1519722932043" duration="6025000" />
+      <workItem from="1519722932043" duration="7207000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58358000" />
+    <option name="totallyTimeSpent" value="59540000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="62" y="-11" width="1305" height="780" extended-state="6" />
@@ -476,20 +520,6 @@
     <entry file="file://$PROJECT_DIR$/imports/ui/AccountDropdown.js" />
     <entry file="file://$PROJECT_DIR$/imports/client/style/components/generic/_wrapper" />
     <entry file="file://$PROJECT_DIR$/imports/client/style/components/generic/_main-generic.scss" />
-    <entry file="file://$PROJECT_DIR$/imports/client/style/components/stock/_add-item.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/client/style/components/stock/_main-stock.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -536,25 +566,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/client/style/components/generic/_title-bar.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/generic/titlebar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="21" column="35" lean-forward="true" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/client/style/components/stock/_table.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="256" column="13" lean-forward="false" selection-start-line="256" selection-start-column="13" selection-end-line="256" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -587,7 +602,7 @@
         <state relative-caret-position="36">
           <caret line="4" column="21" lean-forward="false" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="34" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#0#43#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -610,20 +625,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2466">
-          <caret line="137" column="12" lean-forward="false" selection-start-line="137" selection-start-column="12" selection-end-line="137" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/startingPages/signup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
           <caret line="48" column="35" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -633,7 +640,7 @@
         <state relative-caret-position="468">
           <caret line="31" column="42" lean-forward="false" selection-start-line="31" selection-start-column="42" selection-end-line="31" selection-end-column="42" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#0#43#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -643,7 +650,7 @@
         <state relative-caret-position="198">
           <caret line="11" column="22" lean-forward="false" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -672,16 +679,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/stock/add_items.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="51" column="15" lean-forward="true" selection-start-line="38" selection-start-column="8" selection-end-line="51" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/api/items.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -706,16 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/stock/stockMain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="57" column="14" lean-forward="true" selection-start-line="57" selection-start-column="14" selection-end-line="57" selection-end-column="80" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/stocktakes/stocktakes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="540">
@@ -733,6 +720,66 @@
           <folding>
             <element signature="e#0#25#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/stock/stockMain.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="56" column="27" lean-forward="false" selection-start-line="56" selection-start-column="16" selection-end-line="56" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/stock/add_items.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-87">
+          <caret line="46" column="35" lean-forward="false" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/client/style/components/stock/_add-item.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/client/style/components/stock/_main-stock.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2124">
+          <caret line="118" column="24" lean-forward="true" selection-start-line="118" selection-start-column="24" selection-end-line="118" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/client/style/components/generic/_table.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4608">
+          <caret line="256" column="13" lean-forward="false" selection-start-line="256" selection-start-column="13" selection-end-line="256" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/client/style/components/generic/_title-bar.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
