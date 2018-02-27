@@ -6,6 +6,8 @@ import {Items} from './../../api/items'
 import {Meteor} from 'meteor/meteor'
 import {Temps} from './../../api/temps'
 import {StockTakes} from "../../api/stocktakes";
+import TextInput from 'react-autocomplete-input';
+
 
 
 const menuStyle={
@@ -33,7 +35,11 @@ export default class Stocktakes extends React.Component {
         }
 
     }
-
+    fetchItems(){
+       return Items.find({User:Meteor.userId()}).fetch().map((item)=>{
+           return item.ItemName;
+       });
+    }
     fetch(){
         const columns = [
             {
@@ -67,34 +73,37 @@ export default class Stocktakes extends React.Component {
     };
 
     handleSubmit(e) {
-        let itemId = this.state._id;
+        e.preventDefault();
+        let item = document.getElementsByName("textinput");
+        let itemName=item[0].textContent.trim();
+        let itemId=""
+        try {
+            itemId = Items.find({User: Meteor.userId(), ItemName: itemName}).fetch()[0]._id;
+        } catch(e){
+            alert("Item not in stock")
+            return
+        }
         let itemQuantity = e.target.ItemQuantity.value;
         e.preventDefault();
-        if (itemId) {
-            const item = Items.find({
-                User: Meteor.userId(),
-                _id: itemId
-            }).fetch()
-            e.target.ItemQuantity.value = '';
-            this.setState({
-                value:'',
-                _id: ''});
 
-            if(Temps.find({IngredientId:item[0]._id}).fetch().length>0){
+            if(Temps.find({IngredientId:itemId}).fetch().length>0){
              alert("Item already in");
                 return
              }
 
             Temps.insert({
                 User: Meteor.userId(),
-                ItemName: item[0].ItemName,
+                ItemName: itemName,
                 ItemQuantity: itemQuantity,
-                IngredientId: item[0]._id
+                IngredientId: itemId
 
             });
+           document.getElementsByName("textinput").textcontent="";
+
+
 
         }
-    }
+
 
     saveStocktakes(e){
         e.preventDefault();
@@ -123,27 +132,7 @@ export default class Stocktakes extends React.Component {
             <div className="container">
                 <TitleBar title="Stocktakes" mainData="Items: 0"/>
                 <form onSubmit={this.handleSubmit.bind(this)}>
-                <ReactAutocomplete
-                    items={Items.find({User:Meteor.userId()}).fetch()}
-                    shouldItemRender={(item, value) => item.ItemName.toLowerCase().indexOf(value.toLowerCase()) > -1}
-                    getItemValue={(item) => {
-                        this.setState({_id:item._id})
-                        return item.ItemName;
-
-                    }}
-                    renderItem={(item, highlighted) =>
-                        <div
-                            key={item._id}
-                            style={{ backgroundColor: highlighted ? '#eee' : 'transparent'}}
-                        >
-                            {item.ItemName}
-                        </div>
-                    }
-                    value={this.state.value}
-                    onChange={(e) => this.setState({value: e.target.value})}
-                    onSelect={(value) => this.setState({ value })}
-                    menuStyle= {menuStyle}
-                />
+                    <TextInput name="textinput" options={this.fetchItems()} trigger={""} maxOptions="4"/>
                     <input type = "number" min ="0" step="any" name ="ItemQuantity" placeholder="Quantity"/>
                     <button>Add</button>
                 </form>

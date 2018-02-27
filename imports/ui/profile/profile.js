@@ -24,7 +24,7 @@ export default class Profile extends React.Component {
                     }}>Stock
                     </button>
                     <button onClick={() => {
-                        history.push('/stocktakes');
+                        history.push('/stocktakesList');
                     }}>Stocktakes
                     </button>
                     <button onClick={() => {

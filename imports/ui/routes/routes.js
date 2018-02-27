@@ -16,7 +16,7 @@ export const history = createHistory();
 //Define pages that can be visit from Unauthenticated users only
 const unauthenticatedPages = ['/', '/signgup', '/login'];
 //Define pages that can be visit from Authenticated users only
-const authenticatedPages = ['/profile','/stock','/stocktakes','/fftemperature'];
+const authenticatedPages = ['/profile','/stock','/stocktakes','/fftemperature','/stocktakeslist'];
 
 
 export const onAuthChange = () => {
@@ -46,6 +46,7 @@ export const AppRouter = () => (
             <Route exact path="/stock" component={StockMain}/>
 
             <Route exact path="/stocktakes" component={StockTakes}/>
+
             <Route exact path="/stocktakeslist" component={StocktakesList}/>
 
             <Route exact path="/fftemperature" component={FridgeFreezer}/>
