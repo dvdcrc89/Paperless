@@ -7,7 +7,7 @@ import {Router, Switch, Route} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
 import Profile from './../profile/profile'
 import StockMain from './../stock/stockMain'
-import StockTakes from './../stocktakes/stocktakes'
+import StockTakes from '../stocktakes/stocktake'
 import FridgeFreezer from './../paperworks/fridgeFreezer'
 import NotFound from './../generic/notFound'
 export const history = createHistory();

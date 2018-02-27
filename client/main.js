@@ -6,7 +6,7 @@ import {Items} from "./../imports/api/items";
 import {Temps} from "./../imports/api/temps";
 
 import StockMain from '../imports/ui/stock/stockMain'
-import StockTakes from './../imports/ui/stocktakes/stocktakes'
+import StockTakes from '../imports/ui/stocktakes/stocktake'
 import FridgeFreezer from './../imports/ui/paperworks/fridgeFreezer'
 import {AppRouter,onAuthChange} from './../imports/ui/routes/routes'
 
