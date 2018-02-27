@@ -45,8 +45,9 @@ export default class Login extends React.Component {
     render() {
 
         return (
-            <div>
-                <TitleBar title="Login to Paperless"/>
+            <div className="container">
+
+            <TitleBar title="Login to Paperless"/>
                 {this.state.error ? <p>{this.state.error}</p> : undefined}
                 <form onSubmit={this.onSubmit.bind(this)} noValidate>
                     <input type="email" name="email" ref="email" placeholder="Email"/>

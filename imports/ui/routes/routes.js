@@ -8,13 +8,14 @@ import createHistory from 'history/createBrowserHistory'
 import Profile from './../profile/profile'
 import StockMain from './../stock/stockMain'
 import StockTakes from './../stocktakes/stocktakes'
-
+import FridgeFreezer from './../paperworks/fridgeFreezer'
+import NotFound from './../generic/notFound'
 export const history = createHistory();
 
 //Define pages that can be visit from Unauthenticated users only
 const unauthenticatedPages = ['/', '/signgup', '/login'];
 //Define pages that can be visit from Authenticated users only
-const authenticatedPages = ['/profile','/stock','stocktakes'];
+const authenticatedPages = ['/profile','/stock','/stocktakes','/fftemperature'];
 
 
 export const onAuthChange = () => {
@@ -45,9 +46,12 @@ export const AppRouter = () => (
 
             <Route exact path="/stocktakes" component={StockTakes}/>
 
+            <Route exact path="/fftemperature" component={FridgeFreezer}/>
 
 
-            {/*<Route component={NotFound}/>*/}
+
+
+            <Route component={NotFound}/>
         </Switch>
     </Router>
 );

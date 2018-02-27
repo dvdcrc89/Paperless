@@ -28,6 +28,10 @@ export default class Profile extends React.Component {
                     }}>Stocktakes
                     </button>
                     <button onClick={() => {
+                        history.push('/fftemperature');
+                    }}>Fridge/Freezer Temp
+                    </button>
+                    <button onClick={() => {
                         Accounts.logout()
                     }}>Logout
                     </button>

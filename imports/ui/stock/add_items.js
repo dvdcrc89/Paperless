@@ -29,7 +29,29 @@ export default class AddItems extends React.Component{
             });
         }
     };
+    handleSubmit(e){
+        let itemName = e.target.ItemName.value;
+        let itemDescription = e.target.ItemDescription.value;
+        let itemQuantity = e.target.ItemQuantity.value;
+        let itemPrice = e.target.ItemPrice.value;
+        e.preventDefault();
+        let length= Items.find({User: Meteor.userId()}).fetch().length+1;
+        if(itemName){
+            e.target.ItemName.value ='';
+            e.target.ItemDescription.value ='';
+            e.target.ItemQuantity.value ='';
+            e.target.ItemPrice.value ='';
 
+            Items.insert({
+                User: Meteor.userId(),
+                ItemName: itemName,
+                ItemDescription: itemDescription,
+                ItemQuantity: itemQuantity,
+                ItemPrice:itemPrice
+
+            });
+        }
+    };
     render(){
         return(
 
