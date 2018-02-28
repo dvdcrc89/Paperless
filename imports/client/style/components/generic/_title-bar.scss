@@ -3,17 +3,21 @@
 .header{
     height: 90px;
     width: 100%;
-    background-image: url('../img/backgroundheader.png');
+    background-color: white;
     background-repeat: no-repeat;
     background-size: cover;
 
   
   }
+
+  .logo{
+    width:120px;
+  }
   
   .titleBar{
     display: flex;
     justify-content:space-between;
-    width: 90%;
+    width: 85%;
     font-family: 'Open Sans Condensed', sans-serif;
     font-weight: lighter;
     color:white;
@@ -49,11 +53,16 @@ h2{
 /*Nav*/
 .navbar {
   background-color: lightgray;
-  font-family: 'Roboto Condensed', sans-serif;
-  font-weight: lighter;
   display: flex;
   align-content: space-around;
   width: 100%;
+  -webkit-box-shadow: 0px -1px 4px 0px rgba(140,140,140,1);
+  -moz-box-shadow: 0px -1px 4px 0px rgba(140,140,140,1);
+  box-shadow: 0px -1px 4px 0px rgba(140,140,140,1);
+
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(140,140,140,1);
+-moz-box-shadow: 0px 1px 4px 0px rgba(140,140,140,1);
+box-shadow: 0px 1px 4px 0px rgba(140,140,140,1);
 }
 
 .navbar a {
@@ -65,7 +74,7 @@ h2{
 
 }
 .navbarcontainer{
-  width: 90%;
+  width: 85%;
   margin: 0 auto;
   display: flex;
   justify-content: flex-start;
@@ -87,7 +96,10 @@ h2{
 .navbar a:hover, .dropdown:hover .dropbtn {
   background-color: lightgray;
 }
+a{
+  font-family:'Oxygen', sans-serif;
 
+}
 .dropdown-content {
   display: none;
   position: absolute;
@@ -95,7 +107,7 @@ h2{
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-}
+  font-size: 30px;}
 
 .dropdown-content a {
   float: none;

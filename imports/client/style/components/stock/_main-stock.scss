@@ -27,6 +27,9 @@
 .formstyle input[type=email],
 textarea,
 select{
+  font-family: 'Oxygen', sans-serif;
+  font-size: 0.7rem;
+  margin-top: 2000px;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -44,4 +47,20 @@ select{
 
 .img404{
   margin: 5% 20% 20% 20%;
+}
+
+
+.price{
+  width: 60px;
+}
+
+.plus{
+  text-decoration: none;
+  border-style: none;
+  background-color: white;
+  
+}
+
+.plus :hover{
+  color: gray;
 }

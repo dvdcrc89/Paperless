@@ -18,46 +18,37 @@ export default class TitleBar extends React.Component{
 
                         <div className="dropdown">
                             <h3 className="dropbtn">
-                                STOCK
-                                <i className="fa fa-caret-down"></i>
+                                <i className="fa fa-sticky-note"></i>
                             </h3>
                             <div className="dropdown-content">
-                                <a href="#">Link 1</a>
-                                <a href="#">Link 2</a>
-                                <a href="#">Link 3</a>
+                                <a href="#">Stock</a>
+                                <a href="#">Stock take</a>
                             </div>
                         </div>
                         <div className="dropdown">
                             <h3 className="dropbtn">
-                                MENU
-                                <i className="fa fa-caret-down"></i>
+
+                                <i class="fa fa-bars"></i>
                             </h3>
                             <div className="dropdown-content">
-                                <a href="#">Link 1</a>
-                                <a href="#">Link 2</a>
-                                <a href="#">Link 3</a>
+                                <a href="#">Recipes</a>
+                                <a href="#">Menu</a>
                             </div>
                         </div>
                         <div className="dropdown">
                             <h3 className="dropbtn">
-                                PAPERWORK
-                                <i className="fa fa-caret-down"></i>
+                                <i class="fa fa-paperclip"></i>
                             </h3>
                             <div className="dropdown-content">
-                                <a href="#">Link 1</a>
-                                <a href="#">Link 2</a>
-                                <a href="#">Link 3</a>
-                            </div>
+                                <a href="#">Temperature</a>
+                                </div>
                         </div>
                         <div className="dropdown">
                             <h3 className="dropbtn">
-                                EXPENSES
-                                <i className="fa fa-caret-down"></i>
+                                <i class="fa fa-balance-scale"></i>
                             </h3>
                             <div className="dropdown-content">
-                                <a href="#">Link 1</a>
-                                <a href="#">Link 2</a>
-                                <a href="#">Link 3</a>
+                                <a href="#">Balance</a>
                             </div>
                         </div>
                     </div>
@@ -66,16 +57,16 @@ export default class TitleBar extends React.Component{
         }
     }
 
+
+
+
     render(){
         let date=this.returnDate();
 
         return(
             <div className="header">
                 <div className="titleBar">
-                    <h2 className="titleDate">{date}</h2>
-                    <h1>{this.props.title}</h1>
-
-                    <h2 className="titleMainData" >{this.props.mainData}</h2>
+                    <img className ="logo" src="/img/logo1.svg"></img>
                 </div>
                 {this.renderNav()}
             </div>
