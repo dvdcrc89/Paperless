@@ -45,7 +45,7 @@ export default class Stocktakes extends React.Component {
     fetch(){
         const columns = [
             {
-                Header: 'Ingredients Name', accessor: 'ItemName'
+                Header: 'Ingredient Name', accessor: 'ItemName'
             },{
                 Header: 'Quantity', accessor: 'ItemQuantity',width: 90
 
@@ -121,10 +121,15 @@ export default class Stocktakes extends React.Component {
         let begun = moment(date).format("DD MMMM YYYY");
         let notes = e.target.STnote.value;
         let stocktake = Temps.find({User:Meteor.userId()}).fetch()
+        let value=0;
+        value= stocktake.map((item)=>{return value+=item.ItemValue;
+        })
+        console.log(value)
         StockTakes.insert({
             User: Meteor.userId(),
             Date: begun,
             Note: notes,
+            TotalValue:value[value.length-1],
             STitems:stocktake
 
         })

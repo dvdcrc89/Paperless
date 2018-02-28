@@ -24,6 +24,8 @@ export default class StocktakesList extends React.Component {
             }, {
                 Header: 'Note', accessor: 'Note'
 
+            },{  Header: 'Total Value', accessor: 'TotalValue'
+
             },{
                 Header:'Show',accessor: 'Show',width:90
             }]
@@ -32,6 +34,7 @@ export default class StocktakesList extends React.Component {
         ((stocktake)=>{
             return{
                 ...stocktake,
+                TotalValue:stocktake.TotalValue+" £",
                 Show:
                     <i className="fa fa-eye" onClick={(e) => {
                         e.preventDefault();
@@ -49,13 +52,20 @@ export default class StocktakesList extends React.Component {
         }} else {
             const columns2 = [
                 {
-                    Header: 'Name', accessor: 'ItemName'
-                }, {
-                    Header: 'Quantity', accessor: 'ItemQuantity'
-
+                    Header: 'Ingredient Name', accessor: 'ItemName'
+                },{
+                    Header: 'Quantity', accessor: 'ItemQuantity',width: 90
+                },{
+                    Header: 'Value', accessor: 'ItemValue',width: 90
                 }]
 
-            const data2 = StockTakes.find({User: Meteor.userId(),_id:this.state.id}).fetch()[0].STitems;
+            const data2 = StockTakes.find({User: Meteor.userId(),_id:this.state.id}).fetch()[0].STitems.map((item)=>{
+                return {
+                    ...item,
+                    ItemValue: item.ItemValue + " £"
+                }
+            });
+
             console.log(data2);
             return {
                 data:data2,
