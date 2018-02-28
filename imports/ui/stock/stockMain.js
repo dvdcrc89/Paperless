@@ -17,18 +17,17 @@ export default class StockMain extends React.Component{
             }, {
                 Header: 'Description', accessor: 'ItemDescription'
             }, {
-                Header: '£', accessor: 'ItemPrice',width: 90
-            }, {
-
-                Header: '/qty', accessor: 'ItemQuantity',width: 90
-
-            }, {
+                Header: 'Price', accessor: 'PriceQuantity',
+            }
+            , {
                 Header: '', accessor: 'btn',width: 50
             }]
 
         const data = Items.find({User: Meteor.userId()}).fetch().map((dat) => {
             return {
-                ...dat,
+                ItemName: dat.ItemName,
+                ItemDescription:dat.ItemDescription,
+                PriceQuantity: dat.ItemPrice+"£ / "+dat.ItemUnitMeasure+"("+dat.ItemQuantity+")",
                 btn:
                     <i className="fa fa-trash" onClick={(e) => {
                         let itemID = dat._id;

@@ -49,13 +49,18 @@ export default class Stocktakes extends React.Component {
             },{
                 Header: 'Quantity', accessor: 'ItemQuantity',width: 90
 
+            },{
+                Header: 'Value', accessor: 'ItemValue',width: 90
+
             }, {
                 Header: '', accessor: 'btn',width: 50
             }]
 
         const data = Temps.find({User: Meteor.userId()}).fetch().map((dat) => {
             return {
-                ...dat,
+                ItemName:dat.ItemName,
+                ItemQuantity:dat.ItemQuantity+" "+dat.ItemMeasure,
+                ItemValue: dat.ItemValue+"£",
                 btn:
                     <button onClick={() => {
                         let itemID = dat._id;
@@ -92,12 +97,16 @@ export default class Stocktakes extends React.Component {
              alert("Item already in");
                 return
              }
-
+           let ingredient = Items.find({User: Meteor.userId(), ItemName: itemName}).fetch();
+           let measure = ingredient[0].ItemUnitMeasure;
+           let value=itemQuantity/ingredient[0].ItemQuantity*ingredient[0].ItemPrice;
             Temps.insert({
                 User: Meteor.userId(),
                 ItemName: itemName,
                 ItemQuantity: itemQuantity,
-                IngredientId: itemId
+                ItemMeasure:measure,
+                IngredientId: itemId,
+                ItemValue: Math.round(value * 100) / 100
 
             });
 
