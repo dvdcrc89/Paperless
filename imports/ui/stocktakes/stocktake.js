@@ -7,6 +7,8 @@ import {Meteor} from 'meteor/meteor'
 import {Temps} from './../../api/temps'
 import {StockTakes} from "../../api/stocktakes";
 import TextInput from 'react-autocomplete-input';
+import {history} from "../routes/routes";
+
 
 
 
@@ -98,7 +100,6 @@ export default class Stocktakes extends React.Component {
                 IngredientId: itemId
 
             });
-           document.getElementsByName("textinput").textcontent="";
 
 
 
@@ -120,6 +121,7 @@ export default class Stocktakes extends React.Component {
         })
         Temps.find({User:Meteor.userId}).fetch().map((temp)=>{
             Temps.remove({_id:temp._id})})
+        history.push("/stocktakeslist");
         }
 
 

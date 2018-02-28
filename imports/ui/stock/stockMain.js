@@ -30,15 +30,15 @@ export default class StockMain extends React.Component{
             return {
                 ...dat,
                 btn:
-                    <button onClick={() => {
+                    <i className="fa fa-trash" onClick={(e) => {
                         let itemID = dat._id;
                         console.log(dat._id);
                         if (itemID) {
                             Items.remove(itemID);
                         }
-                    }
+                        }
 
-                    }>X</button>
+                    }></i>
             }
         });
 

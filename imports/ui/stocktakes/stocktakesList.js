@@ -28,16 +28,18 @@ export default class StocktakesList extends React.Component {
                 Header:'Show',accessor: 'Show',width:90
             }]
 
-        const data = StockTakes.find({User: Meteor.userId()}).fetch().map
+        const data = StockTakes.find({User: Meteor.userId()},{sort:{Date: -1}}).fetch().map
         ((stocktake)=>{
             return{
                 ...stocktake,
                 Show:
-                    <button onClick={(e) => {
+                    <i className="fa fa-eye" onClick={(e) => {
                         e.preventDefault();
                         this.setState({id:stocktake._id});
-                    }}>View</button>}
-            })
+                    }}>
+
+                    </i>
+            }})
 
 
         if(this.state.id=="not"){
