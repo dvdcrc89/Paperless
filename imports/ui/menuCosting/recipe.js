@@ -157,26 +157,28 @@ export default class Recipe extends React.Component {
     saveRecipes(e) {
         e.preventDefault();1
         let date = new Date()
-        let begun = moment(date).format("DD MMMM YYYY");
-        let notes = e.target.STnote.value;
-        let stocktake = Temps.find({User: Meteor.userId()}).fetch()
+        let begun = moment(date).format("DD MM YYYY");
+        let recipeName = e.target.RecipeName.value;
+        let retailPrice = e.target.RetailPrice.value;
+        let ingredients = RecipeTemps.find({User: Meteor.userId()}).fetch()
         let value = 0;
-        value = stocktake.map((item) => {
+        value = ingredients.map((item) => {
             return value += item.ItemValue;
         })
         console.log(value)
         Recipes.insert({
             User: Meteor.userId(),
             Date: begun,
-            Note: notes,
-            TotalValue: Math.round(value[value.length - 1] * 100) / 100,
-            STitems: stocktake
+            RecipeName: recipeName,
+            RetailPrice: retailPrice,
+            Cost: Math.round(value[value.length - 1] * 100) / 100,
+            STitems: ingredients
 
         })
         RecipeTemps.find({User: Meteor.userId}).fetch().map((temp) => {
             RecipeTemps.remove({_id: temp._id})
         })
-        history.push("/stocktakeslist");
+        history.push("/recipelist");
     }
 
 
@@ -210,7 +212,7 @@ export default class Recipe extends React.Component {
                     <button onClick={
                         (e)=>{
                             e.preventDefault();
-                            history.push("/stocktakeslist");
+                            history.push("/recipelist");
                         }
                     }> <i className="fa fa-arrow-circle-left"></i></button>
                     <div>

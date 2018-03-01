@@ -12,6 +12,8 @@ import FridgeFreezer from './../paperworks/fridgeFreezer'
 import NotFound from './../generic/notFound'
 import StocktakesList from './../stocktakes/stocktakesList'
 import Recipe from './../menuCosting/recipe'
+import RecipeList from './../menuCosting/recipeList'
+
 export const history = createHistory();
 
 //Define pages that can be visit from Unauthenticated users only
@@ -53,6 +55,9 @@ export const AppRouter = () => (
             <Route exact path="/fftemperature" component={FridgeFreezer}/>
 
             <Route exact path="/recipe" component={Recipe}/>
+
+            <Route exact path="/recipelist" component={RecipeList}/>
+
 
 
 
