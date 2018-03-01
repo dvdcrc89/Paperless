@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="2722.5 634.5 22.762 22.762">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #fff;
+      }
+
+      .cls-2 {
+        filter: url(#Rectangle_6);
+      }
+    </style>
+    <filter id="Rectangle_6" x="2722.5" y="634.5" width="22.762" height="22.762" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Add" transform="translate(2724 635)">
+    <g class="cls-2" transform="matrix(1, 0, 0, 1, -2724, -635)">
+      <rect id="Rectangle_6-2" data-name="Rectangle 6" width="19.762" height="19.762" transform="translate(2724 635)"/>
+    </g>
+    <g id="Group_3" data-name="Group 3" transform="translate(1.959 1.989)">
+      <g id="noun_611127_cc" transform="translate(0 0)">
+        <g id="Group_4" data-name="Group 4" transform="translate(0 0)">
+          <path id="Path_4" data-name="Path 4" class="cls-1" d="M12.513,4.937a.51.51,0,0,0-.5.521v6.631H5.324a.511.511,0,1,0,.053,1.02h6.631V19.74a.51.51,0,1,0,1.02,0V13.109h6.631a.51.51,0,1,0,0-1.02H13.028V5.458a.51.51,0,0,0-.515-.521Z" transform="translate(-4.84 -4.937)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

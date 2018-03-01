@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="2807.5 634.5 22.762 22.762">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        filter: url(#Rectangle_4);
+      }
+    </style>
+    <filter id="Rectangle_4" x="2807.5" y="634.5" width="22.762" height="22.762" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="0.5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Save" transform="translate(2809 635)">
+    <g class="cls-2" transform="matrix(1, 0, 0, 1, -2809, -635)">
+      <rect id="Rectangle_4-2" data-name="Rectangle 4" width="19.762" height="19.762" transform="translate(2809 635)"/>
+    </g>
+    <g id="save-2" data-name="save" transform="translate(3.833 2.699)">
+      <g id="Group_1" data-name="Group 1" transform="translate(0 0)">
+        <path id="Path_1" data-name="Path 1" class="cls-1" d="M31.8,18.134l-.855-.838-3.319,3.37V11h-1.2v9.684L23.038,17.3l-.838.838,4.842,4.842Z" transform="translate(-20.9 -11)"/>
+        <path id="Path_5" data-name="Path 5" class="cls-1" d="M0,0H12.182V1.2H0Z" transform="translate(0 13.003)"/>
+      </g>
+    </g>
+  </g>
+</svg>
