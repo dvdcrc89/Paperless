@@ -27,21 +27,26 @@ export default class StocktakesList extends React.Component {
             },{  Header: 'Total Value', accessor: 'TotalValue', width:200
 
             },{
-                Header:'Show',accessor: 'Show',width:90
+                Header:'View/Remove',accessor: 'Show',width:130
             }]
 
         const data = StockTakes.find({User: Meteor.userId()},{sort:{Date: -1}}).fetch().map
         ((stocktake)=>{
-            return{
+            return {
                 ...stocktake,
-                TotalValue:stocktake.TotalValue+" £",
+                TotalValue: stocktake.TotalValue + " £",
                 Show:
+                <div className={"show_and_remove"}>
                     <i className="fa fa-eye" onClick={(e) => {
                         e.preventDefault();
-                        this.setState({id:stocktake._id});
-                    }}>
-
-                    </i>
+                        this.setState({id: stocktake._id});
+                    }}> </i>
+                    <i className="fa fa-trash" onClick={(e) => {
+                        e.preventDefault();
+                        if(confirm("Do you want to remove this stocktake?"))
+                        StockTakes.remove({_id:stocktake._id});
+                    }}></i>
+                </div>
             }})
 
 

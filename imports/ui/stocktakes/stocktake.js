@@ -81,8 +81,10 @@ export default class Stocktakes extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        let item = document.getElementsByName("textinput");
-        let itemName = item[0].textContent.trim();
+        // let item = document.getElementsByName("textinput");
+        // console.log(e.target.textinput.attributes[0].value);
+
+        let itemName = e.target.textinput.value.trim();
         let itemId = ""
         try {
             itemId = Items.find({User: Meteor.userId(), ItemName: itemName}).fetch()[0]._id;
@@ -109,7 +111,7 @@ export default class Stocktakes extends React.Component {
             ItemValue: Math.round(value * 100) / 100
 
         });
-
+        e.target.textinput.value="";
 
     }
 
@@ -148,8 +150,8 @@ export default class Stocktakes extends React.Component {
 
                     <div className="controllerwrap">
                         <form onSubmit={this.handleSubmit.bind(this)}>
-                            <TextInput name="textinput" options={this.fetchItems()} trigger={""} maxOptions="4"/>
-                            <textarea type="number" min="0" step="any" name="ItemQuantity" placeholder="Quantity"/>
+                            <TextInput Component="input"  placeholder="Item's name" name="textinput" options={this.fetchItems()} trigger={""} maxOptions="4" defaultValue={""}/>
+                            <input type="number" min="0" step="any" name="ItemQuantity" placeholder="Quantity"/>
                             <button><i class="fa fa-plus-square"></i></button>
                         </form>
 
