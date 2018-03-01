@@ -24,7 +24,7 @@ export default class StocktakesList extends React.Component {
             }, {
                 Header: 'Note', accessor: 'Note'
 
-            },{  Header: 'Total Value', accessor: 'TotalValue'
+            },{  Header: 'Total Value', accessor: 'TotalValue', width:200
 
             },{
                 Header:'Show',accessor: 'Show',width:90

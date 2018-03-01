@@ -129,7 +129,7 @@ export default class Stocktakes extends React.Component {
             User: Meteor.userId(),
             Date: begun,
             Note: notes,
-            TotalValue:value[value.length-1],
+            TotalValue:Math.round(value[value.length-1]*100)/100,
             STitems:stocktake
 
         })
@@ -147,6 +147,7 @@ export default class Stocktakes extends React.Component {
         return (
             <div className="container">
                 <TitleBar title="Stocktakes" mainData="Items: 0"/>
+                <div className="stocktakecontroller">
                 <form onSubmit={this.handleSubmit.bind(this)}>
                     <TextInput name="textinput" options={this.fetchItems()} trigger={""} maxOptions="4"/>
                     <input type = "number" min ="0" step="any" name ="ItemQuantity" placeholder="Quantity"/>
@@ -156,6 +157,8 @@ export default class Stocktakes extends React.Component {
                     <input type = "text" name ="STnote" placeholder="Notes" className = "typebox"/>
                     <button>Save</button>
                 </form>
+                </div>
+
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>
             </div>)
     }

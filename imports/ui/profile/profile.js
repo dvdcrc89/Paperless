@@ -19,22 +19,7 @@ export default class Profile extends React.Component {
 
                     <TitleBar title="Profile" mainData={this.getUser()}/>
 
-                    <button onClick={() => {
-                        history.push('/stock');
-                    }}>Stock
-                    </button>
-                    <button onClick={() => {
-                        history.push('/stocktakesList');
-                    }}>Stocktakes
-                    </button>
-                    <button onClick={() => {
-                        history.push('/fftemperature');
-                    }}>Fridge/Freezer Temp
-                    </button>
-                    <button onClick={() => {
-                        Accounts.logout()
-                    }}>Logout
-                    </button>
+
 
 
                     {/*<Table/>*/}

@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import propTypes from 'prop-types'
+import {history} from "../routes/routes";
+import {Accounts} from "meteor/accounts-base";
 
 export default class TitleBar extends React.Component{
 
@@ -21,14 +23,20 @@ export default class TitleBar extends React.Component{
                                 <i className="fa fa-sticky-note"></i>
                             </h3>
                             <div className="dropdown-content">
-                                <a href="#">Stock</a>
-                                <a href="#">Stock take</a>
+                                <a href="#" onClick={(e) => {
+                                    e.preventDefault();
+                                    history.push('/stock');
+                                }}>Stock</a>
+                                <a href="#" onClick={(e) => {
+                                    e.preventDefault();
+                                    history.push('/stocktakeslist');
+                                }}>Stock take</a>
                             </div>
                         </div>
                         <div className="dropdown">
                             <h3 className="dropbtn">
 
-                                <i class="fa fa-bars"></i>
+                                <i className="fa fa-bars"></i>
                             </h3>
                             <div className="dropdown-content">
                                 <a href="#">Recipes</a>
@@ -37,18 +45,24 @@ export default class TitleBar extends React.Component{
                         </div>
                         <div className="dropdown">
                             <h3 className="dropbtn">
-                                <i class="fa fa-paperclip"></i>
+                                <i className="fa fa-paperclip"></i>
                             </h3>
                             <div className="dropdown-content">
-                                <a href="#">Temperature</a>
+                                <a href="#" onClick={(e) => {
+                                    e.preventDefault();
+                                    history.push('/fftemperature');
+                                }}>Temperature</a>
                                 </div>
                         </div>
                         <div className="dropdown">
                             <h3 className="dropbtn">
-                                <i class="fa fa-balance-scale"></i>
+                                <i className="fa fa-balance-scale"></i>
                             </h3>
                             <div className="dropdown-content">
-                                <a href="#">Balance</a>
+                                <a href="#" onClick={(e) => {
+                                    e.preventDefault();
+                                    Accounts.logout();
+                                }}>Logout</a>
                             </div>
                         </div>
                     </div>
