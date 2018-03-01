@@ -1,60 +1,81 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="2169.5 67.442 900.445 974.438">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="2172 114.392 848 927.488">
   <defs>
     <style>
-      .cls-1, .cls-3, .cls-4, .cls-5, .cls-8 {
-        fill: #fff;
-      }
-
-      .cls-1 {
-        font-size: 119px;
-      }
-
-      .cls-1, .cls-2, .cls-3, .cls-4, .cls-7, .cls-8 {
-        font-family: YuGothic-Regular, Yu Gothic;
-      }
-
-      .cls-2, .cls-5, .cls-6 {
+      .cls-1, .cls-4, .cls-5, .cls-8 {
         font-size: 103px;
       }
 
-      .cls-3, .cls-7 {
+      .cls-1, .cls-2, .cls-3, .cls-7, .cls-9 {
+        font-family: YuGothic-Regular, Yu Gothic;
+      }
+
+      .cls-2, .cls-3, .cls-4, .cls-7, .cls-8, .cls-9 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-6 {
         font-size: 104px;
       }
 
-      .cls-4 {
+      .cls-3 {
         font-size: 70px;
       }
 
-      .cls-5, .cls-6 {
+      .cls-4 {
         font-family: SegoeUI, Segoe UI;
       }
 
-      .cls-8 {
+      .cls-5 {
+        font-family: SegoeUI-Semilight, Segoe UI;
+      }
+
+      .cls-5, .cls-6, .cls-8 {
+        font-weight: 300;
+      }
+
+      .cls-6 {
+        font-family: YuGothic-Light, Yu Gothic;
+      }
+
+      .cls-7 {
         font-size: 80px;
       }
 
+      .cls-8 {
+        font-family: SegoeUI-Light, Segoe UI;
+      }
+
+      .cls-9 {
+        font-size: 84px;
+      }
     </style>
   </defs>
-  <g id="Group_5" data-name="Group 5" transform="translate(1990)">
-    <rect id="Rectangle_1" data-name="Rectangle 1" width="104.399" height="900.445" transform="translate(1079.945 67.442) rotate(90)"/>
-    <rect id="Rectangle_9" data-name="Rectangle 9" width="42.399" height="484.445" transform="translate(794.945 548.442) rotate(90)"/>
-    <rect id="Rectangle_6" data-name="Rectangle 6" width="104.399" height="431.339" transform="translate(1010.613 713.011) rotate(90)"/>
-    <rect id="Rectangle_10" data-name="Rectangle 10" width="74.399" height="209.339" transform="translate(569.613 729.011) rotate(90)"/>
-    <rect id="Rectangle_8" data-name="Rectangle 8" width="104.399" height="494.339" transform="translate(288.144 1041.88) rotate(180)"/>
-    <rect id="Rectangle_7" data-name="Rectangle 7" width="104.399" height="169.339" transform="translate(352.613 424.011) rotate(90)"/>
-    <rect id="Rectangle_5" data-name="Rectangle 5" width="214.114" height="653.965" transform="translate(837.441 191.114) rotate(90)"/>
-    <text id="n_o_p_e" data-name="n o p e" class="cls-1" transform="translate(209.813 325.247)"><tspan x="0" y="0">n o p e</tspan></text>
-    <text id="paper" class="cls-2" transform="translate(389.749 507.492)"><tspan x="0" y="0">paper</tspan></text>
-    <text id="stock" class="cls-3" transform="translate(651.761 800.026)"><tspan x="0" y="0">stock</tspan></text>
-    <g id="Group_4" data-name="Group 4" transform="translate(-230 5)">
-      <rect id="Rectangle_11" data-name="Rectangle 11" width="79.399" height="431.339" transform="translate(1010.613 927.011) rotate(90)"/>
-      <text id="paperworks" class="cls-4" transform="translate(606.761 992.026)"><tspan x="0" y="0">paperwork</tspan></text>
+  <g id="logo3" transform="translate(1990)">
+    <g id="Group_6" data-name="Group 6">
+      <rect id="Rectangle_8" data-name="Rectangle 8" width="104.399" height="494.339" transform="translate(288.144 1041.88) rotate(180)"/>
+      <g id="Group_5" data-name="Group 5">
+        <rect id="Rectangle_9" data-name="Rectangle 9" width="42.399" height="484.445" transform="translate(794.945 548.442) rotate(90)"/>
+        <rect id="Rectangle_6" data-name="Rectangle 6" width="104.399" height="431.339" transform="translate(1010.613 713.011) rotate(90)"/>
+        <rect id="Rectangle_10" data-name="Rectangle 10" width="74.399" height="209.339" transform="translate(569.613 729.011) rotate(90)"/>
+        <rect id="Rectangle_7" data-name="Rectangle 7" width="104.399" height="169.339" transform="translate(352.613 424.011) rotate(90)"/>
+        <text id="paper" class="cls-1" transform="translate(389.749 507.492)"><tspan x="0" y="0">paper</tspan></text>
+        <text id="stock" class="cls-2" transform="translate(651.761 800.026)"><tspan x="0" y="0">stock</tspan></text>
+        <g id="Group_4" data-name="Group 4" transform="translate(-241.987 -2)">
+          <rect id="Rectangle_11" data-name="Rectangle 11" width="79.399" height="423.312" transform="translate(1002.587 927.011) rotate(90)"/>
+          <text id="paperwork" class="cls-3" transform="translate(615.558 989.026)"><tspan x="0" y="0">paperwork</tspan></text>
+        </g>
+        <text id="no" class="cls-4" transform="translate(210 398)"><tspan x="0" y="111">no</tspan></text>
+        <text id="MANAGE" class="cls-5" transform="translate(314 691)"><tspan x="0" y="0">MANAGE</tspan></text>
+        <text id="recipes" class="cls-6" transform="translate(313.761 897.026)"><tspan x="0" y="0">recipes</tspan></text>
+        <text id="cost" class="cls-7" transform="translate(383.761 793.026)"><tspan x="0" y="0">cost</tspan></text>
+        <rect id="Rectangle_12" data-name="Rectangle 12" width="104.399" height="335.339" transform="translate(1020.613 424.011) rotate(90)"/>
+        <text id="effort" class="cls-8" transform="translate(730 398)"><tspan x="0" y="111">effort</tspan></text>
+        <g id="logo2" transform="translate(-598.5 -120.108)">
+          <rect id="Rectangle_1" data-name="Rectangle 1" width="69.363" height="598.261" transform="translate(1378.761 234.5) rotate(90)"/>
+          <rect id="Rectangle_5" data-name="Rectangle 5" width="195.084" height="598.261" transform="translate(1378.761 329.875) rotate(90)"/>
+          <text id="n_o_p_e" data-name="n o p e" class="cls-9" transform="translate(930.065 445.39)"><tspan x="0" y="0">n o p e</tspan></text>
+        </g>
+      </g>
     </g>
-    <text id="no" class="cls-5" transform="translate(210 398)"><tspan x="0" y="111">no</tspan></text>
-    <text id="MANAGE" class="cls-6" transform="translate(314 691)"><tspan x="0" y="0">MANAGE</tspan></text>
-    <text id="recipes" class="cls-7" transform="translate(313.761 897.026)"><tspan x="0" y="0">recipes</tspan></text>
-    <text id="cost" class="cls-8" transform="translate(383.761 793.026)"><tspan x="0" y="0">cost</tspan></text>
-    <rect id="Rectangle_12" data-name="Rectangle 12" width="104.399" height="307.339" transform="translate(1010.613 424.011) rotate(90)"/>
-    <text id="effort" class="cls-5" transform="translate(730 398)"><tspan x="0" y="111">effort</tspan></text>
   </g>
 </svg>
