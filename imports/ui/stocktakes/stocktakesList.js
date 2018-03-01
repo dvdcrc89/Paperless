@@ -87,7 +87,10 @@ export default class StocktakesList extends React.Component {
         return(
         <div className="container">
             <TitleBar title="Stocktakes" mainData="Items: 0"/>
+            <div className="formstyle">
+            <div className="controllerWrap">
             {this.renderBack()}
+            </div></div>
             <Table data={this.fetch().data} columns={this.fetch().columns}/>
         </div>
         )

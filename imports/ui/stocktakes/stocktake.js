@@ -10,9 +10,7 @@ import TextInput from 'react-autocomplete-input';
 import {history} from "../routes/routes";
 
 
-
-
-const menuStyle={
+const menuStyle = {
     borderRadius: '3px',
     boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',
     background: 'rgba(255, 255, 255, 0.9)',
@@ -20,47 +18,49 @@ const menuStyle={
     fontSize: '90%',
     zIndex: '100',
     borderBottom: '1px solid black',
-    borderLeft:'1px solid black',
-    borderRight:'1px solid black',
+    borderLeft: '1px solid black',
+    borderRight: '1px solid black',
     position: 'fixed',
     overflow: 'auto',
     maxHeight: '50%', // TODO: don't cheat, let it flow to the bottom
 }
-let value=''
+let value = ''
 export default class Stocktakes extends React.Component {
 
-    constructor (props) {
+    constructor(props) {
         super(props)
         this.state = {
             value: '',
-            _id:''
+            _id: ''
         }
 
     }
-    fetchItems(){
-       return Items.find({User:Meteor.userId()}).fetch().map((item)=>{
-           return item.ItemName;
-       });
+
+    fetchItems() {
+        return Items.find({User: Meteor.userId()}).fetch().map((item) => {
+            return item.ItemName;
+        });
     }
-    fetch(){
+
+    fetch() {
         const columns = [
             {
                 Header: 'Ingredient Name', accessor: 'ItemName'
-            },{
-                Header: 'Quantity', accessor: 'ItemQuantity',width: 90
-
-            },{
-                Header: 'Value', accessor: 'ItemValue',width: 90
+            }, {
+                Header: 'Quantity', accessor: 'ItemQuantity', width: 90
 
             }, {
-                Header: '', accessor: 'btn',width: 50
+                Header: 'Value', accessor: 'ItemValue', width: 90
+
+            }, {
+                Header: '', accessor: 'btn', width: 50
             }]
 
         const data = Temps.find({User: Meteor.userId()}).fetch().map((dat) => {
             return {
-                ItemName:dat.ItemName,
-                ItemQuantity:dat.ItemQuantity+" "+dat.ItemMeasure,
-                ItemValue: dat.ItemValue+"£",
+                ItemName: dat.ItemName,
+                ItemQuantity: dat.ItemQuantity + " " + dat.ItemMeasure,
+                ItemValue: dat.ItemValue + "£",
                 btn:
                     <button onClick={() => {
                         let itemID = dat._id;
@@ -73,92 +73,103 @@ export default class Stocktakes extends React.Component {
             }
         });
 
-        return{
-            data:data,
-            columns:columns
+        return {
+            data: data,
+            columns: columns
         }
     };
 
     handleSubmit(e) {
         e.preventDefault();
         let item = document.getElementsByName("textinput");
-        let itemName=item[0].textContent.trim();
-        let itemId=""
+        let itemName = item[0].textContent.trim();
+        let itemId = ""
         try {
             itemId = Items.find({User: Meteor.userId(), ItemName: itemName}).fetch()[0]._id;
-        } catch(e){
+        } catch (e) {
             alert("Item not in stock")
             return
         }
         let itemQuantity = e.target.ItemQuantity.value;
         e.preventDefault();
 
-            if(Temps.find({IngredientId:itemId}).fetch().length>0){
-             alert("Item already in");
-                return
-             }
-           let ingredient = Items.find({User: Meteor.userId(), ItemName: itemName}).fetch();
-           let measure = ingredient[0].ItemUnitMeasure;
-           let value=itemQuantity/ingredient[0].ItemQuantity*ingredient[0].ItemPrice;
-            Temps.insert({
-                User: Meteor.userId(),
-                ItemName: itemName,
-                ItemQuantity: itemQuantity,
-                ItemMeasure:measure,
-                IngredientId: itemId,
-                ItemValue: Math.round(value * 100) / 100
-
-            });
-
-
-
+        if (Temps.find({IngredientId: itemId}).fetch().length > 0) {
+            alert("Item already in");
+            return
         }
+        let ingredient = Items.find({User: Meteor.userId(), ItemName: itemName}).fetch();
+        let measure = ingredient[0].ItemUnitMeasure;
+        let value = itemQuantity / ingredient[0].ItemQuantity * ingredient[0].ItemPrice;
+        Temps.insert({
+            User: Meteor.userId(),
+            ItemName: itemName,
+            ItemQuantity: itemQuantity,
+            ItemMeasure: measure,
+            IngredientId: itemId,
+            ItemValue: Math.round(value * 100) / 100
+
+        });
 
 
-    saveStocktakes(e){
+    }
+
+
+    saveStocktakes(e) {
         e.preventDefault();
         let date = new Date()
         let begun = moment(date).format("DD MMMM YYYY");
         let notes = e.target.STnote.value;
-        let stocktake = Temps.find({User:Meteor.userId()}).fetch()
-        let value=0;
-        value= stocktake.map((item)=>{return value+=item.ItemValue;
+        let stocktake = Temps.find({User: Meteor.userId()}).fetch()
+        let value = 0;
+        value = stocktake.map((item) => {
+            return value += item.ItemValue;
         })
         console.log(value)
         StockTakes.insert({
             User: Meteor.userId(),
             Date: begun,
             Note: notes,
-            TotalValue:Math.round(value[value.length-1]*100)/100,
-            STitems:stocktake
+            TotalValue: Math.round(value[value.length - 1] * 100) / 100,
+            STitems: stocktake
 
         })
-        Temps.find({User:Meteor.userId}).fetch().map((temp)=>{
-            Temps.remove({_id:temp._id})})
+        Temps.find({User: Meteor.userId}).fetch().map((temp) => {
+            Temps.remove({_id: temp._id})
+        })
         history.push("/stocktakeslist");
-        }
-
-
-
-
+    }
 
 
     render() {
         return (
             <div className="container">
                 <TitleBar title="Stocktakes" mainData="Items: 0"/>
-                <div className="stocktakecontroller">
-                <form onSubmit={this.handleSubmit.bind(this)}>
-                    <TextInput name="textinput" options={this.fetchItems()} trigger={""} maxOptions="4"/>
-                    <input type = "number" min ="0" step="any" name ="ItemQuantity" placeholder="Quantity"/>
-                    <button>Add</button>
-                </form>
-                <form onSubmit={this.saveStocktakes.bind(this)}>
-                    <input type = "text" name ="STnote" placeholder="Notes" className = "typebox"/>
+                <div className='formstyle'>
+
+                    <div className="controllerwrap">
+                        <form onSubmit={this.handleSubmit.bind(this)}>
+                            <TextInput name="textinput" options={this.fetchItems()} trigger={""} maxOptions="4"/>
+                            <textarea type="number" min="0" step="any" name="ItemQuantity" placeholder="Quantity"/>
+                            <button><i class="fa fa-plus-square"></i></button>
+                        </form>
+
+                    </div>
+                </div>
+                <div className="form_save">
+
+                <button onClick={
+                    (e)=>{
+                        e.preventDefault();
+                        history.push("/stocktakeslist");
+                    }
+                }> <i className="fa fa-arrow-circle-left"></i></button>
+                <div>
+                <form  onSubmit={this.saveStocktakes.bind(this)}>
+                    <input type="text" name="STnote" placeholder="Notes" className="typebox"/>
                     <button>Save</button>
                 </form>
                 </div>
-
+                </div>
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>
             </div>)
     }

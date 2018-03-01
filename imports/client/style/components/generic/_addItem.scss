@@ -2,14 +2,21 @@
 .container{
     max-width: 100%;
   }
-  
+.controllerWrap{
+  //display: flex;
+  //width:100%;
+  //justify-content: center;
+}
   .controllerWrap form {
     width: 100%;
-    
-  
-  
+
   }
+  form {
+    width: 100%;
+  }
+
   .formstyle{
+    width: 100%;
     margin-top:37px;
     padding:0rem;
     display: flex;
