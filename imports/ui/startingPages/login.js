@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import Signup from "./../startingPages/signup";
+import Signup from "./login_signup";
 import {Accounts} from "meteor/accounts-base";
 import {Meteor} from "meteor/meteor";
 import {history} from "../routes/routes";

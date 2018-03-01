@@ -1,8 +1,7 @@
 import {Meteor} from "meteor/meteor";
 import React from "react";
 import ReactDOM from "react-dom";
-import Signup from "../startingPages/signup";
-import Login from "../startingPages/login";
+import LoginSignup from "../startingPages/login_signup";
 import {Router, Switch, Route} from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory'
 import Profile from './../profile/profile'
@@ -17,7 +16,7 @@ import RecipeList from './../menuCosting/recipeList'
 export const history = createHistory();
 
 //Define pages that can be visit from Unauthenticated users only
-const unauthenticatedPages = ['/', '/signgup', '/login'];
+const unauthenticatedPages = ['/'];
 //Define pages that can be visit from Authenticated users only
 const authenticatedPages = ['/profile','/stock','/stocktakes','/fftemperature','/stocktakeslist'];
 
@@ -40,9 +39,8 @@ export const AppRouter = () => (
 
     <Router history={history}>
         <Switch>
-            <Route exact path="/" component={Login}/>
+            <Route exact path="/" component={LoginSignup}/>
 
-            <Route exact path="/signup" component={Signup}/>
 
             <Route exact path="/profile" component={Profile}/>
 
