@@ -39,7 +39,10 @@ export default class TitleBar extends React.Component{
                                 <i className="fa fa-bars"></i>
                             </h3>
                             <div className="dropdown-content">
-                                <a href="#">Recipes</a>
+                                <a href="#" onClick={(e)=>{
+                                    e.preventDefault();
+                                    history.push("/recipelist")
+                                }}>Recipes</a>
                                 <a href="#">Menu</a>
                             </div>
                         </div>

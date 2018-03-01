@@ -20,15 +20,15 @@ export default class RecipeList extends React.Component {
 
         const columns = [
             {
-                Header: 'Date', accessor: 'Date'
+                Header: 'Date', accessor: 'Date',width:120
             }, {
                 Header: 'Name', accessor: 'RecipeName'
 
-            },{  Header: 'Cost', accessor: 'Cost', width:200
+            },{  Header: 'Cost', accessor: 'Cost', width:100
 
-            },{  Header: 'Retail Price', accessor: 'RetailPrice', width:200
+            },{  Header: 'Retail Price', accessor: 'RetailPrice', width:130
 
-            },{  Header: 'Profit', accessor: 'Profit', width:200
+            },{  Header: 'Profit', accessor: 'Profit', width:100
 
             },{
                 Header:'View/Remove',accessor: 'Show',width:130
@@ -38,7 +38,7 @@ export default class RecipeList extends React.Component {
         ((recipe)=>{
             return {
                 ...recipe,
-                Profit:(recipe.RetailPrice-recipe.Cost)/recipe.RetailPrice*100+"%",
+                Profit:Math.round(((recipe.RetailPrice-recipe.Cost)/recipe.RetailPrice*100)*100)/100+"%",
                 Cost: recipe.Cost + " £",
                 RetailPrice:recipe.RetailPrice+" £",
                 Show:
@@ -73,7 +73,8 @@ export default class RecipeList extends React.Component {
             const data2 = Recipes.find({User: Meteor.userId(),_id:this.state.id}).fetch()[0].STitems.map((item)=>{
                 return {
                     ...item,
-                    ItemValue: item.ItemValue + " £"
+                    Cost: item.ItemValue + " £",
+                    ItemQuantity:item.ItemQuantity+" "+item.ItemMeasure
                 }
             });
 
