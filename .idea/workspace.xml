@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a11ad881-b0bf-409f-b985-168949682b6e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/imports/client/style/components/startingPages/_signup.scss" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/imports/ui/startingPages/login_signup.js" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/imports/client/style/components/global/global.scss" afterPath="$PROJECT_DIR$/imports/client/style/components/global/global.scss" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/routes/routes.js" afterPath="$PROJECT_DIR$/imports/ui/routes/routes.js" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/startingPages/login.js" afterPath="$PROJECT_DIR$/imports/ui/startingPages/login.js" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/startingPages/signup.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/startingPages/login_signup.js" afterPath="$PROJECT_DIR$/imports/ui/startingPages/login_signup.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -69,8 +63,8 @@
       <file leaf-file-name="login_signup.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/imports/ui/startingPages/login_signup.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="87" column="37" lean-forward="true" selection-start-line="87" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+            <state relative-caret-position="237">
+              <caret line="102" column="29" lean-forward="false" selection-start-line="102" selection-start-column="29" selection-end-line="102" selection-end-column="29" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -463,12 +457,12 @@
       <workItem from="1519672249783" duration="14559000" />
       <workItem from="1519722932043" duration="19208000" />
       <workItem from="1519762429941" duration="48153000" />
-      <workItem from="1519936358676" duration="4928000" />
+      <workItem from="1519936358676" duration="5181000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125141000" />
+    <option name="totallyTimeSpent" value="125394000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="109" y="380" width="1305" height="780" extended-state="6" />
@@ -875,8 +869,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/startingPages/login_signup.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="87" column="37" lean-forward="true" selection-start-line="87" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+        <state relative-caret-position="237">
+          <caret line="102" column="29" lean-forward="false" selection-start-line="102" selection-start-column="29" selection-end-line="102" selection-end-column="29" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

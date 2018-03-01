@@ -100,6 +100,7 @@ export default class LoginSignup extends React.Component{
                 <section>
 
                     {this.state.error ? <p>{this.state.error}</p> : undefined}
+                    <TitleBar/>
                     <div className="aligner ">
                         <div className="subOne">
                             <div className="claim">
