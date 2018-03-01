@@ -1,7 +1,7 @@
 /*HEADER*/
 /*--------------------------------------------------------------------------------*/
 .header{
-    height: 90px;
+    height: 75px;
     width: 100%;
     background-color: white;
     background-repeat: no-repeat;
@@ -72,6 +72,7 @@ h2{
 
 /*Nav*/
 .navbar {
+  position: relative;
   background-color: lightgray;
   display: flex;
   align-content: space-around;
