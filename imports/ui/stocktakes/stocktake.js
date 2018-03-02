@@ -149,6 +149,12 @@ export default class Stocktakes extends React.Component {
     renderButtons_Controller() {
         return (
             <div className={"controller_bar"}>
+                <button onClick={
+                    (e) => {
+                        e.preventDefault();
+                        history.push("/stocktakeslist");
+                    }
+                }><i className="fa fa-arrow-circle-left"></i></button>
                 <div className={"controller"}>
                     <form id="add_item" onSubmit={this.handleSubmit.bind(this)}>
                         <TextInput Component="input" placeholder="Item's name" name="textinput"
@@ -183,12 +189,7 @@ export default class Stocktakes extends React.Component {
             <div className="container">
                 <TitleBar title="Stocktakes" mainData="Items: 0"/>
                 {this.renderButtons_Controller()}
-                <button onClick={
-                    (e) => {
-                        e.preventDefault();
-                        history.push("/stocktakeslist");
-                    }
-                }><i className="fa fa-arrow-circle-left"></i></button>
+
 
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>
                 <Footer/>

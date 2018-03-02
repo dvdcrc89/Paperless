@@ -45,6 +45,14 @@ export default class Footer extends React.Component {
                             history.push("/recipe");
                         }
                     }/>
+                    <input className="button_controller foot logout" type="image" name="logout"
+                           src="./../../../img/logout.svg" border="0" onClick={
+                        (e) => {
+                            e.preventDefault();
+                            Accounts.logout();
+                        }
+                    }/>
+
                 </div>
                 <div className={"showData"}>
                     <h1>{this.returnDate()}</h1>
