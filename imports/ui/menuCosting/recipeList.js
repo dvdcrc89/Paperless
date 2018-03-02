@@ -116,6 +116,7 @@ export default class RecipeList extends React.Component {
                                src="./../../../img/Save.svg" border="0" alt="" onClick={() => alert("Button Disabled")}/>
                     </div>
                 </div>
+
             )
         } else{
             return (
@@ -143,6 +144,7 @@ export default class RecipeList extends React.Component {
                 <Footer title={"Menu"}/>
 
             </div>
+
         )
     }
 }

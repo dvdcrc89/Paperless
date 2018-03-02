@@ -1,42 +1,54 @@
-.footer_fixed{
-
-  position: relative;
-
-  height: 100px;
+.Aligner{
+  width: 100%;
+  display: flex;
+  background-color: black;
+  
+}
+.AlignerWhite{
+  width: 80%;
+  background-color: white;
+  
+}
+.logout{
+  margin-right: 20px;
 }
 
+.space{
+  margin-right:3px;
+  margin-left: 3px;
+}
 .footer_buttons{
-  width: max;
+  margin:0 auto;
+  width: 80%;
   height: 35px;
-  margin-left: 0%;
-  margin-top:10px;
-  background: black;
   display: flex;
-justify-content: center;
-  -webkit-box-shadow: 0px -1px 4px 0px rgba(140,140,140,1);
-  -moz-box-shadow: 0px -1px 4px 0px rgba(140,140,140,1);
-  box-shadow: 0px -1px 4px 0px rgba(140,140,140,1);
-
-  -webkit-box-shadow: 0px 1px 4px 0px rgba(140,140,140,1);
-  -moz-box-shadow: 0px 1px 4px 0px rgba(140,140,140,1);
-  box-shadow: 0px 1px 4px 0px rgba(140,140,140,1);
+  background-color: black;
+}
+.footer_buttons2{
+  height: 35px;
+  display: flex;
+  background-color: black;
 }
 .foot{
   background: white;
   padding: 4px;
 
 }
-.logout{
-  margin-left: 50px;
-}
+
 .showData{
+  width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  background-color: white;
 
 }
 .showData h1{
-  font-size: 3rem;
+  font-family: 'Oxygen', sans-serif;
+  color: black;
+  font-size: 2rem;
 }
 .showData h2{
+  font-family: 'Oxygen', sans-serif;
   color: black;
+
 }

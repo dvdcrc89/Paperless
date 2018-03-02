@@ -18,48 +18,51 @@ export default class Footer extends React.Component {
         return (
             <div className={"footer_fixed"}>
                 <div className={"footer_buttons"}>
-                    <input className="button_controller foot" type="image" name="stock"
-                           src="./../../../img/stock.svg" border="0" onClick={
-                        (e) => {
-                            e.preventDefault();
-                            history.push("/stock");
-                        }
-                    }/>
-                    <input className="button_controller foot " type="image" name="stocktake"
-                           src="./../../../img/stocktake.svg" border="0" onClick={
-                        (e) => {
-                            e.preventDefault();
-                            history.push("/stocktakes");
-                        }
-                    }/>
-                    <input className="button_controller foot"  type="image" name="menu"
-                           src="./../../../img/menu.svg" border="0" onClick={
-                        (e) => {
-                            e.preventDefault();
-                            history.push("/recipelist");
-                        }
-                    }/>
-                    <input className="button_controller foot" type="image" name="recipe"
-                           src="./../../../img/recipe.svg" border="0" onClick={
-                        (e) => {
-                            e.preventDefault();
-                            history.push("/recipe");
-                        }
-                    }/>
-                    <input className="button_controller foot logout" type="image" name="logout"
+                <input className="button_controller foot logout " type="image" name="logout"
                            src="./../../../img/logout.svg" border="0" onClick={
                         (e) => {
                             e.preventDefault();
                             Accounts.logout();
                         }
                     }/>
-
-                </div>
+                    <input className="button_controller foot space" type="image" name="stocktake"
+                           src="./../../../img/stocktake.svg" border="0" onClick={
+                        (e) => {
+                            e.preventDefault();
+                            history.push("/stocktakes");
+                        }
+                    }/>
+                    <input className="button_controller foot space"  type="image" name="menu"
+                           src="./../../../img/menu.svg" border="0" onClick={
+                        (e) => {
+                            e.preventDefault();
+                            history.push("/recipelist");
+                        }
+                    }/>
+                    <input className="button_controller foot space" type="image" name="recipe"
+                           src="./../../../img/recipe.svg" border="0" onClick={
+                        (e) => {
+                            e.preventDefault();
+                            history.push("/recipe");
+                        }
+                    }/>
+                     <input className="button_controller foot space" type="image" name="stock"
+                           src="./../../../img/stock.svg" border="0" onClick={
+                        (e) => {
+                            e.preventDefault();
+                            history.push("/stock");
+                       }
+                    }/>
+                  
+                    </div>
+                
+                
                 <div className={"showData"}>
                     <h2>{this.returnDate()}</h2>
                     <h1>{this.props.title}</h1>
                 </div>
-            </div>
+                </div>
+         
         )
     }
 }
