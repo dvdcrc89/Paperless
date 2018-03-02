@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a11ad881-b0bf-409f-b985-168949682b6e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/imports/client/style/components/generic/_controller_and_buttons.scss" afterPath="$PROJECT_DIR$/imports/client/style/components/generic/_controller_and_buttons.scss" />
-      <change beforePath="$PROJECT_DIR$/imports/client/style/components/generic/_footer.scss" afterPath="$PROJECT_DIR$/imports/client/style/components/generic/_footer.scss" />
-      <change beforePath="$PROJECT_DIR$/imports/client/style/components/generic/_title-bar.scss" afterPath="$PROJECT_DIR$/imports/client/style/components/generic/_title-bar.scss" />
-      <change beforePath="$PROJECT_DIR$/imports/client/style/components/global/global.scss" afterPath="$PROJECT_DIR$/imports/client/style/components/global/global.scss" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/generic/footer.js" afterPath="$PROJECT_DIR$/imports/ui/generic/footer.js" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/menuCosting/recipe.js" afterPath="$PROJECT_DIR$/imports/ui/menuCosting/recipe.js" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/menuCosting/recipeList.js" afterPath="$PROJECT_DIR$/imports/ui/menuCosting/recipeList.js" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/stock/stockMain.js" afterPath="$PROJECT_DIR$/imports/ui/stock/stockMain.js" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/stocktakes/stocktake.js" afterPath="$PROJECT_DIR$/imports/ui/stocktakes/stocktake.js" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/stocktakes/stocktakesList.js" afterPath="$PROJECT_DIR$/imports/ui/stocktakes/stocktakesList.js" />
-    </list>
+    <list default="true" id="a11ad881-b0bf-409f-b985-168949682b6e" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -489,7 +477,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152967000" />
+    <option name="totallyTimeSpent" value="153567000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="63" y="-4" width="1303" height="772" extended-state="6" />
