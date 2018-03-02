@@ -58,7 +58,6 @@ export default class AddItems extends React.Component{
         return(
 
                 <div className = 'formstyle'>
-                <div className ="controllerWrap">
                     <form onSubmit={this.handleSubmit}>
                         <input type = "text" name ="ItemName" placeholder="Item Name" className = "typebox"/>
                         <select  name="ItemDescription" placeholder="Meat">
@@ -76,11 +75,15 @@ export default class AddItems extends React.Component{
                             <option value="oz">oz</option>
                             <option value="unit">unit</option>
                         </select>
-                        <button>Add Item</button>
+                        {/*<button className={"add"}></button>*/}
+                        <input className="button_controller " type="image" name="" src="./../../../img/AddItem.svg" border="0"   />
+                        <img className="button_controller button_disabled" type="image" name="submit" src="./../../../img/Add.svg" border="0" alt="Submit" onClick={()=>alert("Button Disabled")} />
+                        <img className="button_controller button_disabled" type="image" name="submit" src="./../../../img/Save.svg" border="0" alt="" onClick={()=>alert("Button Disabled")} />
+
+
                     </form>
 
-                </div>
-            </div>
+                 </div>
 
     )
     }

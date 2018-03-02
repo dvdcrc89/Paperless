@@ -16,9 +16,23 @@
   }
 
   .formstyle{
+    position:relative;
     width: 100%;
     margin-top:37px;
     padding:1rem;
     display: flex;
-    justify-content: center;
+    align-items: baseline;
+  }
+  .button_controller{
+    filter: invert(100);
+      width: 28px;
+  }
+  .button_controller:hover{
+    filter: invert( 0);
+  }
+
+  .button_disabled{
+    cursor:not-allowed;
+    pointer-events: none;
+    filter: opacity(0.20);
   }

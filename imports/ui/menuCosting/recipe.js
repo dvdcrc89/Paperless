@@ -154,12 +154,12 @@ export default class Recipe extends React.Component {
 
 
 
-    saveRecipes(e) {
-        e.preventDefault();1
+    saveRecipes() {
+
         let date = new Date()
         let begun = moment(date).format("DD MM YYYY");
-        let recipeName = e.target.RecipeName.value;
-        let retailPrice = e.target.RetailPrice.value;
+        let recipeName = prompt("Insert the recipe's name");
+        let retailPrice = prompt("Insert the retail price");
         let ingredients = RecipeTemps.find({User: Meteor.userId()}).fetch()
         let value = 0;
         value = ingredients.map((item) => {
@@ -199,15 +199,19 @@ export default class Recipe extends React.Component {
                                 <option value="kg">kg</option>
                                 <option value="oz">oz</option>
                                 <option value="unit">unit</option>
+
                             </select>
-                            <button><i class="fa fa-plus-square"></i></button>
+                            <input className="button_controller " type="image" name="" src="./../../../img/AddItem.svg" border="0"   />
+                            <img className="button_controller button_disabled" type="image" name="submit" src="./../../../img/Add.svg" border="0" alt="Submit" onClick={()=>alert("Button Disabled")} />
+                            <input className="button_controller " type="image" name="save" src="./../../../img/Save.svg" border="0" alt="" onClick={(e)=>{
+                                e.preventDefault();
+                                this.saveRecipes()}} />
                         </form>
 
                     </div>
                 </div>
 
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>
-                <div className="form_save">
 
                     <button onClick={
                         (e)=>{
@@ -216,14 +220,9 @@ export default class Recipe extends React.Component {
                         }
                     }> <i className="fa fa-arrow-circle-left"></i></button>
                     <div>
-                        <form  onSubmit={this.saveRecipes.bind(this)}>
-                            <input type="text" name="RecipeName" placeholder="Recipe's name" className="typebox"/>
-                            <input type="number" name="RetailPrice" placeholder="Retail's price" className="typebox"/>
 
-                            <button>Save Recipe</button>
-                        </form>
                     </div>
                 </div>
-            </div>)
+           )
     }
 }

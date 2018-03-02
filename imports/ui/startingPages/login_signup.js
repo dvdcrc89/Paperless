@@ -66,6 +66,8 @@ export default class LoginSignup extends React.Component{
         if(this.state.value==="login"){
             return(
                 <div class ="sub">
+                    {this.state.error ? <p>{this.state.error}</p> : undefined}
+
                     <button className={"formButtonSL"} onClick={()=>this.setState({value:"signup"})}>Don't have an account? Sign up</button>
 
                     <form onSubmit={this.onSubmit_login.bind(this)} noValidate>
@@ -73,12 +75,15 @@ export default class LoginSignup extends React.Component{
                         <input type="password" name="password" ref="password" className="signup_form_style" placeholder="Password"/>
                         <button className="formButton">Login</button>
                     </form>
+
                 </div>
             )
 
         } else {
             return(
                 <div class ="sub">
+                    {this.state.error ? <p>{this.state.error}</p> : undefined}
+
                     <button className={"formButtonSL"}onClick={()=>this.setState({value:"login"})}>Already have an account? Log in</button>
                     <form onSubmit={this.onSubmit.bind(this)} noValidate>
                 {/*<input type="text" name="name" className="signup_form_style" placeholder="Full Name" required />*/}
@@ -88,6 +93,7 @@ export default class LoginSignup extends React.Component{
                 <input type="" name="" className="signup_form_style" placeholder="Confirm Password" required />
                 <button className="formButton">Sign up</button>
             </form>
+
                 </div>
             )
         }
@@ -99,16 +105,15 @@ export default class LoginSignup extends React.Component{
 
                 <section>
 
-                    {this.state.error ? <p>{this.state.error}</p> : undefined}
                     <TitleBar/>
                     <div className="aligner ">
                         <div className="subOne">
                             <div className="claim">
                                 <img className="logoClaim" src="./../../../img/logo3.svg"></img>
                             </div>
-
                         </div>
-                            {this.renderLoginSignup()}
+
+                        {this.renderLoginSignup()}
                             </div>
 
 

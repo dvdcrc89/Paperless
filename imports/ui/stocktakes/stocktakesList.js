@@ -83,9 +83,15 @@ export default class StocktakesList extends React.Component {
     }
     renderBack(){
         if(!(this.state.id=="not")){
-            return <button onClick={()=>this.setState({id:"not"})}>Back to Stocktakes</button>
+            return <button onClick={()=>this.setState({id:"not"})}><i className="fa fa-arrow-circle-left"></i></button>
         } else{
-            return <button onClick={()=>history.replace("/stocktakes")}>NEW Stocktake</button>
+            // return <button onClick={()=>history.replace("/stocktakes")}>NEW Stocktake</button>
+            return (
+                <div className={"buttons_stocktakeslist"}>
+                <img className="button_controller button_disabled " type="image" name="" src="./../../../img/AddItem.svg" border="0"   /><input className="button_controller " type="image" name="submit" src="./../../../img/Add.svg" border="0" alt="Submit" onClick={()=>history.replace("/stocktakes")} />
+                 <img className="button_controller button_disabled" type="image" name="submit" src="./../../../img/Save.svg" border="0" alt="" onClick={()=>alert("Button Disabled")} />
+            </div>
+        )
         }
     }
     render(){

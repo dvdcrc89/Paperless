@@ -90,9 +90,15 @@ export default class RecipeList extends React.Component {
     }
     renderBack(){
         if(!(this.state.id=="not")){
-            return <button onClick={()=>this.setState({id:"not"})}>Back to Menu</button>
+            return <button onClick={()=>this.setState({id:"not"})}><i className="fa fa-arrow-circle-left"></i></button>
         } else{
-            return <button onClick={()=>history.replace("/recipe")}>ADD Recipe</button>
+            return (
+                <div className={"buttons_stocktakeslist"}>
+                    <img className="button_controller button_disabled " type="image" name="" src="./../../../img/AddItem.svg" border="0"   />
+                    <input className="button_controller " type="image" name="submit" src="./../../../img/Add.svg" border="0" alt="Submit" onClick={()=>history.replace("/recipe")} />
+                    <img className="button_controller button_disabled" type="image" name="submit" src="./../../../img/Save.svg" border="0" alt="" onClick={()=>alert("Button Disabled")} />
+                </div>
+            )
         }
     }
     render(){

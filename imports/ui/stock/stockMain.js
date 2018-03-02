@@ -1,6 +1,5 @@
 import React from 'react'
 import AddItems from './add_items'
-import ItemList from './itemList'
 import Table from '../generic/table'
 import {Items} from "../../api/items";
 import TitleBar from '../generic/titlebar';

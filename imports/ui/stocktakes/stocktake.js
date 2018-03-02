@@ -116,11 +116,10 @@ export default class Stocktakes extends React.Component {
     }
 
 
-    saveStocktakes(e) {
-        e.preventDefault();
+    saveStocktakes() {
         let date = new Date()
         let begun = moment(date).format("DD MMMM YYYY");
-        let notes = e.target.STnote.value;
+        let notes = prompt("Feel free to add some notes");
         let stocktake = Temps.find({User: Meteor.userId()}).fetch()
         let value = 0;
         value = stocktake.map((item) => {
@@ -152,12 +151,15 @@ export default class Stocktakes extends React.Component {
                         <form onSubmit={this.handleSubmit.bind(this)}>
                             <TextInput Component="input"  placeholder="Item's name" name="textinput" options={this.fetchItems()} trigger={""} maxOptions="4" defaultValue={""}/>
                             <input type="number" min="0" step="any" name="ItemQuantity" placeholder="Quantity"/>
-                            <button><i class="fa fa-plus-square"></i></button>
+                            <input className="button_controller " type="image" name="" src="./../../../img/AddItem.svg" border="0"   />
+                            <img className="button_controller button_disabled" type="image" name="submit" src="./../../../img/Add.svg" border="0" alt="Submit" onClick={()=>alert("Button Disabled")} />
+                            <input className="button_controller " type="image" name="save" src="./../../../img/Save.svg" border="0" alt="" onClick={(e)=>{
+                                e.preventDefault();
+                                this.saveStocktakes()}} />
                         </form>
 
                     </div>
                 </div>
-                <div className="form_save">
 
                 <button onClick={
                     (e)=>{
@@ -166,11 +168,7 @@ export default class Stocktakes extends React.Component {
                     }
                 }> <i className="fa fa-arrow-circle-left"></i></button>
                 <div>
-                <form  onSubmit={this.saveStocktakes.bind(this)}>
-                    <input type="text" name="STnote" placeholder="Notes" className="typebox"/>
-                    <button>Save</button>
-                </form>
-                </div>
+
                 </div>
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>
             </div>)
