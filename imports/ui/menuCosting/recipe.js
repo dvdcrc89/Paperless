@@ -237,7 +237,8 @@ export default class Recipe extends React.Component {
                 <TitleBar title="Recipe" mainData="Items: 0"/>
                     {this.renderButtons_Controller()}
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>
-                <Footer/>
+                <Footer title={"New recipe"}/>
+
             </div>
         )}
 }

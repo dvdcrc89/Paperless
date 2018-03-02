@@ -140,7 +140,8 @@ export default class RecipeList extends React.Component {
                 <TitleBar title="Menu" mainData="Items: 0"/>
                 {this.renderButtons_Controller()}
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>
-                <Footer/>
+                <Footer title={"Menu"}/>
+
             </div>
         )
     }

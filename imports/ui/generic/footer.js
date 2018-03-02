@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import propTypes from 'prop-types'
 import {history} from "../routes/routes";
 import {Accounts} from "meteor/accounts-base";
+import {Meteor} from 'meteor/meteor'
 
 export default class Footer extends React.Component {
 
@@ -55,7 +56,8 @@ export default class Footer extends React.Component {
 
                 </div>
                 <div className={"showData"}>
-                    <h1>{this.returnDate()}</h1>
+                    <h2>{this.returnDate()}</h2>
+                    <h1>{this.props.title}</h1>
                 </div>
             </div>
         )

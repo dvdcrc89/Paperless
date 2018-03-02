@@ -192,7 +192,7 @@ export default class Stocktakes extends React.Component {
 
 
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>
-                <Footer/>
+                <Footer title={"New stocktake"}/>
             </div>)
     }
 }

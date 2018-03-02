@@ -128,7 +128,7 @@ export default class StocktakesList extends React.Component {
             {this.renderButtons_Controller()}
 
             <Table data={this.fetch().data} columns={this.fetch().columns}/>
-            <Footer/>
+            <Footer title={"Stocktakes List"}/>
         </div>
         )
     }

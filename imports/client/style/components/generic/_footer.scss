@@ -1,9 +1,8 @@
 .footer_fixed{
 
   position: relative;
-  left: 0;
-  bottom: 0;
 
+  height: 100px;
 }
 
 .footer_buttons{
@@ -30,8 +29,14 @@ justify-content: center;
 .logout{
   margin-left: 50px;
 }
-.showData h1{
-  font-size: 0.8rem;
-  align-self: center;
+.showData{
+  display: flex;
+  justify-content: space-evenly;
 
+}
+.showData h1{
+  font-size: 3rem;
+}
+.showData h2{
+  color: black;
 }

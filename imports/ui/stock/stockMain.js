@@ -136,7 +136,7 @@ export default class StockMain extends React.Component {
                 <TitleBar title="STOCK" mainData={"Total items: " + this.fetch().data.length}/>
                 {this.renderButtons_Controller()}
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>
-            <Footer/>
+                <Footer title={"Stock"}/>
             </div>
         )
     }
