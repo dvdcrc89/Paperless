@@ -99,6 +99,7 @@ export default class StocktakesList extends React.Component {
             // return <button onClick={()=>history.replace("/stocktakes")}>NEW Stocktake</button>
             return (
                 <div className={"controller_bar"}>
+                    <div className={"controller"}></div>
                 <div className={"buttons"}>
                     <input className="button_controller button_disabled " type="image" name="addItem"
                            src="./../../../img/AddItem.svg" border="0" onClick={() => alert("Button Disabled")}/>

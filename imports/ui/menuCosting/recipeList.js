@@ -108,6 +108,7 @@ export default class RecipeList extends React.Component {
         } else{
             return (
                 <div className={"controller_bar"}>
+                    <div className={"controller"}></div>
                 <div className={"buttons"}>
                     <input className="button_controller button_disabled " type="image" name="addItem"
                            src="./../../../img/AddItem.svg" border="0" onClick={() => alert("Button Disabled")}/>
