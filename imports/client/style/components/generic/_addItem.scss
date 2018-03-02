@@ -2,27 +2,12 @@
 .container{
     max-width: 100%;
   }
-.controllerWrap{
-  //display: flex;
-  //width:100%;
-  //justify-content: center;
-}
-  .controllerWrap form {
-    width: 100%;
 
-  }
   form {
     width: 100%;
   }
 
-  .formstyle{
-    position:relative;
-    width: 100%;
-    margin-top:37px;
-    padding:1rem;
-    display: flex;
-    align-items: baseline;
-  }
+
   .button_controller{
     filter: invert(100);
       width: 28px;

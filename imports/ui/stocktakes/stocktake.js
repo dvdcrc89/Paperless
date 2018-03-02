@@ -1,7 +1,6 @@
 import TitleBar from '../generic/titlebar';
 import React from 'react'
 import Table from '../generic/table'
-import ReactAutocomplete from 'react-autocomplete';
 import {Items} from './../../api/items'
 import {Meteor} from 'meteor/meteor'
 import {Temps} from './../../api/temps'
@@ -10,21 +9,6 @@ import TextInput from 'react-autocomplete-input';
 import {history} from "../routes/routes";
 
 
-const menuStyle = {
-    borderRadius: '3px',
-    boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',
-    background: 'rgba(255, 255, 255, 0.9)',
-    padding: '2px 5px',
-    fontSize: '90%',
-    zIndex: '100',
-    borderBottom: '1px solid black',
-    borderLeft: '1px solid black',
-    borderRight: '1px solid black',
-    position: 'fixed',
-    overflow: 'auto',
-    maxHeight: '50%', // TODO: don't cheat, let it flow to the bottom
-}
-let value = ''
 export default class Stocktakes extends React.Component {
 
     constructor(props) {
@@ -36,11 +20,10 @@ export default class Stocktakes extends React.Component {
 
     }
 
-    fetchItems() {
-        return Items.find({User: Meteor.userId()}).fetch().map((item) => {
-            return item.ItemName;
-        });
-    }
+
+    /*                                                           **
+     *                        Table Declaration                  **
+     *                                                            */
 
     fetch() {
         const columns = [
@@ -79,11 +62,15 @@ export default class Stocktakes extends React.Component {
         }
     };
 
+
+    /*                                                      **
+    *               Add, Open new Tab, Save Functions       **
+    *                                                       **
+    *                                                        */
+
+
     handleSubmit(e) {
         e.preventDefault();
-        // let item = document.getElementsByName("textinput");
-        // console.log(e.target.textinput.attributes[0].value);
-
         let itemName = e.target.textinput.value.trim();
         let itemId = ""
         try {
@@ -111,7 +98,7 @@ export default class Stocktakes extends React.Component {
             ItemValue: Math.round(value * 100) / 100
 
         });
-        e.target.textinput.value="";
+        e.target.textinput.value = "";
 
     }
 
@@ -141,35 +128,67 @@ export default class Stocktakes extends React.Component {
     }
 
 
+    /*                                      **
+    *               Other functions         **
+    *                                       **
+    *                                       */
+
+    fetchItems() {
+        return Items.find({User: Meteor.userId()}).fetch().map((item) => {
+            return item.ItemName;
+        });
+    }
+
+
+    /*                                                              **
+    *               Add, Open new Tab, Save Buttons                 **
+    *                        & Controller                           **
+    *                                                               */
+
+    renderButtons_Controller() {
+        return (
+            <div className={"controller_bar"}>
+                <div className={"controller"}>
+                    <form id="add_item" onSubmit={this.handleSubmit.bind(this)}>
+                        <TextInput Component="input" placeholder="Item's name" name="textinput"
+                                   options={this.fetchItems()} trigger={""} maxOptions="4" defaultValue={""}/>
+                        <input type="number" min="0" step="any" name="ItemQuantity" placeholder="Quantity"/>
+                    </form>
+                </div>
+                <div className={"buttons"}>
+                    <input className="button_controller " type="image" name="addItem" form={"add_item"}
+                           src="./../../../img/AddItem.svg" border="0"/>
+                    <input className="button_controller button_disabled" type="image" name="newTable"
+                           src="./../../../img/Add.svg" border="0" alt="Submit"
+                           onClick={() => alert("Button Disabled")}/>
+                    <input className="button_controller" type="image" name="save"
+                           src="./../../../img/Save.svg" border="0" alt="" onClick={(e) => {
+                        e.preventDefault();
+                        this.saveStocktakes();
+                    }}/>
+                </div>
+
+            </div>
+        )
+    }
+
+    /*                                  **
+    *               JSX Render          **
+    *                                   **
+    *                                   */
+
     render() {
         return (
             <div className="container">
                 <TitleBar title="Stocktakes" mainData="Items: 0"/>
-                <div className='formstyle'>
-
-                    <div className="controllerwrap">
-                        <form onSubmit={this.handleSubmit.bind(this)}>
-                            <TextInput Component="input"  placeholder="Item's name" name="textinput" options={this.fetchItems()} trigger={""} maxOptions="4" defaultValue={""}/>
-                            <input type="number" min="0" step="any" name="ItemQuantity" placeholder="Quantity"/>
-                            <input className="button_controller " type="image" name="" src="./../../../img/AddItem.svg" border="0"   />
-                            <img className="button_controller button_disabled" type="image" name="submit" src="./../../../img/Add.svg" border="0" alt="Submit" onClick={()=>alert("Button Disabled")} />
-                            <input className="button_controller " type="image" name="save" src="./../../../img/Save.svg" border="0" alt="" onClick={(e)=>{
-                                e.preventDefault();
-                                this.saveStocktakes()}} />
-                        </form>
-
-                    </div>
-                </div>
-
+                {this.renderButtons_Controller()}
                 <button onClick={
-                    (e)=>{
+                    (e) => {
                         e.preventDefault();
                         history.push("/stocktakeslist");
                     }
-                }> <i className="fa fa-arrow-circle-left"></i></button>
-                <div>
+                }><i className="fa fa-arrow-circle-left"></i></button>
 
-                </div>
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>
             </div>)
     }

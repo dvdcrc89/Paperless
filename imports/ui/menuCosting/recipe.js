@@ -10,21 +10,6 @@ import TextInput from 'react-autocomplete-input';
 import {history} from "../routes/routes";
 
 
-const menuStyle = {
-    borderRadius: '3px',
-    boxShadow: '0 2px 12px rgba(0, 0, 0, 0.1)',
-    background: 'rgba(255, 255, 255, 0.9)',
-    padding: '2px 5px',
-    fontSize: '90%',
-    zIndex: '100',
-    borderBottom: '1px solid black',
-    borderLeft: '1px solid black',
-    borderRight: '1px solid black',
-    position: 'fixed',
-    overflow: 'auto',
-    maxHeight: '50%', // TODO: don't cheat, let it flow to the bottom
-}
-
 export default class Recipe extends React.Component {
 
     constructor(props) {
@@ -36,11 +21,10 @@ export default class Recipe extends React.Component {
 
     }
 
-    fetchItems() {
-        return Items.find({User: Meteor.userId()}).fetch().map((item) => {
-            return item.ItemName;
-        });
-    }
+
+    /*                                                              **
+    *                        Table Declaration                      **
+    *                                                               */
 
     fetch() {
         const columns = [
@@ -79,6 +63,11 @@ export default class Recipe extends React.Component {
         }
     };
 
+    /*                                                      **
+    *               Add, Open new Tab, Save Functions       **
+    *                                                       **
+    *                                                        */
+
     handleSubmit(e) {
         e.preventDefault();
         // let item = document.getElementsByName("textinput");
@@ -116,6 +105,50 @@ export default class Recipe extends React.Component {
 
     }
 
+    saveRecipes() {
+
+        let date = new Date()
+        let begun = moment(date).format("DD MM YYYY");
+        let recipeName = prompt("Insert the recipe's name");
+        let retailPrice = prompt("Insert the retail price");
+        let ingredients = RecipeTemps.find({User: Meteor.userId()}).fetch()
+        let value = 0;
+        value = ingredients.map((item) => {
+            return value += item.ItemValue;
+        })
+        console.log(value)
+        Recipes.insert({
+            User: Meteor.userId(),
+            Date: begun,
+            RecipeName: recipeName,
+            RetailPrice: retailPrice,
+            Cost: Math.round(value[value.length - 1] * 100) / 100,
+            STitems: ingredients
+
+        })
+        RecipeTemps.find({User: Meteor.userId}).fetch().map((temp) => {
+            RecipeTemps.remove({_id: temp._id})
+        })
+        history.push("/recipelist");
+    }
+
+
+
+    /*                                      **
+    *               Other functions         **
+    *                                       **
+    *                                       */
+
+    fetchItems() {
+        return Items.find({User: Meteor.userId()}).fetch().map((item) => {
+            return item.ItemName;
+        });
+    }
+
+
+
+
+
     calculateValue(itemMeasureUnit,itemQuantity,ingredient){
         console.log(itemMeasureUnit === ingredient.ItemUnitMeasure);
         if(itemMeasureUnit === ingredient.ItemUnitMeasure) {
@@ -151,78 +184,57 @@ export default class Recipe extends React.Component {
         }
     }
 
+    /*                                                              **
+    *               Add, Open new Tab, Save Buttons                 **
+    *                        & Controller                           **
+    *                                                               */
 
+    renderButtons_Controller() {
+        return (
+            <div className={"controller_bar"}>
+                <div className={"controller"}>
+                    <form id="add_item" onSubmit={this.handleSubmit.bind(this) }>
+                        <TextInput Component="input"  placeholder="Item's name" name="textinput" options={this.fetchItems()} trigger={""} maxOptions="4" defaultValue={""}/>
+                        <input type="number" min="0" step="any" name="ItemQuantity" placeholder="Quantity"/>
+                        <select  name="ItemUnitMeasure" defaultValue="g">
+                            <option value="g">g</option>
+                            <option value="kg">kg</option>
+                            <option value="oz">oz</option>
+                            <option value="unit">unit</option>
 
-
-    saveRecipes() {
-
-        let date = new Date()
-        let begun = moment(date).format("DD MM YYYY");
-        let recipeName = prompt("Insert the recipe's name");
-        let retailPrice = prompt("Insert the retail price");
-        let ingredients = RecipeTemps.find({User: Meteor.userId()}).fetch()
-        let value = 0;
-        value = ingredients.map((item) => {
-            return value += item.ItemValue;
-        })
-        console.log(value)
-        Recipes.insert({
-            User: Meteor.userId(),
-            Date: begun,
-            RecipeName: recipeName,
-            RetailPrice: retailPrice,
-            Cost: Math.round(value[value.length - 1] * 100) / 100,
-            STitems: ingredients
-
-        })
-        RecipeTemps.find({User: Meteor.userId}).fetch().map((temp) => {
-            RecipeTemps.remove({_id: temp._id})
-        })
-        history.push("/recipelist");
+                        </select>
+                    </form>
+                </div>
+                <div className={"buttons"}>
+                    <input className="button_controller " type="image" name="addItem" form={"add_item"}
+                           src="./../../../img/AddItem.svg" border="0"/>
+                    <input className="button_controller button_disabled" type="image" name="newTable"
+                           src="./../../../img/Add.svg" border="0" alt="Submit"
+                           onClick={() => alert("Button Disabled")}/>
+                    <input className="button_controller" type="image" name="save"
+                           src="./../../../img/Save.svg" border="0" alt="" onClick={(e) => {
+                        e.preventDefault();
+                        this.saveRecipes();
+                    }}/>
+                </div>
+            </div>
+        )
     }
+
 
 
     render() {
         return (
             <div className="container">
                 <TitleBar title="Recipe" mainData="Items: 0"/>
-
-                <div className='formstyle'>
-
-                    <div className="controllerwrap">
-
-                        <form onSubmit={this.handleSubmit.bind(this)}>
-                            <TextInput Component="input"  placeholder="Item's name" name="textinput" options={this.fetchItems()} trigger={""} maxOptions="4" defaultValue={""}/>
-                            <input type="number" min="0" step="any" name="ItemQuantity" placeholder="Quantity"/>
-                            <select  name="ItemUnitMeasure" defaultValue="g">
-                                <option value="g">g</option>
-                                <option value="kg">kg</option>
-                                <option value="oz">oz</option>
-                                <option value="unit">unit</option>
-
-                            </select>
-                            <input className="button_controller " type="image" name="" src="./../../../img/AddItem.svg" border="0"   />
-                            <img className="button_controller button_disabled" type="image" name="submit" src="./../../../img/Add.svg" border="0" alt="Submit" onClick={()=>alert("Button Disabled")} />
-                            <input className="button_controller " type="image" name="save" src="./../../../img/Save.svg" border="0" alt="" onClick={(e)=>{
-                                e.preventDefault();
-                                this.saveRecipes()}} />
-                        </form>
-
-                    </div>
-                </div>
-
+                    {this.renderButtons_Controller()}
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>
-
                     <button onClick={
                         (e)=>{
                             e.preventDefault();
                             history.push("/recipelist");
                         }
                     }> <i className="fa fa-arrow-circle-left"></i></button>
-                    <div>
-
-                    </div>
-                </div>
-           )
-    }
+            </div>
+        )}
 }

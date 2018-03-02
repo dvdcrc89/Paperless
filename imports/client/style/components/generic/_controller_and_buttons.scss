@@ -1,0 +1,27 @@
+
+.controller_bar{
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.controller{
+  margin:0 auto;
+
+}
+.buttons{
+
+}
+.button_controller{
+  filter: invert(100);
+  width: 28px;
+}
+.button_controller:hover{
+  filter: invert( 0);
+}
+
+.button_disabled{
+  cursor:not-allowed;
+  pointer-events: none;
+  filter: opacity(0.20);
+}

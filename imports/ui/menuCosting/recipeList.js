@@ -16,6 +16,10 @@ export default class RecipeList extends React.Component {
         }
 
     }
+
+    /*                                                              **
+    *                        Table Declaration                      **
+    *                                                               */
     fetch() {
 
         const columns = [
@@ -88,15 +92,31 @@ export default class RecipeList extends React.Component {
 
 
     }
+
+
+    /*                                                              **
+    *               Add, Open new Tab, Save Buttons                 **
+    *                        & Controller                           **
+    *                                                               */
     renderBack(){
         if(!(this.state.id=="not")){
-            return <button onClick={()=>this.setState({id:"not"})}><i className="fa fa-arrow-circle-left"></i></button>
+            return (
+                <div className={"controller_bar"}>
+                <button onClick={()=>this.setState({id:"not"})}><i className="fa fa-arrow-circle-left"></i></button>
+                </div>
+            )
         } else{
             return (
-                <div className={"buttons_stocktakeslist"}>
-                    <img className="button_controller button_disabled " type="image" name="" src="./../../../img/AddItem.svg" border="0"   />
-                    <input className="button_controller " type="image" name="submit" src="./../../../img/Add.svg" border="0" alt="Submit" onClick={()=>history.replace("/recipe")} />
-                    <img className="button_controller button_disabled" type="image" name="submit" src="./../../../img/Save.svg" border="0" alt="" onClick={()=>alert("Button Disabled")} />
+                <div className={"controller_bar"}>
+                <div className={"buttons"}>
+                    <input className="button_controller button_disabled " type="image" name="addItem"
+                           src="./../../../img/AddItem.svg" border="0" onClick={() => alert("Button Disabled")}/>
+                    <input className="button_controller " type="image" name="newTable"
+                           src="./../../../img/Add.svg" border="0" alt="Submit"
+                           onClick={()=>history.replace("/recipe")}/>
+                    <input className="button_controller button_disabled" type="image" name="save"
+                           src="./../../../img/Save.svg" border="0" alt="" onClick={() => alert("Button Disabled")}/>
+                </div>
                 </div>
             )
         }
@@ -105,10 +125,7 @@ export default class RecipeList extends React.Component {
         return(
             <div className="container">
                 <TitleBar title="Menu" mainData="Items: 0"/>
-                <div className="formstyle">
-                    <div className="controllerWrap">
-                        {this.renderBack()}
-                    </div></div>
+                {this.renderBack()}
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>
             </div>
         )
