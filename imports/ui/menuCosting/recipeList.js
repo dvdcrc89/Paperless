@@ -104,8 +104,8 @@ export default class RecipeList extends React.Component {
         if(!(this.state.id=="not")){
             return (
                 <div className={"controller_bar"}>
-                <button onClick={()=>this.setState({id:"not"})}><i className="fa fa-arrow-circle-left"></i></button>
-                    <div className={"controller"}></div>
+                    <input className="button_controller " type="image" name="back"
+                           src="./../../../img/back.svg" border="0" onClick={()=>this.setState({id:"not"})}/>                    <div className={"controller"}></div>
                     <div className={"buttons"}>
                         <input className="button_controller button_disabled " type="image" name="addItem"
                                src="./../../../img/AddItem.svg" border="0" onClick={() => alert("Button Disabled")}/>
@@ -139,7 +139,9 @@ export default class RecipeList extends React.Component {
         return(
             <div className="container">
                 <TitleBar title="Menu" mainData="Items: 0"/>
+                <div className={"black_wrapper"}>
                 {this.renderButtons_Controller()}
+                </div>
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>
                 <Footer title={"Menu"}/>
 

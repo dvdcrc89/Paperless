@@ -194,12 +194,10 @@ export default class Recipe extends React.Component {
         return (
 
             <div className={"controller_bar"}>
-                <button onClick={
-                    (e)=>{
-                        e.preventDefault();
-                        history.push("/recipelist");
-                    }
-                }> <i className="fa fa-arrow-circle-left"></i></button>
+                <input className="button_controller " type="image" name="back"
+                       src="./../../../img/back.svg" border="0" onClick={()=>{
+                    history.push("/recipelist")
+                }}/>
                 <div className={"controller"}>
                     <form id="add_item" onSubmit={this.handleSubmit.bind(this) }>
                         <TextInput Component="input"  placeholder="Item's name" name="textinput" options={this.fetchItems()} trigger={""} maxOptions="4" defaultValue={""}/>
@@ -235,7 +233,9 @@ export default class Recipe extends React.Component {
         return (
             <div className="container">
                 <TitleBar title="Recipe" mainData="Items: 0"/>
+                <div className={"black_wrapper"}>
                     {this.renderButtons_Controller()}
+                </div>
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>
                 <Footer title={"New recipe"}/>
 

@@ -25,11 +25,11 @@ export default class StocktakesList extends React.Component {
 
         const columns = [
             {
-                Header: 'Date', accessor: 'Date'
+                Header: 'Date', accessor: 'Date',width:180
             }, {
-                Header: 'Note', accessor: 'Note'
+                Header: 'Note', accessor: 'Note',width:300
 
-            },{  Header: 'Total Value', accessor: 'TotalValue', width:200
+            },{  Header: 'Total Value', accessor: 'TotalValue', width:100
 
             },{
                 Header:'View/Remove',accessor: 'Show',width:130
@@ -95,7 +95,15 @@ export default class StocktakesList extends React.Component {
 
     renderButtons_Controller(){
         if(!(this.state.id=="not")){
-            return <button onClick={()=>this.setState({id:"not"})}><i className="fa fa-arrow-circle-left"></i></button>
+            return(
+                <div className={"controller_bar"}>
+                    <input className="button_controller " type="image" name="back"
+                           src="./../../../img/back.svg" border="0" onClick={()=>this.setState({id:"not"})}/>
+
+                    <div className={"controller"}> </div>
+
+                </div>
+            )
         } else{
             // return <button onClick={()=>history.replace("/stocktakes")}>NEW Stocktake</button>
             return (
@@ -124,8 +132,9 @@ export default class StocktakesList extends React.Component {
         return(
         <div className="container">
             <TitleBar title="Stocktakes" mainData="Items: 0"/>
-
+            <div className={"black_wrapper"}>
             {this.renderButtons_Controller()}
+            </div>
 
             <Table data={this.fetch().data} columns={this.fetch().columns}/>
             <Footer title={"Stocktakes List"}/>

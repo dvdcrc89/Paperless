@@ -9,9 +9,7 @@
   background-color: white;
   
 }
-.logout{
-  margin-right: 20px;
-}
+
 
 .space{
   margin-right:3px;
@@ -20,21 +18,20 @@
 .footer_buttons{
   margin:0 auto;
   width: 80%;
-  height: 35px;
+  height: 38px;
   display: flex;
   background-color: black;
+  justify-content: space-between;
 }
-.footer_buttons2{
-  height: 35px;
-  display: flex;
-  background-color: black;
-}
+
 .foot{
   background: white;
   padding: 4px;
 
 }
+.logout{
 
+}
 .showData{
   width: 100%;
   display: flex;

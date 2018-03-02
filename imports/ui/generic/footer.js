@@ -17,14 +17,20 @@ export default class Footer extends React.Component {
     render() {
         return (
             <div className={"footer_fixed"}>
-                <div className={"footer_buttons"}>
-                <input className="button_controller foot logout " type="image" name="logout"
-                           src="./../../../img/logout.svg" border="0" onClick={
-                        (e) => {
-                            e.preventDefault();
-                            Accounts.logout();
-                        }
-                    }/>
+                <div className={"black_wrapper"}>
+
+
+                    <div className={"footer_buttons"}>
+                        <div className={"logout"}>
+                            <input className="button_controller foot " type="image" name="logout"
+                                   src="./../../../img/logout.svg" border="0" onClick={
+                                (e) => {
+                                    e.preventDefault();
+                                    Accounts.logout();
+                                }
+                            }/>
+                        </div>
+                        <div className={"nav_button"}>
                     <input className="button_controller foot space" type="image" name="stocktake"
                            src="./../../../img/stocktake.svg" border="0" onClick={
                         (e) => {
@@ -53,13 +59,14 @@ export default class Footer extends React.Component {
                             history.push("/stock");
                        }
                     }/>
-                  
+                        </div>
                     </div>
-                
+                </div>
                 
                 <div className={"showData"}>
-                    <h2>{this.returnDate()}</h2>
                     <h1>{this.props.title}</h1>
+                    <h2>{this.returnDate()}</h2>
+
                 </div>
                 </div>
          

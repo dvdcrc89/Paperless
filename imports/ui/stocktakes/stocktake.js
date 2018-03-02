@@ -149,12 +149,10 @@ export default class Stocktakes extends React.Component {
     renderButtons_Controller() {
         return (
             <div className={"controller_bar"}>
-                <button onClick={
-                    (e) => {
-                        e.preventDefault();
-                        history.push("/stocktakeslist");
-                    }
-                }><i className="fa fa-arrow-circle-left"></i></button>
+                <input className="button_controller " type="image" name="back"
+                src="./../../../img/back.svg" border="0" onClick={()=>{
+                    history.push("/stocktakeslist")
+                }}/>
                 <div className={"controller"}>
                     <form id="add_item" onSubmit={this.handleSubmit.bind(this)}>
                         <TextInput Component="input" placeholder="Item's name" name="textinput"
@@ -188,7 +186,9 @@ export default class Stocktakes extends React.Component {
         return (
             <div className="container">
                 <TitleBar title="Stocktakes" mainData="Items: 0"/>
+                <div className={"black_wrapper"}>
                 {this.renderButtons_Controller()}
+                </div>
 
 
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>

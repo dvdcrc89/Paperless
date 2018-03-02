@@ -134,9 +134,11 @@ export default class StockMain extends React.Component {
             <div class="container">
                 {console.log(Items.find({User: Meteor.userId()}).fetch())}
                 <TitleBar title="STOCK" mainData={"Total items: " + this.fetch().data.length}/>
+                <div className={"black_wrapper"}>
                 {this.renderButtons_Controller()}
+                </div>
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>
-                <Footer title={"Stock"}/>
+                    <Footer title={"Stock"}/>
             </div>
         )
     }
