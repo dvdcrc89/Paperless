@@ -98,7 +98,7 @@ export default class RecipeList extends React.Component {
     *               Add, Open new Tab, Save Buttons                 **
     *                        & Controller                           **
     *                                                               */
-    renderBack(){
+    renderButtons_Controller(){
         if(!(this.state.id=="not")){
             return (
                 <div className={"controller_bar"}>
@@ -126,7 +126,7 @@ export default class RecipeList extends React.Component {
         return(
             <div className="container">
                 <TitleBar title="Menu" mainData="Items: 0"/>
-                {this.renderBack()}
+                {this.renderButtons_Controller()}
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>
             </div>
         )

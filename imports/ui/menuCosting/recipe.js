@@ -191,7 +191,14 @@ export default class Recipe extends React.Component {
 
     renderButtons_Controller() {
         return (
+
             <div className={"controller_bar"}>
+                <button onClick={
+                    (e)=>{
+                        e.preventDefault();
+                        history.push("/recipelist");
+                    }
+                }> <i className="fa fa-arrow-circle-left"></i></button>
                 <div className={"controller"}>
                     <form id="add_item" onSubmit={this.handleSubmit.bind(this) }>
                         <TextInput Component="input"  placeholder="Item's name" name="textinput" options={this.fetchItems()} trigger={""} maxOptions="4" defaultValue={""}/>
@@ -229,12 +236,7 @@ export default class Recipe extends React.Component {
                 <TitleBar title="Recipe" mainData="Items: 0"/>
                     {this.renderButtons_Controller()}
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>
-                    <button onClick={
-                        (e)=>{
-                            e.preventDefault();
-                            history.push("/recipelist");
-                        }
-                    }> <i className="fa fa-arrow-circle-left"></i></button>
+
             </div>
         )}
 }
