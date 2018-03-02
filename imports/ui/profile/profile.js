@@ -4,6 +4,8 @@ import Table from '../generic/table'
 import {Accounts} from "meteor/accounts-base";
 import {history} from "../routes/routes";
 import {Meteor} from 'meteor/meteor';
+import Footer from './../generic/footer'
+
 export default class Profile extends React.Component {
 
         getUser(){
@@ -23,6 +25,7 @@ export default class Profile extends React.Component {
 
 
                     {/*<Table/>*/}
+                    <Footer/>
                 </div>)
         }
     }

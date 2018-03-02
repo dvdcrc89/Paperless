@@ -8,6 +8,7 @@ import {RecipeTemps} from './../../api/recipetemps'
 import {Recipes} from "../../api/recipes";
 import TextInput from 'react-autocomplete-input';
 import {history} from "../routes/routes";
+import Footer from './../generic/footer'
 
 
 export default class Recipe extends React.Component {
@@ -236,7 +237,7 @@ export default class Recipe extends React.Component {
                 <TitleBar title="Recipe" mainData="Items: 0"/>
                     {this.renderButtons_Controller()}
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>
-
+                <Footer/>
             </div>
         )}
 }

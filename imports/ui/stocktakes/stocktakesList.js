@@ -5,6 +5,7 @@ import Table from '../generic/table'
 import {Meteor} from "meteor/meteor";
 import {Temps} from "../../api/temps";
 import {history} from "../routes/routes";
+import Footer from './../generic/footer'
 
 
 export default class StocktakesList extends React.Component {
@@ -127,6 +128,7 @@ export default class StocktakesList extends React.Component {
             {this.renderButtons_Controller()}
 
             <Table data={this.fetch().data} columns={this.fetch().columns}/>
+            <Footer/>
         </div>
         )
     }

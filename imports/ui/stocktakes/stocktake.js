@@ -7,6 +7,7 @@ import {Temps} from './../../api/temps'
 import {StockTakes} from "../../api/stocktakes";
 import TextInput from 'react-autocomplete-input';
 import {history} from "../routes/routes";
+import Footer from './../generic/footer'
 
 
 export default class Stocktakes extends React.Component {
@@ -190,6 +191,7 @@ export default class Stocktakes extends React.Component {
                 }><i className="fa fa-arrow-circle-left"></i></button>
 
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>
+                <Footer/>
             </div>)
     }
 }

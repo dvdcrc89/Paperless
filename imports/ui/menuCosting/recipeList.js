@@ -5,6 +5,8 @@ import Table from '../generic/table'
 import {Meteor} from "meteor/meteor";
 import {Temps} from "../../api/temps";
 import {history} from "../routes/routes";
+import Footer from './../generic/footer'
+
 
 
 export default class RecipeList extends React.Component {
@@ -103,6 +105,16 @@ export default class RecipeList extends React.Component {
             return (
                 <div className={"controller_bar"}>
                 <button onClick={()=>this.setState({id:"not"})}><i className="fa fa-arrow-circle-left"></i></button>
+                    <div className={"controller"}></div>
+                    <div className={"buttons"}>
+                        <input className="button_controller button_disabled " type="image" name="addItem"
+                               src="./../../../img/AddItem.svg" border="0" onClick={() => alert("Button Disabled")}/>
+                        <input className="button_controller button_disabled" type="image" name="newTable"
+                               src="./../../../img/Add.svg" border="0" alt="Submit"
+                               onClick={()=>history.replace("/recipe")}/>
+                        <input className="button_controller button_disabled" type="image" name="save"
+                               src="./../../../img/Save.svg" border="0" alt="" onClick={() => alert("Button Disabled")}/>
+                    </div>
                 </div>
             )
         } else{
@@ -128,6 +140,7 @@ export default class RecipeList extends React.Component {
                 <TitleBar title="Menu" mainData="Items: 0"/>
                 {this.renderButtons_Controller()}
                 <Table data={this.fetch().data} columns={this.fetch().columns}/>
+                <Footer/>
             </div>
         )
     }

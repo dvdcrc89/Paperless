@@ -1,15 +1,24 @@
 
 .controller_bar{
-  margin-top: 40px;
+  //margin-top: 40px;
   display: flex;
   justify-content: space-between;
+  background: black;
+  -webkit-box-shadow: 0px -1px 4px 0px rgba(140,140,140,1);
+  -moz-box-shadow: 0px -1px 4px 0px rgba(140,140,140,1);
+  box-shadow: 0px -1px 4px 0px rgba(140,140,140,1);
+
+  -webkit-box-shadow: 0px 1px 4px 0px rgba(140,140,140,1);
+  -moz-box-shadow: 0px 1px 4px 0px rgba(140,140,140,1);
+  box-shadow: 0px 1px 4px 0px rgba(140,140,140,1);
 }
 
 .controller{
   margin:0 auto;
-
+  padding-top:2px;
 }
 .buttons{
+  padding-top:4px;
 
 }
 .button_controller{
@@ -24,4 +33,13 @@
   cursor:not-allowed;
   pointer-events: none;
   filter: opacity(0.20);
+}
+
+button{
+  border:hidden;
+  background: black;
+
+}
+button:hover{
+  filter: invert(100);
 }

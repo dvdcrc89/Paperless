@@ -89,7 +89,7 @@ export default class TitleBar extends React.Component{
                     <i className="fa fa-instagram"></i>
                     </div>
                 </div>
-                {this.renderNav()}
+                {/*{this.renderNav()}*/}
             </div>
 
         )
