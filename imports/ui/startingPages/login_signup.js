@@ -70,7 +70,7 @@ export default class LoginSignup extends React.Component{
 
                     <button className={"formButtonSL"} onClick={()=>this.setState({value:"signup"})}>Don't have an account? Sign up</button>
 
-                    <form onSubmit={this.onSubmit_login.bind(this)} noValidate>
+                    <form className={"form_signup"} onSubmit={this.onSubmit_login.bind(this)} noValidate>
                         <input type="email" name="email" ref="email" className="signup_form_style" placeholder="Email"/>
                         <input type="password" name="password" ref="password" className="signup_form_style" placeholder="Password"/>
                         <button className="formButton">Login</button>
@@ -85,7 +85,7 @@ export default class LoginSignup extends React.Component{
                     {this.state.error ? <p>{this.state.error}</p> : undefined}
 
                     <button className={"formButtonSL"}onClick={()=>this.setState({value:"login"})}>Already have an account? Log in</button>
-                    <form onSubmit={this.onSubmit.bind(this)} noValidate>
+                    <form className={"form_signup"} onSubmit={this.onSubmit.bind(this)} noValidate>
                 {/*<input type="text" name="name" className="signup_form_style" placeholder="Full Name" required />*/}
                 <input type="email" name="email" className="signup_form_style" placeholder="Email" required />
                 {/*<input type="" name="" className="signup_form_style" placeholder="Confirm Email" required />*/}

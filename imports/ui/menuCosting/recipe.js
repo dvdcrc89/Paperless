@@ -47,14 +47,14 @@ export default class Recipe extends React.Component {
                 ItemQuantity: dat.ItemQuantity + " " + dat.ItemMeasure,
                 ItemValue: dat.ItemValue + "£",
                 btn:
-                    <button onClick={() => {
+                    <i className="fa fa-trash" onClick={() => {
                         let itemID = dat._id;
                         if (itemID) {
                             RecipeTemps.remove(itemID);
                         }
                     }
 
-                    }>X</button>
+                    }></i>
             }
         });
 

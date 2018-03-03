@@ -46,14 +46,14 @@ export default class Stocktakes extends React.Component {
                 ItemQuantity: dat.ItemQuantity + " " + dat.ItemMeasure,
                 ItemValue: dat.ItemValue + "£",
                 btn:
-                    <button onClick={() => {
+                    <i className="fa fa-trash" onClick={() => {
                         let itemID = dat._id;
                         if (itemID) {
                             Temps.remove(itemID);
                         }
                     }
 
-                    }>X</button>
+                    }></i>
             }
         });
 

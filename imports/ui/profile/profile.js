@@ -48,7 +48,21 @@ export default class Profile extends React.Component {
             }
         }}
 
-
+    renderButtons_Controller() {
+        return (
+            <div className={"controller_bar"}>
+                <div className={"controller"}></div>
+                <div className={"buttons"}>
+                    <input className="button_controller button_disabled " type="image" name="addItem"
+                           src="./../../../img/AddItem.svg" border="0" onClick={() => alert("Button Disabled")}/>
+                    <input className="button_controller button_disabled" type="image" name="newTable"
+                           src="./../../../img/Add.svg" border="0" alt="Submit"
+                           onClick={() => alert("Button Disabled")}/>
+                    <input className="button_controller button_disabled" type="image" name="save"
+                           src="./../../../img/Save.svg" border="0" alt="" onClick={() => alert("Button Disabled")}/>
+                </div>
+            </div>)
+    }
 
         render()
         {
@@ -56,7 +70,9 @@ export default class Profile extends React.Component {
                 <div className="container">
 
                     <TitleBar title="Profile" mainData={this.getUser()}/>
-
+                    <div className={"black_wrapper"}>
+                        {this.renderButtons_Controller()}
+                    </div>
                     <div className="profile_grid">
                         <div className="menu_g">
                             <div className="img_g">

@@ -83,7 +83,7 @@ export default class TitleBar extends React.Component{
         return(
             <div className="header">
                 <div className="titleBar">
-                    <img className ="logo" src="/img/logo2.svg"></img>
+                    <img className ="logo" src="/img/logo2.svg" onClick={()=>history.push("/")}></img>
                 <div className = "social">
                     <i className="fa fa-facebook-square"></i>
                     <i className="fa fa-instagram"></i>

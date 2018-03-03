@@ -5,7 +5,7 @@
   padding: 5%;
   font-family: Oxygen;
   font-weight: 100;
-  grid-gap: 100px;
+  grid-gap: 80px;
 }
 
 .info{
@@ -14,6 +14,9 @@
   padding-right: 5px;
   padding-bottom: 0px;
   border: solid 1px black;
+  width: 250px;
+  height: 150px;
+  text-align: center;
 
 }
 .info:hover{
@@ -42,7 +45,7 @@
 }
 .stock_g{
   max-width: 370px;
-  grid-column: 1;
+  grid-column: 2;
   grid-row: 1;
   display: flex;
   justify-content: space-between;
@@ -51,7 +54,7 @@
 .stocktake_g{
   max-width: 370px;
   grid-column: 1;
-  grid-row: 1;
+  grid-row:2;
   display: flex;
   justify-content: space-between;
   align-items: normal;
@@ -59,27 +62,14 @@
 
 .temperature_g{
   max-width: 370px;
-  grid-column: 1;
-  grid-row: 1;
+  grid-column: 2;
+  grid-row: 2;
   display: flex;
   justify-content: space-between;
   align-items: normal;
 }
 
-.stock_g{
-  grid-column: 2;
-  grid-row: 1;
-}
 
-.stocktake_g{
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.temperature_g{
-  grid-column: 2;
-  grid-row: 2;
-}
 
 .profile_grid img{
   width: 100px;
@@ -89,4 +79,30 @@
   filter: invert( 100);
 
 
+}
+@media only screen and (max-width: 900px) {
+  form{
+    display: none;
+  }
+  .profile_grid img{
+    width: 40px;
+  }
+  .menu_g{
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .stock_g{
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .stocktake_g{
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .temperature_g{
+    grid-column: 1;
+    grid-row: 4;
+  }
 }

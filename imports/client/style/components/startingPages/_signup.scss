@@ -48,7 +48,7 @@
 }
 
 .formButton {
-  background-color:#ffffff;
+  background-color:transparent;
   display:inline-block;
   color:black;
   font-size:28px;
@@ -73,7 +73,7 @@
 
 /*Signup/Login switch*/
 .formButtonSL {
-  background-color:#ffffff;
+  background-color:transparent;
   display:inline-block;
   position: relative;
   float:right;
@@ -100,6 +100,15 @@
   top:3px;
 }
 
+.form_signup{
+  display: block;
+  width: 100%;
+}
+.form_signup input{
+  background-color: transparent;
+  font-family: Oxygen;
+
+}
 
 /*To remove the outline that appears on clicking the input textbox*/
 input:focus {
