@@ -2,15 +2,70 @@
   display: grid;
   width: 80%;
   margin: 0 auto;
-  grid-gap: 100px;
   padding: 5%;
+  font-family: Oxygen;
+  font-weight: 100;
+  grid-gap: 100px;
 }
 
+.info{
+  line-height: 0.2rem;
+  padding-left:5px;
+  padding-right: 5px;
+  padding-bottom: 0px;
+  border: solid 1px black;
+
+}
+.info:hover{
+  color:white;
+  background: black;
+  border: 1px solid white;
+
+
+}
+
+.title_g h1{
+  padding: 2px;
+  font-size: 1rem;
+  color:white;
+  background: black;
+  font-weight: 900;
+
+}
 .menu_g{
+  max-width: 370px;
   grid-column: 1;
   grid-row: 1;
-
+  display: flex;
+  justify-content: space-between;
+ align-items: normal;
 }
+.stock_g{
+  max-width: 370px;
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: normal;
+}
+.stocktake_g{
+  max-width: 370px;
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: normal;
+}
+
+.temperature_g{
+  max-width: 370px;
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: normal;
+}
+
 .stock_g{
   grid-column: 2;
   grid-row: 1;
@@ -28,4 +83,10 @@
 
 .profile_grid img{
   width: 100px;
+
+}
+.img_g:hover{
+  filter: invert( 100);
+
+
 }
