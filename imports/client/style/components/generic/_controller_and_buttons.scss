@@ -14,23 +14,34 @@
 
 }
 
+
+
+
 .controller{
   margin:0 auto;
   padding-top:2px;
+
 }
+
 .buttons{
   display: flex;
-  padding-top:4px;
   justify-content: space-between;
+ 
 
 }
 .button_controller{
   filter: invert(100);
   width: 28px;
+  padding: 4px;
+  margin-right:3px;
+  margin-left: 3px;
 }
 .button_controller:hover{
   filter: invert( 0);
 }
+
+
+
 
 .button_disabled{
   cursor:not-allowed;
