@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a11ad881-b0bf-409f-b985-168949682b6e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/imports/client/style/components/generic/_profile.scss" afterPath="$PROJECT_DIR$/imports/client/style/components/generic/_profile.scss" />
-      <change beforePath="$PROJECT_DIR$/imports/client/style/components/startingPages/_signup.scss" afterPath="$PROJECT_DIR$/imports/client/style/components/startingPages/_signup.scss" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/generic/titlebar.js" afterPath="$PROJECT_DIR$/imports/ui/generic/titlebar.js" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/menuCosting/recipe.js" afterPath="$PROJECT_DIR$/imports/ui/menuCosting/recipe.js" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/profile/profile.js" afterPath="$PROJECT_DIR$/imports/ui/profile/profile.js" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/startingPages/login_signup.js" afterPath="$PROJECT_DIR$/imports/ui/startingPages/login_signup.js" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/stocktakes/stocktake.js" afterPath="$PROJECT_DIR$/imports/ui/stocktakes/stocktake.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -59,20 +52,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_profile.scss" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_profile.scss" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/imports/client/style/components/generic/_profile.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="84" column="17" lean-forward="false" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
+            <state relative-caret-position="269">
+              <caret line="92" column="18" lean-forward="false" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="recipe.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_signup.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/imports/client/style/components/startingPages/_signup.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="33" column="1" lean-forward="true" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="recipe.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/ui/menuCosting/recipe.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
+            <state relative-caret-position="494">
               <caret line="56" column="22" lean-forward="true" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
@@ -87,18 +90,6 @@
             <state relative-caret-position="431">
               <caret line="47" column="13" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stockMain.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/imports/ui/stock/stockMain.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="503">
-              <caret line="117" column="27" lean-forward="true" selection-start-line="88" selection-start-column="4" selection-end-line="117" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#25#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -225,9 +216,9 @@
         <option value="$PROJECT_DIR$/imports/ui/profile/profile.js" />
         <option value="$PROJECT_DIR$/imports/client/style/components/generic/_controller_and_buttons.scss" />
         <option value="$PROJECT_DIR$/imports/ui/generic/titlebar.js" />
-        <option value="$PROJECT_DIR$/imports/client/style/components/generic/_profile.scss" />
         <option value="$PROJECT_DIR$/imports/ui/stocktakes/stocktake.js" />
         <option value="$PROJECT_DIR$/imports/ui/menuCosting/recipe.js" />
+        <option value="$PROJECT_DIR$/imports/client/style/components/generic/_profile.scss" />
       </list>
     </option>
   </component>
@@ -491,12 +482,12 @@
       <workItem from="1519762429941" duration="48153000" />
       <workItem from="1519936358676" duration="17272000" />
       <workItem from="1519983030325" duration="13226000" />
-      <workItem from="1520101289862" duration="13367000" />
+      <workItem from="1520101289862" duration="13901000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167767000" />
+    <option name="totallyTimeSpent" value="168301000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="63" y="62" width="1305" height="780" extended-state="6" />
@@ -776,14 +767,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/client/style/components/startingPages/_signup.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/client/style/components/global/global.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -836,14 +819,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/client/style/components/generic/_profile.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="84" column="17" lean-forward="false" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/stocktakes/stocktakesList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -876,11 +851,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/menuCosting/recipe.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="487">
+        <state relative-caret-position="494">
           <caret line="56" column="22" lean-forward="true" selection-start-line="56" selection-start-column="22" selection-end-line="56" selection-end-column="22" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/client/style/components/startingPages/_signup.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="33" column="1" lean-forward="true" selection-start-line="33" selection-start-column="1" selection-end-line="33" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/client/style/components/generic/_profile.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="92" column="18" lean-forward="false" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>

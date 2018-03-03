@@ -81,6 +81,17 @@
 
 }
 @media only screen and (max-width: 900px) {
+  .logoClaim{
+    display: none;
+
+  }
+  .subOne{
+    display: none;
+  }
+  .sub{
+    width: 100%;
+    margin-top: 10%;
+  }
   form{
     display: none;
   }
