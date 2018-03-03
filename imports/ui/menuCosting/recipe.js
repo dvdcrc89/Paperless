@@ -110,27 +110,30 @@ export default class Recipe extends React.Component {
 
         let date = new Date()
         let begun = moment(date).format("DD MM YYYY");
-        let recipeName = prompt("Insert the recipe's name");
-        let retailPrice = prompt("Insert the retail price");
-        let ingredients = RecipeTemps.find({User: Meteor.userId()}).fetch()
-        let value = 0;
-        value = ingredients.map((item) => {
-            return value += item.ItemValue;
-        })
-        console.log(value)
-        Recipes.insert({
-            User: Meteor.userId(),
-            Date: begun,
-            RecipeName: recipeName,
-            RetailPrice: retailPrice,
-            Cost: Math.round(value[value.length - 1] * 100) / 100,
-            STitems: ingredients
+        let recipeName;
+        let retailPrice;
+        if(recipeName=prompt("Insert the recipe's name")) {
+            if(retailPrice = prompt("Insert the retail price")){
+            let ingredients = RecipeTemps.find({User: Meteor.userId()}).fetch()
+            let value = 0;
+            value = ingredients.map((item) => {
+                return value += item.ItemValue;
+            })
+            console.log(value)
+            Recipes.insert({
+                User: Meteor.userId(),
+                Date: begun,
+                RecipeName: recipeName,
+                RetailPrice: retailPrice,
+                Cost: Math.round(value[value.length - 1] * 100) / 100,
+                STitems: ingredients
 
-        })
-        RecipeTemps.find({User: Meteor.userId}).fetch().map((temp) => {
-            RecipeTemps.remove({_id: temp._id})
-        })
-        history.push("/recipelist");
+            })
+            RecipeTemps.find({User: Meteor.userId}).fetch().map((temp) => {
+                RecipeTemps.remove({_id: temp._id})
+            })
+            history.push("/recipelist");
+        }}
     }
 
 

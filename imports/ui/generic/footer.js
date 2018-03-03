@@ -27,6 +27,7 @@ export default class Footer extends React.Component {
                                 (e) => {
                                     e.preventDefault();
                                     Accounts.logout();
+                                    history.replace("/")
                                 }
                             }/>
                         </div>
@@ -35,7 +36,7 @@ export default class Footer extends React.Component {
                            src="./../../../img/stocktake.svg" border="0" onClick={
                         (e) => {
                             e.preventDefault();
-                            history.push("/stocktakes");
+                            history.push("/stocktakeslist");
                         }
                     }/>
                     <input className="button_controller foot space"  type="image" name="menu"

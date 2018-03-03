@@ -27,9 +27,9 @@ export default class StocktakesList extends React.Component {
             {
                 Header: 'Date', accessor: 'Date',width:180
             }, {
-                Header: 'Note', accessor: 'Note',width:300
+                Header: 'Note', accessor: 'Note'
 
-            },{  Header: 'Total Value', accessor: 'TotalValue', width:100
+            },{  Header: 'Total Value', accessor: 'TotalValue',width:180
 
             },{
                 Header:'View/Remove',accessor: 'Show',width:130
@@ -39,7 +39,7 @@ export default class StocktakesList extends React.Component {
         ((stocktake)=>{
             return {
                 ...stocktake,
-                TotalValue: stocktake.TotalValue + " £",
+                TotalValue: <div className="money"> {stocktake.TotalValue} £</div>,
                 Show:
                 <div className={"show_and_remove"}>
                     <i className="fa fa-eye" onClick={(e) => {

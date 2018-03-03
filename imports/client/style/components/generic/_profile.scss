@@ -1,0 +1,31 @@
+.profile_grid{
+  display: grid;
+  width: 80%;
+  margin: 0 auto;
+  grid-gap: 100px;
+  padding: 5%;
+}
+
+.menu_g{
+  grid-column: 1;
+  grid-row: 1;
+
+}
+.stock_g{
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.stocktake_g{
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.temperature_g{
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.profile_grid img{
+  width: 100px;
+}

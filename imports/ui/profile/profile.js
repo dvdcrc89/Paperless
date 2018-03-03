@@ -21,7 +21,20 @@ export default class Profile extends React.Component {
 
                     <TitleBar title="Profile" mainData={this.getUser()}/>
 
-
+                    <div className="profile_grid">
+                        <div className="menu_g">
+                            <img src="./../../../img/menu.svg"></img>
+                        </div>
+                        <div className="stock_g">
+                            <img src="./../../../img/stock.svg"></img>
+                        </div>
+                        <div className="stocktake_g">
+                            <img src="./../../../img/stocktake.svg"></img>
+                        </div>
+                        <div className="temperature_g">
+                            <img src="./../../../img/recipe.svg"></img>
+                        </div>
+                    </div>
 
 
                     {/*<Table/>*/}
