@@ -32,18 +32,19 @@ export default class Footer extends React.Component {
                             }/>
                         </div>
                         <div className={"nav_button"}>
-                    <input className="button_controller foot space" type="image" name="stocktake"
+                        <input className="button_controller foot space" type="image" name="stock"
+                           src="./../../../img/stock.svg" border="0" onClick={
+                        (e) => {
+                            e.preventDefault();
+                            history.push("/stock");
+                       }
+                    }/>
+                
+                <input className="button_controller foot space" type="image" name="stocktake"
                            src="./../../../img/stocktake.svg" border="0" onClick={
                         (e) => {
                             e.preventDefault();
                             history.push("/stocktakeslist");
-                        }
-                    }/>
-                    <input className="button_controller foot space"  type="image" name="menu"
-                           src="./../../../img/menu.svg" border="0" onClick={
-                        (e) => {
-                            e.preventDefault();
-                            history.push("/recipelist");
                         }
                     }/>
                     <input className="button_controller foot space" type="image" name="recipe"
@@ -53,12 +54,19 @@ export default class Footer extends React.Component {
                             history.push("/recipe");
                         }
                     }/>
-                     <input className="button_controller foot space" type="image" name="stock"
-                           src="./../../../img/stock.svg" border="0" onClick={
+                  <input className="button_controller foot space"  type="image" name="menu"
+                           src="./../../../img/menu.svg" border="0" onClick={
                         (e) => {
                             e.preventDefault();
-                            history.push("/stock");
-                       }
+                            history.push("/recipelist");
+                        }
+                    }/>
+                     <input className="button_controller foot space"  type="image" name="menu"
+                           src="./../../../img/temperature.svg" border="0" onClick={
+                        (e) => {
+                            e.preventDefault();
+                            history.push("/recipelist");
+                        }
                     }/>
                         </div>
                     </div>
