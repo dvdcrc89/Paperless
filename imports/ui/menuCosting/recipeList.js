@@ -6,6 +6,7 @@ import {Meteor} from "meteor/meteor";
 import {Temps} from "../../api/temps";
 import {history} from "../routes/routes";
 import Footer from './../generic/footer'
+import RecipeListTable from './recipeListTable';
 
 
 
@@ -19,81 +20,7 @@ export default class RecipeList extends React.Component {
 
     }
 
-    /*                                                              **
-    *                        Table Declaration                      **
-    *                                                               */
-    fetch() {
 
-        const columns = [
-            {
-                Header: 'Date', accessor: 'Date',width:120
-            }, {
-                Header: 'Name', accessor: 'RecipeName'
-
-            },{  Header: 'Cost', accessor: 'Cost', width:100
-
-            },{  Header: 'Retail Price', accessor: 'RetailPrice', width:130
-
-            },{  Header: 'Profit', accessor: 'Profit', width:100
-
-            },{
-                Header:'View/Remove',accessor: 'Show',width:130
-            }]
-
-        const data = Recipes.find({User: Meteor.userId()},{sort:{Date: -1}}).fetch().map
-        ((recipe)=>{
-            return {
-                ...recipe,
-                Profit:Math.round(((recipe.RetailPrice-recipe.Cost)/recipe.RetailPrice*100)*100)/100+"%",
-                Cost: recipe.Cost + " £",
-                RetailPrice:recipe.RetailPrice+" £",
-                Show:
-                    <div className={"show_and_remove"}>
-                        <i className="fa fa-eye" onClick={(e) => {
-                            e.preventDefault();
-                            this.setState({id: recipe._id});
-                        }}> </i>
-                        <i className="fa fa-trash" onClick={(e) => {
-                            e.preventDefault();
-                            if(confirm("Do you want to remove this recipe?"))
-                                Recipes.remove({_id:recipe._id});
-                        }}></i>
-                    </div>
-            }})
-
-
-        if(this.state.id=="not"){
-            return {
-                data: data,
-                columns: columns
-            }} else {
-            const columns2 = [
-                {
-                    Header: 'Ingredient Name', accessor: 'ItemName'
-                },{
-                    Header: 'Quantity', accessor: 'ItemQuantity',width: 90
-                },{
-                    Header: 'Cost', accessor: 'Cost',width: 90
-                }]
-
-            const data2 = Recipes.find({User: Meteor.userId(),_id:this.state.id}).fetch()[0].STitems.map((item)=>{
-                return {
-                    ...item,
-                    Cost: item.ItemValue + " £",
-                    ItemQuantity:item.ItemQuantity+" "+item.ItemMeasure
-                }
-            });
-
-            console.log(data2);
-            return {
-                data:data2,
-                columns:columns2
-            }
-        }
-
-
-
-    }
 
 
     /*                                                              **
@@ -142,7 +69,7 @@ export default class RecipeList extends React.Component {
                 <div className={"black_wrapper"}>
                 {this.renderButtons_Controller()}
                 </div>
-                <Table data={this.fetch().data} columns={this.fetch().columns}/>
+                <RecipeListTable/>
                 <Footer title={"Menu"}/>
 
             </div>

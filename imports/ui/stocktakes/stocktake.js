@@ -1,6 +1,6 @@
 import TitleBar from '../generic/titlebar';
 import React from 'react'
-import Table from '../generic/table'
+import StocktakeTable from './stocktakeTable'
 import {Items} from './../../api/items'
 import {Meteor} from 'meteor/meteor'
 import {Temps} from './../../api/temps'
@@ -8,60 +8,40 @@ import {StockTakes} from "../../api/stocktakes";
 import TextInput from 'react-autocomplete-input';
 import {history} from "../routes/routes";
 import Footer from './../generic/footer'
+import {Tracker} from "meteor/tracker";
 
 
 export default class Stocktakes extends React.Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            value: '',
-            _id: ''
+    constructor(props){
+        super(props);
+        this.state={
+            temps: [],
+            items:[]
         }
+    }
+
+    componentDidMount(){
+        this.stocktakeTracker= Tracker.autorun(()=>{
+            Meteor.subscribe('temps');
+            const temps =Temps.find().fetch();
+            this.setState({temps});
+            Meteor.subscribe("items");
+            const items=Items.find().fetch().map((item) => {
+                return item.itemName;
+            });
+            this.setState({items});
+
+
+        });
 
     }
 
+    componentWillUnmount(){
+        this.stocktakeTracker.stop();
+    }
 
-    /*                                                           **
-     *                        Table Declaration                  **
-     *                                                            */
 
-    fetch() {
-        const columns = [
-            {
-                Header: 'Ingredient Name', accessor: 'ItemName'
-            }, {
-                Header: 'Quantity', accessor: 'ItemQuantity', width: 90
-
-            }, {
-                Header: 'Value', accessor: 'ItemValue', width: 90
-
-            }, {
-                Header: '', accessor: 'btn', width: 50
-            }]
-
-        const data = Temps.find({User: Meteor.userId()}).fetch().map((dat) => {
-            return {
-                ItemName: dat.ItemName,
-                ItemQuantity: dat.ItemQuantity + " " + dat.ItemMeasure,
-                ItemValue: dat.ItemValue + "£",
-                btn:
-                    <i className="fa fa-trash" onClick={() => {
-                        let itemID = dat._id;
-                        if (itemID) {
-                            Temps.remove(itemID);
-                        }
-                    }
-
-                    }></i>
-            }
-        });
-
-        return {
-            data: data,
-            columns: columns
-        }
-    };
 
 
     /*                                                      **
@@ -74,31 +54,24 @@ export default class Stocktakes extends React.Component {
         e.preventDefault();
         let itemName = e.target.textinput.value.trim();
         let itemId = ""
+
         try {
-            itemId = Items.find({User: Meteor.userId(), ItemName: itemName}).fetch()[0]._id;
+            itemId = Items.findOne({itemName: itemName})._id;
         } catch (e) {
             alert("Item not in stock")
             return
         }
         let itemQuantity = e.target.ItemQuantity.value;
-        e.preventDefault();
 
-        if (Temps.find({IngredientId: itemId}).fetch().length > 0) {
+        if (Temps.find({ingredientId: itemId}).fetch().length > 0) {
             alert("Item already in");
             return
         }
-        let ingredient = Items.find({User: Meteor.userId(), ItemName: itemName}).fetch();
-        let measure = ingredient[0].ItemUnitMeasure;
-        let value = itemQuantity / ingredient[0].ItemQuantity * ingredient[0].ItemPrice;
-        Temps.insert({
-            User: Meteor.userId(),
-            ItemName: itemName,
-            ItemQuantity: itemQuantity,
-            ItemMeasure: measure,
-            IngredientId: itemId,
-            ItemValue: Math.round(value * 100) / 100
+        let ingredient = Items.findOne({itemName: itemName});
+        let measure = ingredient.itemUnitMeasure;
+        let value = itemQuantity / ingredient.itemQuantity * ingredient.itemPrice;
+        Meteor.call("temps.insert",itemName,itemQuantity,measure,itemId,value);
 
-        });
         e.target.textinput.value = "";
 
     }
@@ -122,9 +95,7 @@ export default class Stocktakes extends React.Component {
             STitems: stocktake
 
         })
-        Temps.find({User: Meteor.userId}).fetch().map((temp) => {
-            Temps.remove({_id: temp._id})
-        })
+        Meteor.call("temps.drop");
         history.push("/stocktakeslist");
     }
 
@@ -147,6 +118,7 @@ export default class Stocktakes extends React.Component {
     *                                                               */
 
     renderButtons_Controller() {
+        Meteor.subscribe("temps");
         return (
             <div className={"controller_bar"}>
                 <input className="button_controller " type="image" name="back"
@@ -156,7 +128,7 @@ export default class Stocktakes extends React.Component {
                 <div className={"controller"}>
                     <form id="add_item" onSubmit={this.handleSubmit.bind(this)}>
                         <TextInput Component="input" placeholder="Item's name" name="textinput"
-                                   options={this.fetchItems()} trigger={""} maxOptions="4" defaultValue={""}/>
+                                   options={this.state.items} trigger={""} maxOptions="4" defaultValue={""}/>
                         <input type="number" min="0" step="any" name="ItemQuantity" placeholder="Quantity"/>
                     </form>
                 </div>
@@ -191,7 +163,7 @@ export default class Stocktakes extends React.Component {
                 </div>
 
 
-                <Table data={this.fetch().data} columns={this.fetch().columns}/>
+                <StocktakeTable/>
                 <Footer title={"New stocktake"}/>
             </div>)
     }

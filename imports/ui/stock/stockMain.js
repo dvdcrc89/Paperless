@@ -1,54 +1,15 @@
 import React from 'react'
-import Table from '../generic/table'
-import {Items} from "../../api/items";
+
 import TitleBar from '../generic/titlebar';
 import {Meteor} from "meteor/meteor";
 import Footer from './../generic/footer'
+import {history} from "../routes/routes";
+import StockMainTable from './stockMainTable'
 
 
 export default class StockMain extends React.Component {
 
 
-    /*                                                           **
-     *                        Table Declaration                  **
-     *                                                            */
-
-    fetch() {
-        const columns = [
-            {
-                Header: 'Ingredients Name', accessor: 'ItemName'
-            }, {
-                Header: 'Description', accessor: 'ItemDescription'
-            }, {
-                Header: 'Price', accessor: 'PriceQuantity',
-            }
-            , {
-                Header: '', accessor: 'btn', width: 50
-            }]
-
-        const data = Items.find({User: Meteor.userId()}).fetch().map((dat) => {
-            return {
-                ItemName: dat.ItemName,
-                ItemDescription: dat.ItemDescription,
-                PriceQuantity: dat.ItemPrice + "£ / " + dat.ItemUnitMeasure + "(" + dat.ItemQuantity + ")",
-                btn:
-                    <i className="fa fa-trash" onClick={(e) => {
-                        let itemID = dat._id;
-                        console.log(dat._id);
-                        if (itemID) {
-                            Items.remove(itemID);
-                        }
-                    }
-
-                    }></i>
-            }
-        });
-
-        return {
-            data: data,
-            columns: columns
-        }
-    };
 
 
     /*                                                      **
@@ -63,22 +24,13 @@ export default class StockMain extends React.Component {
         let itemPrice = e.target.ItemPrice.value;
         let itemUnitMeasure = e.target.ItemUnitMeasure.value;
         e.preventDefault();
-        let length = Items.find({User: Meteor.userId()}).fetch().length + 1;
         if (itemName) {
             e.target.ItemName.value = '';
             e.target.ItemDescription.value = '';
             e.target.ItemQuantity.value = '';
             e.target.ItemPrice.value = '';
+            Meteor.call('items.insert',itemName,itemDescription,itemQuantity,itemPrice,itemUnitMeasure)
 
-            Items.insert({
-                User: Meteor.userId(),
-                ItemName: itemName,
-                ItemDescription: itemDescription,
-                ItemQuantity: itemQuantity,
-                ItemPrice: itemPrice,
-                ItemUnitMeasure: itemUnitMeasure
-
-            });
         }
     };
 
@@ -89,6 +41,7 @@ export default class StockMain extends React.Component {
     renderButtons_Controller() {
         return (
             <div className={"controller_bar"}>
+
                 <div className={"controller"}>
                     <form id="add_item" onSubmit={this.handleSubmit}>
                         <input type="text" name="ItemName" placeholder="Item Name" className="typebox"/>
@@ -132,12 +85,11 @@ export default class StockMain extends React.Component {
         return (
 
             <div class="container">
-                {console.log(Items.find({User: Meteor.userId()}).fetch())}
-                <TitleBar title="STOCK" mainData={"Total items: " + this.fetch().data.length}/>
+                <TitleBar title="STOCK" mainData={"Total items: "  }/>
                 <div className={"black_wrapper"}>
                 {this.renderButtons_Controller()}
                 </div>
-                <Table data={this.fetch().data} columns={this.fetch().columns}/>
+                <StockMainTable/>
                     <Footer title={"Stock"}/>
             </div>
         )

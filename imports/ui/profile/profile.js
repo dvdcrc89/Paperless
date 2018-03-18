@@ -51,6 +51,11 @@ export default class Profile extends React.Component {
     renderButtons_Controller() {
         return (
             <div className={"controller_bar"}>
+                <div className={"bread"}>
+                    <p onClick={()=>{
+                    history.push("/")}
+                    }>Home</p>
+                </div>
                 <div className={"controller"}></div>
                 <div className={"buttons"}>
                     <input className="button_controller button_disabled " type="image" name="addItem"

@@ -9,60 +9,42 @@ import {Recipes} from "../../api/recipes";
 import TextInput from 'react-autocomplete-input';
 import {history} from "../routes/routes";
 import Footer from './../generic/footer'
+import RecipeTable from './recipeTable';
+import {Tracker} from "meteor/tracker";
 
 
 export default class Recipe extends React.Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            value: '',
-            _id: ''
+    constructor(props){
+        super(props);
+        this.state={
+            recipetemps: [],
+            items:[]
         }
+    }
+
+    componentDidMount(){
+        this.recipeTracker= Tracker.autorun(()=>{
+            Meteor.subscribe('recipeTemps');
+            const recipetemps =RecipeTemps.find().fetch();
+            this.setState({recipetemps});
+            Meteor.subscribe("items");
+            const items=Items.find().fetch().map((item) => {
+                return item.itemName;
+            });
+            this.setState({items});
+
+
+        });
 
     }
 
+    componentWillUnmount(){
+        this.recipeTracker.stop();
+    }
 
-    /*                                                              **
-    *                        Table Declaration                      **
-    *                                                               */
 
-    fetch() {
-        const columns = [
-            {
-                Header: 'Ingredient Name', accessor: 'ItemName'
-            }, {
-                Header: 'Quantity', accessor: 'ItemQuantity', width: 90
 
-            }, {
-                Header: 'Cost', accessor: 'ItemValue', width: 90
-
-            }, {
-                Header: '', accessor: 'btn', width: 50
-            }]
-
-        const data = RecipeTemps.find({User: Meteor.userId()}).fetch().map((dat) => {
-            return {
-                ItemName: dat.ItemName,
-                ItemQuantity: dat.ItemQuantity + " " + dat.ItemMeasure,
-                ItemValue: dat.ItemValue + "£",
-                btn:
-                    <i className="fa fa-trash" onClick={() => {
-                        let itemID = dat._id;
-                        if (itemID) {
-                            RecipeTemps.remove(itemID);
-                        }
-                    }
-
-                    }></i>
-            }
-        });
-
-        return {
-            data: data,
-            columns: columns
-        }
-    };
 
     /*                                                      **
     *               Add, Open new Tab, Save Functions       **
@@ -73,11 +55,11 @@ export default class Recipe extends React.Component {
         e.preventDefault();
         // let item = document.getElementsByName("textinput");
         // console.log(e.target.textinput.attributes[0].value);
-
+        Meteor.subscribe("items");
         let itemName = e.target.textinput.value.trim();
         let itemId = ""
         try {
-            itemId = Items.find({User: Meteor.userId(), ItemName: itemName}).fetch()[0]._id;
+            itemId = Items.find({itemName: itemName}).fetch()[0]._id;
         } catch (e) {
             alert("Item not in stock")
             return
@@ -86,22 +68,14 @@ export default class Recipe extends React.Component {
         let itemMeasureUnit = e.target.ItemUnitMeasure.value;
         e.preventDefault();
 
-        if (RecipeTemps.find({IngredientId: itemId}).fetch().length > 0) {
+        if (RecipeTemps.find({ingredientId: itemId}).fetch().length > 0) {
             alert("Item already in");
             return
         }
-        let ingredient = Items.find({User: Meteor.userId(), ItemName: itemName}).fetch();
-        let measure = ingredient[0].ItemUnitMeasure;
+        let ingredient = Items.find({itemName: itemName}).fetch();
+        let measure = ingredient[0].itemUnitMeasure;
         let value = this.calculateValue(itemMeasureUnit,itemQuantity,ingredient[0]);
-        RecipeTemps.insert({
-            User: Meteor.userId(),
-            ItemName: itemName,
-            ItemQuantity: itemQuantity,
-            ItemMeasure: itemMeasureUnit,
-            IngredientId: itemId,
-            ItemValue: Math.round(value * 100) / 100
-
-        });
+        Meteor.call("recipeTemps.insert",itemName,itemQuantity,itemMeasureUnit,itemId,value)
         e.target.textinput.value="";
 
     }
@@ -114,24 +88,13 @@ export default class Recipe extends React.Component {
         let retailPrice;
         if(recipeName=prompt("Insert the recipe's name")) {
             if(retailPrice = prompt("Insert the retail price")){
-            let ingredients = RecipeTemps.find({User: Meteor.userId()}).fetch()
+            let ingredients = RecipeTemps.find().fetch()
             let value = 0;
             value = ingredients.map((item) => {
-                return value += item.ItemValue;
+                return value += item.itemValue;
             })
-            console.log(value)
-            Recipes.insert({
-                User: Meteor.userId(),
-                Date: begun,
-                RecipeName: recipeName,
-                RetailPrice: retailPrice,
-                Cost: Math.round(value[value.length - 1] * 100) / 100,
-                STitems: ingredients
-
-            })
-            RecipeTemps.find({User: Meteor.userId}).fetch().map((temp) => {
-                RecipeTemps.remove({_id: temp._id})
-            })
+            Meteor.call("recipes.insert",begun,recipeName,retailPrice,value,ingredients);
+            Meteor.call("recipeTemps.drop");
             history.push("/recipelist");
         }}
     }
@@ -143,45 +106,44 @@ export default class Recipe extends React.Component {
     *                                       **
     *                                       */
 
-    fetchItems() {
-        return Items.find({User: Meteor.userId()}).fetch().map((item) => {
-            return item.ItemName;
-        });
-    }
+    // fetchItems() {
+    //
+    //     return
+    // }
 
 
 
 
 
     calculateValue(itemMeasureUnit,itemQuantity,ingredient){
-        console.log(itemMeasureUnit === ingredient.ItemUnitMeasure);
-        if(itemMeasureUnit === ingredient.ItemUnitMeasure) {
-            return itemQuantity / ingredient.ItemQuantity * ingredient.ItemPrice;
+
+        if(itemMeasureUnit === ingredient.itemUnitMeasure) {
+            return itemQuantity / ingredient.itemQuantity * ingredient.itemPrice;
         }
         if(itemMeasureUnit==="g"){
-            switch(ingredient.ItemUnitMeasure){
-                case "kg": return itemQuantity / (ingredient.ItemQuantity*1000) * ingredient.ItemPrice;
-                case "oz": return itemQuantity / (ingredient.ItemQuantity*28.34) * ingredient.ItemPrice
+            switch(ingredient.itemUnitMeasure){
+                case "kg": return itemQuantity / (ingredient.itemQuantity*1000) * ingredient.itemPrice;
+                case "oz": return itemQuantity / (ingredient.itemQuantity*28.34) * ingredient.itemPrice
                 case "unit": return
             }
 
         }
         if(itemMeasureUnit==="kg") {
-            switch (ingredient.ItemUnitMeasure) {
+            switch (ingredient.itemUnitMeasure) {
                 case "g":
-                    return (itemQuantity*1000) / ingredient.ItemQuantity * ingredient.ItemPrice;
+                    return (itemQuantity*1000) / ingredient.itemQuantity * ingredient.itemPrice;
                 case "oz":
-                    return itemQuantity*35.27  / (ingredient.ItemQuantity) * ingredient.ItemPrice
+                    return itemQuantity*35.27  / (ingredient.itemQuantity) * ingredient.itemPrice
                 case "unit": return
             }
 
         }
         if(itemMeasureUnit==="oz") {
-            switch (ingredient.ItemUnitMeasure) {
+            switch (ingredient.itemUnitMeasure) {
                 case "g":
-                    return itemQuantity *28.34 / ingredient.ItemQuantity * ingredient.ItemPrice;
+                    return itemQuantity *28.34 / ingredient.itemQuantity * ingredient.itemPrice;
                 case "kg":
-                    return (itemQuantity) / (ingredient.ItemQuantity*35.274)  * ingredient.ItemPrice
+                    return (itemQuantity) / (ingredient.itemQuantity*35.274)  * ingredient.itemPrice
                 case "unit": return
             }
 
@@ -203,7 +165,7 @@ export default class Recipe extends React.Component {
                 }}/>
                 <div className={"controller"}>
                     <form id="add_item" onSubmit={this.handleSubmit.bind(this) }>
-                        <TextInput Component="input"  placeholder="Item's name" name="textinput" options={this.fetchItems()} trigger={""} maxOptions="4" defaultValue={""}/>
+                        <TextInput Component="input" autocomplete={"off"} placeholder="Item's name" name="textinput" options={this.state.items} trigger={""} maxOptions="4" defaultValue={""}/>
                         <input type="number" min="0" step="any" name="ItemQuantity" placeholder="Quantity"/>
                         <select  name="ItemUnitMeasure" defaultValue="g">
                             <option value="g">g</option>
@@ -239,7 +201,7 @@ export default class Recipe extends React.Component {
                 <div className={"black_wrapper"}>
                     {this.renderButtons_Controller()}
                 </div>
-                <Table data={this.fetch().data} columns={this.fetch().columns}/>
+                <RecipeTable/>
                 <Footer title={"New recipe"}/>
 
             </div>

@@ -45,3 +45,12 @@ h2{
     color: black;
 }
 
+.bread{
+    display: flex;
+    color: white;
+    justify-items: baseline;
+
+}
+.bread p{
+    padding: 2px;
+}
