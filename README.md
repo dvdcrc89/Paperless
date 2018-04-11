@@ -1,4 +1,4 @@
-# Paperless
+# NOPE / No Paper Effort
 ## Smart managing of restaurant kitchen paperworks
 
 A practical help for chefs who prefer to spend their time in the kitchen rather than going crazy in front of a computer.
