@@ -25,5 +25,8 @@ Meteor.methods({
 
 
         })
+    },
+    "stockTakes.remove"(id){
+        StockTakes.remove({_id:id});
     }
 })

@@ -70,7 +70,7 @@ export default class StocktakesListTable extends React.Component {
                         <i className="fa fa-trash" onClick={(e) => {
                             e.preventDefault();
                             if(confirm("Do you want to remove this stocktake?"))
-                                StockTakes.remove({_id:stocktake._id});
+                                Meteor.call("stockTakes.remove",(stocktake._id));
                         }}></i>
                     </div>
             }})

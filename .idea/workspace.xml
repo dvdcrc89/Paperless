@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a11ad881-b0bf-409f-b985-168949682b6e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/imports/ui/stocktakes/stocktakesListTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/imports/api/stocktakes.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/api/stocktakes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/stocktakes/stocktake.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/stocktakes/stocktake.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/stocktakes/stocktakesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/stocktakes/stocktakesList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imports/ui/stocktakes/stocktakesListTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/imports/ui/stocktakes/stocktakesListTable.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -94,8 +91,8 @@
       <file leaf-file-name="stocktakesListTable.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/imports/ui/stocktakes/stocktakesListTable.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="96" column="73" selection-start-line="96" selection-start-column="73" selection-end-line="96" selection-end-column="73" />
+            <state relative-caret-position="159">
+              <caret line="72" column="80" selection-start-line="72" selection-start-column="80" selection-end-line="72" selection-end-column="80" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -106,8 +103,8 @@
       <file leaf-file-name="stocktakes.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/imports/api/stocktakes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+            <state relative-caret-position="450">
+              <caret line="30" column="3" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -230,8 +227,8 @@
         <option value="$PROJECT_DIR$/imports/ui/stocktakes/stocktakeTable.js" />
         <option value="$PROJECT_DIR$/imports/client/style/components/startingPages/_signup.scss" />
         <option value="$PROJECT_DIR$/imports/ui/stocktakes/stocktakesList.js" />
-        <option value="$PROJECT_DIR$/imports/api/stocktakes.js" />
         <option value="$PROJECT_DIR$/imports/ui/stocktakes/stocktake.js" />
+        <option value="$PROJECT_DIR$/imports/api/stocktakes.js" />
         <option value="$PROJECT_DIR$/imports/ui/stocktakes/stocktakesListTable.js" />
       </list>
     </option>
@@ -414,15 +411,15 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/imports/ui" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/imports/ui/stock" />
       <recent name="$PROJECT_DIR$/imports/ui/generic" />
       <recent name="$PROJECT_DIR$/imports/client/style/components/generic" />
       <recent name="$PROJECT_DIR$/imports/ui" />
       <recent name="$PROJECT_DIR$/public" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/imports/ui" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -462,12 +459,12 @@
       <workItem from="1521714345965" duration="1838000" />
       <workItem from="1523784879877" duration="93000" />
       <workItem from="1523807313009" duration="1236000" />
-      <workItem from="1525108184328" duration="2433000" />
+      <workItem from="1525108184328" duration="3352000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="196084000" />
+    <option name="totallyTimeSpent" value="197003000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
@@ -705,16 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/api/stocktakes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/menuCosting/recipeListTable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-920">
@@ -725,10 +712,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/imports/api/stocktakes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="3" selection-start-line="30" selection-start-column="3" selection-end-line="30" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/stocktakes/stocktakesListTable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="96" column="73" selection-start-line="96" selection-start-column="73" selection-end-line="96" selection-end-column="73" />
+        <state relative-caret-position="159">
+          <caret line="72" column="80" selection-start-line="72" selection-start-column="80" selection-end-line="72" selection-end-column="80" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
