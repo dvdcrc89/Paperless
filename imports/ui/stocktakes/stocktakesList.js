@@ -5,7 +5,8 @@ import Table from '../generic/table'
 import {Meteor} from "meteor/meteor";
 import {Temps} from "../../api/temps";
 import {history} from "../routes/routes";
-import Footer from './../generic/footer'
+import Footer from './../generic/footer';
+import StocktakesListTable from './stocktakesListTable';
 
 
 export default class StocktakesList extends React.Component {
@@ -18,74 +19,6 @@ export default class StocktakesList extends React.Component {
 
     }
 
-    /*                                                           **
-    *                        Table Declaration                  **
-    *                                                            */
-    fetch() {
-
-        const columns = [
-            {
-                Header: 'Date', accessor: 'Date',width:180
-            }, {
-                Header: 'Note', accessor: 'Note'
-
-            },{  Header: 'Total Value', accessor: 'TotalValue',width:180
-
-            },{
-                Header:'View/Remove',accessor: 'Show',width:130
-            }]
-
-        const data = StockTakes.find({User: Meteor.userId()},{sort:{Date: -1}}).fetch().map
-        ((stocktake)=>{
-            return {
-                ...stocktake,
-                TotalValue: <div className="money"> {stocktake.TotalValue} £</div>,
-                Show:
-                <div className={"show_and_remove"}>
-                    <i className="fa fa-eye" onClick={(e) => {
-                        e.preventDefault();
-                        this.setState({id: stocktake._id});
-                    }}> </i>
-                    <i className="fa fa-trash" onClick={(e) => {
-                        e.preventDefault();
-                        if(confirm("Do you want to remove this stocktake?"))
-                        StockTakes.remove({_id:stocktake._id});
-                    }}></i>
-                </div>
-            }})
-
-
-        if(this.state.id=="not"){
-        return {
-            data: data,
-            columns: columns
-        }} else {
-            const columns2 = [
-                {
-                    Header: 'Ingredient Name', accessor: 'ItemName'
-                },{
-                    Header: 'Quantity', accessor: 'ItemQuantity',width: 90
-                },{
-                    Header: 'Value', accessor: 'ItemValue',width: 90
-                }]
-
-            const data2 = StockTakes.find({User: Meteor.userId(),_id:this.state.id}).fetch()[0].STitems.map((item)=>{
-                return {
-                    ...item,
-                    ItemValue: item.ItemValue + " £"
-                }
-            });
-
-            console.log(data2);
-            return {
-                data:data2,
-                columns:columns2
-            }
-        }
-
-
-
-    }
 
 
     /*                                                              **
@@ -136,7 +69,7 @@ export default class StocktakesList extends React.Component {
             {this.renderButtons_Controller()}
             </div>
 
-            <Table data={this.fetch().data} columns={this.fetch().columns}/>
+            <StocktakesListTable/>
             <Footer title={"Stocktakes List"}/>
         </div>
         )

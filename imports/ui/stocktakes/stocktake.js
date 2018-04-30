@@ -81,20 +81,20 @@ export default class Stocktakes extends React.Component {
         let date = new Date()
         let begun = moment(date).format("DD MMMM YYYY");
         let notes = prompt("Feel free to add some notes");
-        let stocktake = Temps.find({User: Meteor.userId()}).fetch()
         let value = 0;
-        value = stocktake.map((item) => {
+        value = this.state.temps.map((item) => {
             return value += item.ItemValue;
         })
         console.log(value)
-        StockTakes.insert({
-            User: Meteor.userId(),
-            Date: begun,
-            Note: notes,
-            TotalValue: Math.round(value[value.length - 1] * 100) / 100,
-            STitems: stocktake
-
-        })
+        Meteor.call("stocktakes.insert",begun,notes,value,this.state.temps);
+        // StockTakes.insert({
+        //     User: Meteor.userId(),
+        //     Date: begun,
+        //     Note: notes,
+        //     TotalValue: Math.round(value[value.length - 1] * 100) / 100,
+        //     STitems: stocktake
+        //
+        // })
         Meteor.call("temps.drop");
         history.push("/stocktakeslist");
     }
